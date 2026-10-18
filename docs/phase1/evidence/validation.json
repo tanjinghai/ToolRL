@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-18",
+  "timezone": "Asia/Shanghai",
+  "audit_target_commit": "8cee13ec0ca72f0461da372a93a6fd8140dbb840",
+  "checks": {
+    "python_ast_files": 176,
+    "shell_syntax_files": 4,
+    "audit_repeat_identical": true,
+    "source_data_hashes_verified": 8,
+    "parquet_raw_seed_order_consistency": true,
+    "reward_edge_cases_verified": true,
+    "baseline_files_unchanged_except_documentation_gitignore_and_secret_rename": 202,
+    "new_files_under_1_mib": true,
+    "credential_pattern_scan_new_changes": "no matches (limited pattern scan, not a guarantee)",
+    "credential_example_placeholders_only": true,
+    "gitignore_probes": 6,
+    "local_markdown_links": 19,
+    "yaml_template_safe_load": true,
+    "audit_dependency_pip_check": "No broken requirements found.",
+    "staged_diff_check": true,
+    "staged_file_count_scanned": 16,
+    "main_unchanged": true
+  },
+  "sft_dataframe_probe": {
+    "python": "bundled Python/pandas, no torch",
+    "result": "AttributeError: 'DataFrame' object has no attribute 'tolist'",
+    "expression": "DataFrame({'prompt':['p']})[['prompt']].tolist()"
+  },
+  "not_run": [
+    "CUDA/FlashAttention/vLLM/Ray/FSDP GPU execution",
+    "model/tokenizer download",
+    "SFT or GRPO training",
+    "paid API search or judge",
+    "BFCL official execution",
+    "full semantic/near-duplicate contamination audit"
+  ]
+}
