@@ -59,7 +59,7 @@ class EvaluationTests(unittest.TestCase):
     def test_duplicate_unknown_and_mixed_provenance_refused(self):
         pred = generate(self.dataset, self.root/'oracle', self.run, mock_backend(self.records, 'oracle'))
         rows = read_jsonl(pred)
-        for changes in ['duplicate', 'unknown', 'revision', 'config']:
+        for changes in ['duplicate', 'unknown', 'revision', 'config', 'backend_config']:
             mutated = copy.deepcopy(rows)
             if changes == 'duplicate':
                 mutated.append(mutated[0])
@@ -67,8 +67,10 @@ class EvaluationTests(unittest.TestCase):
                 mutated[0]['sample_id'] = 'not-in-dataset'
             elif changes == 'revision':
                 mutated[-1]['model']['revision'] = 'other'
-            else:
+            elif changes == 'config':
                 mutated[-1]['generation_config']['seed'] = 999
+            else:
+                mutated[-1]['backend_config'] = {'dtype': 'float16'}
             write_jsonl(self.root/'bad.jsonl', mutated)
             with self.assertRaises(ValueError):
                 score(self.dataset, self.root/'bad.jsonl', self.root/'no-results', run_metadata=self.run)

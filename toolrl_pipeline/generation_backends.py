@@ -3,10 +3,10 @@
 
 class VLLMBackend:
     """Future GPU path: implemented, not GPU-tested in Phase 2."""
-    def __init__(self, model_path, max_model_len=4096, tensor_parallel_size=1, gpu_memory_utilization=0.5):
+    def __init__(self, model_path, max_model_len=6144, tensor_parallel_size=1, gpu_memory_utilization=0.5, dtype='bfloat16'):
         from vllm import LLM
         self.llm = LLM(model=model_path, max_model_len=max_model_len, tensor_parallel_size=tensor_parallel_size,
-                       gpu_memory_utilization=gpu_memory_utilization)
+                       gpu_memory_utilization=gpu_memory_utilization, dtype=dtype)
 
     def __call__(self, request, config):
         from vllm import SamplingParams

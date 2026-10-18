@@ -63,6 +63,12 @@ def main():
                 'sft_total_over_2048': sum(n > 2048 for n in totals) if totals else None}
     report['checks'] = {'real_qwen_template': True, 'assistant_only_labels_samples': checked,
                         'one_target_eos': True, 'no_double_special_tokens': True, 'full_encoding_bpe_boundary_match': True}
+    api = args.data_root/'benchmarks/api_bank.jsonl'
+    if api.exists():
+        # Prompt-only deployment sizing; never use benchmark answers to select training.
+        lengths = [len(tokenizer.encode(render_prompt(r['prompt'], tokenizer), add_special_tokens=False)) for r in read_jsonl(api)]
+        report['api_bank_prompt_only'] = {'rows': len(lengths), 'prompt_tokens': stats(lengths),
+                                         'prompt_over_4096': sum(n > 4096 for n in lengths)}
     write_json(args.output, report)
     print(f'PASS: {checked} SFT examples checked with real Qwen tokenizer; final Test unopened; no model weights loaded.')
 

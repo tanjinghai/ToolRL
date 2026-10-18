@@ -18,6 +18,10 @@ def _generation_args(parser):
     parser.add_argument('--backend', choices=['mock', 'vllm'], default='mock')
     parser.add_argument('--mock-mode', choices=['mixed', 'oracle', 'invalid'], default='mixed')
     parser.add_argument('--model-path', type=Path)
+    parser.add_argument('--max-model-len', type=int, default=6144)
+    parser.add_argument('--tensor-parallel-size', type=int, default=1)
+    parser.add_argument('--gpu-memory-utilization', type=float, default=0.5)
+    parser.add_argument('--model-dtype', choices=['bfloat16', 'float16'], default='bfloat16')
     parser.add_argument('--resume', action='store_true')
     parser.add_argument('--allow-final-test', action='store_true')
 
@@ -40,13 +44,16 @@ def run_generation(args, dataset):
     if args.backend == 'mock':
         backend = mock_backend(records, args.mock_mode)
         backend_name = 'mock-'+args.mock_mode
+        backend_config = {}
     else:
         if args.model_path is None or not args.model_path.is_dir():
             raise ValueError('vLLM requires an existing local --model-path; no implicit model download')
         from .generation_backends import VLLMBackend
-        backend = VLLMBackend(str(args.model_path))
+        backend_config = {'max_model_len': args.max_model_len, 'tensor_parallel_size': args.tensor_parallel_size,
+                          'gpu_memory_utilization': args.gpu_memory_utilization, 'dtype': args.model_dtype}
+        backend = VLLMBackend(str(args.model_path), **backend_config)
         backend_name = 'vllm'
-    run = make_run(dataset, args.run_id, args.model_id, args.model_revision, config, backend_name)
+    run = make_run(dataset, args.run_id, args.model_id, args.model_revision, config, backend_name, backend_config)
     path = generate(dataset, args.output_dir, run, backend, resume=args.resume)
     return score(dataset, path, args.output_dir, run_metadata=run, allow_final_test=args.allow_final_test)
 

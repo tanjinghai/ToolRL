@@ -18,24 +18,32 @@ DEFAULT_GENERATION = {"temperature": 0.0, "top_p": 1.0, "max_new_tokens": 1024,
 
 def evaluator_fingerprint():
     directory = Path(__file__).parent
-    return digest({name: file_hash(directory/name) for name in ('evaluation.py', 'verifier.py', 'schema.py', 'protocol.py', 'io.py', 'benchmarks.py')})
+    return digest({name: file_hash(directory/name) for name in ('evaluation.py', 'verifier.py', 'schema.py', 'protocol.py', 'io.py',
+                                                                'benchmarks.py', 'cli.py', 'generation_backends.py', 'tokenization.py')})
 
 
-def make_run(dataset_path, run_id, model_id, model_revision, generation=None, backend="mock"):
+def make_run(dataset_path, run_id, model_id, model_revision, generation=None, backend="mock", backend_config=None):
     return {"prediction_schema_version": PREDICTION_VERSION, "run_id": run_id,
             "model": {"id": model_id, "revision": model_revision},
             "generation_config": generation or dict(DEFAULT_GENERATION),
             "dataset_file_sha256": file_hash(dataset_path), "backend": backend,
+            "backend_config": backend_config or {},
             "is_mock": backend.startswith("mock"),
             "evaluator_git_sha": subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=Path(__file__).resolve().parents[1], text=True).strip(),
             "evaluator_code_sha256": evaluator_fingerprint()}
 
 
 def _check_prediction(record, run, expected):
+    if record.get('prediction_schema_version') != PREDICTION_VERSION:
+        raise ValueError('Unsupported prediction schema version')
+    if not isinstance(record.get('backend'), str) or record.get('is_mock') != record['backend'].startswith('mock'):
+        raise ValueError('Mock provenance must be explicit and consistent with backend')
+    if record.get('generation_config', {}).get('n') != 1:
+        raise ValueError('Evaluation requires one fixed attempt per sample (n=1)')
     sid = record.get("sample_id")
     if sid not in expected:
         raise ValueError(f"Unknown prediction ID: {sid}")
-    for key in ("prediction_schema_version", "run_id", "model", "generation_config", "dataset_file_sha256", "backend", "is_mock", "evaluator_git_sha", "evaluator_code_sha256"):
+    for key in ("prediction_schema_version", "run_id", "model", "generation_config", "dataset_file_sha256", "backend", "backend_config", "is_mock", "evaluator_git_sha", "evaluator_code_sha256"):
         if record.get(key) != run.get(key):
             raise ValueError(f"Mixed/missing prediction provenance: {key}")
     if record.get("dataset_version") != expected[sid]["dataset_version"]:
@@ -181,6 +189,7 @@ def score(dataset_path, predictions_path, output_dir, previous_results=None, run
     summary = aggregate(scored)
     summary.update({"prediction_schema_version": PREDICTION_VERSION, "run_id": run["run_id"], "is_mock": run.get("is_mock"),
                     "model": run["model"], "generation_config": run["generation_config"],
+                    "backend_config": run.get('backend_config', {}),
                     "dataset_file_sha256": dataset_hash, "predictions_sha256": file_hash(predictions_path),
                     "dataset_versions": sorted({r["dataset_version"] for r in records}),
                     "scorer_code_sha256": evaluator_fingerprint(), "generation_evaluator_code_sha256": run.get('evaluator_code_sha256'),
@@ -208,6 +217,8 @@ def score(dataset_path, predictions_path, output_dir, previous_results=None, run
             raise ValueError("Previous experiment must use the same complete dataset version and IDs")
         if any(r['prediction'].get('generation_config', run['generation_config']) != run['generation_config'] for r in previous_rows):
             raise ValueError('Paired comparison requires the same decoding configuration')
+        if any(r['prediction'].get('backend_config', run.get('backend_config', {})) != run.get('backend_config', {}) for r in previous_rows):
+            raise ValueError('Paired comparison requires the same inference precision/context/backend settings')
         changes = {"fixed": [], "regressed": [], "changed_error_labels": []}
         for row in scored:
             old = previous[row["sample_id"]]["verification"]
