@@ -92,6 +92,11 @@ class ActorRolloutRefWorker(Worker):
             # TODO: it seems that manual offload is slowly than FSDP offload
             self._is_offload_param = self.config.ref.fsdp_config.get('param_offload', False)
 
+        # Validate before integer normalization; never silently floor a microbatch to zero.
+        from toolrl_training.runtime import validate_worker_batches
+        validate_worker_batches(self.config, self.device_mesh.shape[0] // self.ulysses_sequence_parallel_size,
+                                self._is_actor, self._is_rollout, self._is_ref)
+        torch.manual_seed(self.config.rollout.get('seed', 31415))
         # normalize config
         if self._is_actor:
             self.config.actor.ppo_mini_batch_size //= (self.device_mesh.shape[0] // self.ulysses_sequence_parallel_size)
@@ -339,6 +344,8 @@ class ActorRolloutRefWorker(Worker):
                                                                use_remove_padding=use_remove_padding,
                                                                trust_remote_code=self.config.model.get(
                                                                    'trust_remote_code', False))[0]
+            self.ref_module_fsdp.requires_grad_(False)
+            self.ref_module_fsdp.eval()
             if self._is_offload_param:
                 offload_fsdp_param_and_grad(module=self.ref_module_fsdp, offload_grad=self._is_offload_grad)
 
@@ -483,21 +490,32 @@ class ActorRolloutRefWorker(Worker):
                                      device_id=torch.cuda.current_device(),
                                      load_grad=self._is_offload_grad)
 
-        # TODO: support DCP and save sharded checkpoints
-        import torch.distributed
-        from torch.distributed.fsdp import FullyShardedDataParallel as FSDP, StateDictType, FullStateDictConfig
+        from torch.distributed.fsdp import FullyShardedDataParallel as FSDP, StateDictType, FullStateDictConfig, FullOptimStateDictConfig
+        from toolrl_training.checkpoint import publish_checkpoint, capture_rng, training_provenance
+        from omegaconf import OmegaConf
+        if self._is_offload_optimizer:
+            load_fsdp_optimizer(optimizer=self.actor_optimizer, device_id=torch.cuda.current_device())
         cfg = FullStateDictConfig(offload_to_cpu=True, rank0_only=True)
-        with FSDP.state_dict_type(self.actor.actor_module, StateDictType.FULL_STATE_DICT, cfg):
+        ocfg = FullOptimStateDictConfig(offload_to_cpu=True, rank0_only=True)
+        with FSDP.state_dict_type(self.actor.actor_module, StateDictType.FULL_STATE_DICT, cfg, ocfg):
             state_dict = self.actor.actor_module.state_dict()
+            optimizer_state = FSDP.optim_state_dict(self.actor.actor_module, self.actor_optimizer)
+        rngs = [None] * torch.distributed.get_world_size()
+        torch.distributed.all_gather_object(rngs, capture_rng())
         if self.rank == 0:
-            print(f'Saving actor checkpoint to {local_path}')
-            os.makedirs(local_path, exist_ok=True)
-            self.actor_module.save_pretrained(local_path, state_dict=state_dict)
-            self.tokenizer.save_pretrained(local_path)
-            if hdfs_path is not None:
-                print(f'Uploading actor checkpoint to {hdfs_path}')
-                hdfs_io.makedirs(hdfs_path, exist_ok=True)
-                hdfs_io.copy(src=local_path, dst=hdfs_path)
+            def writer(tmp):
+                self.actor_module.save_pretrained(tmp, state_dict=state_dict)
+                self.tokenizer.save_pretrained(tmp)
+                OmegaConf.save(self.config, tmp / 'worker_config.yaml')
+                torch.save({'optimizer': optimizer_state, 'scheduler': self.actor_lr_scheduler.state_dict(),
+                            'rngs': rngs}, tmp / 'training_state.pt')
+            publish_checkpoint(local_path, writer, {**training_provenance(), 'step': int(local_path.rsplit('_', 1)[-1]),
+                                                   'resume_mode': 'weights_only_optimizer_restart',
+                                                   'note': 'state captured; Ray/vLLM/data cursor restore not implemented'})
+            from toolrl_training.checkpoint import prune_checkpoints
+            prune_checkpoints(os.path.dirname(local_path), self.config.actor.get('keep_checkpoints', 1))
+        if self._is_offload_optimizer:
+            offload_fsdp_optimizer(optimizer=self.actor_optimizer)
 
         torch.distributed.barrier()
         if self._is_offload_param:
