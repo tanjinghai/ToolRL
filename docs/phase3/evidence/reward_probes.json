@@ -1,0 +1,103 @@
+{
+  "cases": [
+    {
+      "independent_exact_match": true,
+      "legacy": {
+        "correctness": 3.0,
+        "format": 1.0,
+        "length": 0,
+        "total": 4.0
+      },
+      "name": "exact",
+      "strict_matching": {
+        "correctness": 3.0,
+        "format": 1.0,
+        "length": 0.0,
+        "total": 4.0
+      }
+    },
+    {
+      "independent_exact_match": false,
+      "legacy": {
+        "correctness": 3.0,
+        "format": 1.0,
+        "length": 0,
+        "total": 4.0
+      },
+      "name": "bool_int",
+      "strict_matching": {
+        "correctness": 1.0,
+        "format": 0.0,
+        "length": 0.0,
+        "total": 1.0
+      }
+    },
+    {
+      "independent_exact_match": false,
+      "legacy": {
+        "correctness": 1.0,
+        "format": 1.0,
+        "length": 0,
+        "total": 2.0
+      },
+      "name": "wrong_value",
+      "strict_matching": {
+        "correctness": 1.0,
+        "format": 1.0,
+        "length": 0.0,
+        "total": 2.0
+      }
+    },
+    {
+      "independent_exact_match": false,
+      "legacy": {
+        "correctness": 2.0,
+        "format": 1.0,
+        "length": 0,
+        "total": 3.0
+      },
+      "name": "extra_call",
+      "strict_matching": {
+        "correctness": -0.5,
+        "format": 1.0,
+        "length": 0.0,
+        "total": 0.5
+      }
+    },
+    {
+      "independent_exact_match": false,
+      "legacy": {
+        "correctness": -3.0,
+        "format": 1.0,
+        "length": 0,
+        "total": -2.0
+      },
+      "name": "wrong_tool",
+      "strict_matching": {
+        "correctness": -3.0,
+        "format": 0.0,
+        "length": 0.0,
+        "total": -3.0
+      }
+    },
+    {
+      "independent_exact_match": false,
+      "legacy": {
+        "correctness": -3.0,
+        "format": 1.0,
+        "length": 0,
+        "total": -2.0
+      },
+      "name": "invalid_json",
+      "strict_matching": {
+        "correctness": -3.0,
+        "format": 0.0,
+        "length": 0.0,
+        "total": -3.0
+      }
+    }
+  ],
+  "is_model_evaluation": false,
+  "legacy_fullscore_false_positives": 1,
+  "strict_fullscore_false_positives": 0
+}

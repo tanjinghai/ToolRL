@@ -76,3 +76,7 @@ To train the model with a specific reward variant, please enable one of the envi
   year={2025}
 }
 ```
+
+### Phase 3：训练工程（GPU 尚未验证）
+
+SFT/GRPO 修复、版本化 Reward、Checkpoint、授权与预算约束的连续实验执行器见 [中文阶段报告](docs/phase3/README.md)。`python run_experiments.py --plan configs/experiment_plan.yaml` 默认仅 dry-run；实际训练需要用户批准文件。原始 Reward 和 Phase 2 Frozen Manifest 保留，Final Test 继续锁定。

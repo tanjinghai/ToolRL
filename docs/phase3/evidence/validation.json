@@ -1,0 +1,23 @@
+{
+  "compiled_python": 223,
+  "cpu_only": true,
+  "final_test_generated": false,
+  "gpu_training_validated": false,
+  "model_weights_downloaded": false,
+  "paid_api_called": false,
+  "phase2_frozen_hashes_unchanged": true,
+  "shell_syntax": 7,
+  "tested_source_sha256": "273d7dd1e85a59be060f145103ae870236258e5aa7675c3121b330110374fe77",
+  "tests": {
+    "phase2": {
+      "exit_code": 0,
+      "log_sha256": "15014b28d98ecc78f9306ade6d2444d443c1e6a4e3bdd4a24d9ddee6d214debd"
+    },
+    "phase3": {
+      "exit_code": 0,
+      "log_sha256": "0aaab602851fa802a168aed5e84c5dc81a9c16f850fe100ac747ece7fcf703da"
+    }
+  },
+  "torch": "2.4.0",
+  "torch_cuda": null
+}
