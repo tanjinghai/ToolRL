@@ -30,3 +30,32 @@ def run_probes():
                 report[('strict' if version == 'strict_matching' else 'legacy')+'_fullscore_false_positives'] += 1
         report['cases'].append(item)
     return report
+
+
+def audit_validation_rewards(dataset_path, scored_path, version='strict_matching'):
+    """Offline E4 gate on actual saved bad cases, recomputing independent EM.
+
+    Partial reward versus EM is expected. Only a tool sample's maximum total
+    with failed independent EM is a blocking contradiction. Free text is excluded.
+    """
+    from toolrl_pipeline.io import read_jsonl, file_hash
+    records = {r['sample_id']: r for r in read_jsonl(dataset_path)}
+    scored = read_jsonl(scored_path)
+    if not records or any(r['split'] != 'validation' for r in records.values()):
+        raise ValueError('Reward audit requires validation only')
+    if len(scored) != len(records) or {r['sample_id'] for r in scored} != set(records):
+        raise ValueError('Reward audit sample coverage mismatch')
+    conflicts = []
+    dataset_hash = file_hash(dataset_path)
+    for row in scored:
+        record = records[row['sample_id']]
+        if row['dataset_file_sha256'] != dataset_hash:
+            raise ValueError('Reward audit dataset hash mismatch')
+        prediction = row['prediction']
+        scores = compute_reward(version, prediction.get('raw_output', ''), record['target_output'],
+                                record['tools'], record['metadata'])
+        em = verify(record['ground_truth'], prediction, record['tools'], record['metadata'])['metrics']['exact_match_accuracy']
+        if record['ground_truth'] and scores[0] >= 4 - 1e-9 and not em:
+            conflicts.append({'sample_id': row['sample_id'], 'reward': list(scores), 'independent_exact_match': em})
+    return {'source_split': 'validation', 'reward_version': version, 'samples': len(scored),
+            'scored_sha256': file_hash(scored_path), 'fullscore_false_positives': len(conflicts), 'conflicts': conflicts}

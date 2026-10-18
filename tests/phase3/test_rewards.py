@@ -64,3 +64,23 @@ class RealTrainingRewardSanityTests(unittest.TestCase):
                 self.assertEqual(scores[3],0)
                 count+=1
         self.assertEqual(count,2818)
+
+class ValidationAuditTests(unittest.TestCase):
+    def test_actual_saved_predictions_fullscore_false_positive_gate(self):
+        import tempfile
+        from pathlib import Path
+        from toolrl_pipeline.io import write_jsonl,file_hash
+        from toolrl_training.reward_probes import audit_validation_rewards
+        tools,gt,_=cases()
+        with tempfile.TemporaryDirectory() as d:
+            path=Path(d);dataset=path/'val.jsonl';scored=path/'scored.jsonl'
+            write_jsonl(dataset,[dict(sample_id='fixture',split='validation',ground_truth=gt,
+                                     tools=tools,target_output=render_completion(gt),metadata={'call_order':'parallel'})])
+            row=dict(sample_id='fixture',dataset_file_sha256=file_hash(dataset),prediction={
+                'raw_output':render_completion(gt),'status':'ok','finish_reason':'length','is_mock':True})
+            write_jsonl(scored,[row])
+            self.assertEqual(audit_validation_rewards(dataset,scored)['fullscore_false_positives'],1)
+            row['prediction']['finish_reason']='stop';write_jsonl(scored,[row])
+            self.assertEqual(audit_validation_rewards(dataset,scored)['fullscore_false_positives'],0)
+            row['dataset_file_sha256']='wrong';write_jsonl(scored,[row])
+            with self.assertRaises(ValueError):audit_validation_rewards(dataset,scored)

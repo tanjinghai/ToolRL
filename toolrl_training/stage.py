@@ -118,6 +118,12 @@ def train(payload):
                     or evidence.get('badcase_sha256') != file_hash(badcases)
                     or probes['strict_fullscore_false_positives'] or evidence.get('approved_candidate') is not True):
                 raise ValueError('E4 validation/reward agreement gate failed')
+            from .reward_probes import audit_validation_rewards
+            audit = audit_validation_rewards(Path(plan['data_root'])/'eval/validation.jsonl', badcases)
+            write_json(out/'reward_validation_audit.json', audit)
+            if audit['fullscore_false_positives']:
+                return {'status': 'stopped', 'reason': 'Candidate reward conflicts with independent verifier on real validation',
+                        'audit': audit}
         if stage.get('reward_version'):
             c = dict(c, reward_version=stage['reward_version'])
         if c.get('reward_version') == 'legacy' and not payload['approval'].get('allow_legacy_reward_diagnostic', False):
