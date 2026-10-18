@@ -14,6 +14,9 @@ Our code is built upon [veRL](https://github.com/volcengine/verl) and [TinyZero]
 实验记录模板见 [experiment_record_template.yaml](docs/phase1/experiment_record_template.yaml)。
 Bamboogle 凭据占位文件移至 `benchmarks/Bamboogle/secret.example.json`；运行前复制为本地被忽略的 `secret.json`，不要提交实际密钥。
 
+Phase 2 的清洗数据、冻结划分、独立 Verifier、统一评测和 CPU Mock 验收见 [docs/phase2](docs/phase2/README.md)。
+后续在一次租期内运行实验的设计见 [GPU 连续执行计划](docs/gpu_continuous_execution_plan.md)；Phase 2/3 验收前不租卡。
+
 ## 🔍 Installation
 Please install torch, vllm and ray according to your own environment configuration. We provide a configuration example adapted from TinyZero in the following:
 ```

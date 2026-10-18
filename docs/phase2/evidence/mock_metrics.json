@@ -1,0 +1,4817 @@
+{
+  "api-bank-mixed": {
+    "backend_config": {},
+    "comparison": null,
+    "dataset_file_sha256": "6b1855bfaa0709f83991fd66d3ec6aaba2619ebe7fed15876c7582809d33ebc8",
+    "dataset_versions": [
+      "apibank-local-5f5c4366e589"
+    ],
+    "errors": {
+      "extra_argument": {
+        "count": 4,
+        "rate": 0.006700167504187605
+      },
+      "extra_tool": {
+        "count": 58,
+        "rate": 0.09715242881072027
+      },
+      "format_error": {
+        "count": 332,
+        "rate": 0.5561139028475712
+      },
+      "invalid_ground_truth": {
+        "count": 118,
+        "rate": 0.19765494137353434
+      },
+      "missing_argument": {
+        "count": 54,
+        "rate": 0.09045226130653267
+      },
+      "missing_tool": {
+        "count": 183,
+        "rate": 0.3065326633165829
+      },
+      "truncated_output": {
+        "count": 74,
+        "rate": 0.12395309882747069
+      },
+      "unnecessary_tool": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "wrong_argument_type": {
+        "count": 119,
+        "rate": 0.19932998324958123
+      },
+      "wrong_argument_value": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "wrong_call_order": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "wrong_tool": {
+        "count": 5,
+        "rate": 0.008375209380234505
+      }
+    },
+    "free_text_semantic_accuracy": null,
+    "generation_config": {
+      "max_new_tokens": 1024,
+      "n": 1,
+      "seed": 31415,
+      "stop": null,
+      "temperature": 0.0,
+      "top_p": 1.0
+    },
+    "generation_errors": 74,
+    "generation_evaluator_code_sha256": "55b228aa6c91aa26a8360a0dbf2ac426b3499a5c8c623d55b1e8c7224caabe9e",
+    "invalid_ground_truth": 118,
+    "is_mock": true,
+    "legacy_api_bank_soft_match": {
+      "denominator": 597,
+      "numerator": 225,
+      "rate": 0.3768844221105528
+    },
+    "metrics": {
+      "exact_match_accuracy": {
+        "denominator": 597,
+        "numerator": 63,
+        "rate": 0.10552763819095477
+      },
+      "format_validity": {
+        "denominator": 597,
+        "numerator": 265,
+        "rate": 0.4438860971524288
+      },
+      "json_validity": {
+        "denominator": 597,
+        "numerator": 374,
+        "rate": 0.626465661641541
+      },
+      "no_tool_accuracy": {
+        "denominator": 0,
+        "numerator": 0,
+        "rate": null
+      },
+      "parameter_name_accuracy": {
+        "denominator": 597,
+        "numerator": 127,
+        "rate": 0.21273031825795644
+      },
+      "parameter_value_accuracy": {
+        "denominator": 597,
+        "numerator": 63,
+        "rate": 0.10552763819095477
+      },
+      "parameter_value_accuracy_given_names": {
+        "denominator": 127,
+        "numerator": 63,
+        "rate": 0.49606299212598426
+      },
+      "protocol_validity": {
+        "denominator": 597,
+        "numerator": 449,
+        "rate": 0.7520938023450586
+      },
+      "schema_validity": {
+        "denominator": 597,
+        "numerator": 265,
+        "rate": 0.4438860971524288
+      },
+      "tool_name_accuracy": {
+        "denominator": 597,
+        "numerator": 181,
+        "rate": 0.30318257956448913
+      }
+    },
+    "missing_predictions": 0,
+    "model": {
+      "id": "mock-mixed",
+      "revision": "synthetic-v1"
+    },
+    "prediction_schema_version": "toolrl.prediction.v1",
+    "predictions_sha256": "f4c10bd08470d3487a001920fc4dd744805e25b0eb0145bb9c4c45300b5523ac",
+    "run_id": "phase2-mock-api-bank",
+    "samples": 597,
+    "scorer_code_sha256": "55b228aa6c91aa26a8360a0dbf2ac426b3499a5c8c623d55b1e8c7224caabe9e",
+    "slices": {
+      "api_level:1": {
+        "errors": {
+          "extra_argument": {
+            "count": 4,
+            "rate": 0.010025062656641603
+          },
+          "extra_tool": {
+            "count": 44,
+            "rate": 0.11027568922305764
+          },
+          "format_error": {
+            "count": 213,
+            "rate": 0.5338345864661654
+          },
+          "invalid_ground_truth": {
+            "count": 48,
+            "rate": 0.12030075187969924
+          },
+          "missing_argument": {
+            "count": 38,
+            "rate": 0.09523809523809523
+          },
+          "missing_tool": {
+            "count": 135,
+            "rate": 0.3383458646616541
+          },
+          "truncated_output": {
+            "count": 50,
+            "rate": 0.12531328320802004
+          },
+          "unnecessary_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_type": {
+            "count": 68,
+            "rate": 0.17042606516290726
+          },
+          "wrong_argument_value": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_call_order": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_tool": {
+            "count": 0,
+            "rate": 0.0
+          }
+        },
+        "invalid_ground_truth": 48,
+        "legacy_api_bank_soft_match": {
+          "denominator": 399,
+          "numerator": 151,
+          "rate": 0.37844611528822053
+        },
+        "metrics": {
+          "exact_match_accuracy": {
+            "denominator": 399,
+            "numerator": 46,
+            "rate": 0.11528822055137844
+          },
+          "format_validity": {
+            "denominator": 399,
+            "numerator": 186,
+            "rate": 0.46616541353383456
+          },
+          "json_validity": {
+            "denominator": 399,
+            "numerator": 249,
+            "rate": 0.6240601503759399
+          },
+          "no_tool_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_name_accuracy": {
+            "denominator": 399,
+            "numerator": 91,
+            "rate": 0.22807017543859648
+          },
+          "parameter_value_accuracy": {
+            "denominator": 399,
+            "numerator": 46,
+            "rate": 0.11528822055137844
+          },
+          "parameter_value_accuracy_given_names": {
+            "denominator": 91,
+            "numerator": 46,
+            "rate": 0.5054945054945055
+          },
+          "protocol_validity": {
+            "denominator": 399,
+            "numerator": 299,
+            "rate": 0.7493734335839599
+          },
+          "schema_validity": {
+            "denominator": 399,
+            "numerator": 186,
+            "rate": 0.46616541353383456
+          },
+          "tool_name_accuracy": {
+            "denominator": 399,
+            "numerator": 129,
+            "rate": 0.3233082706766917
+          }
+        },
+        "samples": 399
+      },
+      "api_level:2": {
+        "errors": {
+          "extra_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "extra_tool": {
+            "count": 4,
+            "rate": 0.05970149253731343
+          },
+          "format_error": {
+            "count": 38,
+            "rate": 0.5671641791044776
+          },
+          "invalid_ground_truth": {
+            "count": 15,
+            "rate": 0.22388059701492538
+          },
+          "missing_argument": {
+            "count": 7,
+            "rate": 0.1044776119402985
+          },
+          "missing_tool": {
+            "count": 20,
+            "rate": 0.29850746268656714
+          },
+          "truncated_output": {
+            "count": 8,
+            "rate": 0.11940298507462686
+          },
+          "unnecessary_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_type": {
+            "count": 12,
+            "rate": 0.1791044776119403
+          },
+          "wrong_argument_value": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_call_order": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_tool": {
+            "count": 5,
+            "rate": 0.07462686567164178
+          }
+        },
+        "invalid_ground_truth": 15,
+        "legacy_api_bank_soft_match": {
+          "denominator": 67,
+          "numerator": 25,
+          "rate": 0.373134328358209
+        },
+        "metrics": {
+          "exact_match_accuracy": {
+            "denominator": 67,
+            "numerator": 8,
+            "rate": 0.11940298507462686
+          },
+          "format_validity": {
+            "denominator": 67,
+            "numerator": 29,
+            "rate": 0.43283582089552236
+          },
+          "json_validity": {
+            "denominator": 67,
+            "numerator": 43,
+            "rate": 0.6417910447761194
+          },
+          "no_tool_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_name_accuracy": {
+            "denominator": 67,
+            "numerator": 16,
+            "rate": 0.23880597014925373
+          },
+          "parameter_value_accuracy": {
+            "denominator": 67,
+            "numerator": 8,
+            "rate": 0.11940298507462686
+          },
+          "parameter_value_accuracy_given_names": {
+            "denominator": 16,
+            "numerator": 8,
+            "rate": 0.5
+          },
+          "protocol_validity": {
+            "denominator": 67,
+            "numerator": 51,
+            "rate": 0.7611940298507462
+          },
+          "schema_validity": {
+            "denominator": 67,
+            "numerator": 29,
+            "rate": 0.43283582089552236
+          },
+          "tool_name_accuracy": {
+            "denominator": 67,
+            "numerator": 23,
+            "rate": 0.34328358208955223
+          }
+        },
+        "samples": 67
+      },
+      "api_level:3": {
+        "errors": {
+          "extra_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "extra_tool": {
+            "count": 10,
+            "rate": 0.07633587786259542
+          },
+          "format_error": {
+            "count": 81,
+            "rate": 0.6183206106870229
+          },
+          "invalid_ground_truth": {
+            "count": 55,
+            "rate": 0.4198473282442748
+          },
+          "missing_argument": {
+            "count": 9,
+            "rate": 0.06870229007633588
+          },
+          "missing_tool": {
+            "count": 28,
+            "rate": 0.21374045801526717
+          },
+          "truncated_output": {
+            "count": 16,
+            "rate": 0.12213740458015267
+          },
+          "unnecessary_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_type": {
+            "count": 39,
+            "rate": 0.29770992366412213
+          },
+          "wrong_argument_value": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_call_order": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_tool": {
+            "count": 0,
+            "rate": 0.0
+          }
+        },
+        "invalid_ground_truth": 55,
+        "legacy_api_bank_soft_match": {
+          "denominator": 131,
+          "numerator": 49,
+          "rate": 0.37404580152671757
+        },
+        "metrics": {
+          "exact_match_accuracy": {
+            "denominator": 131,
+            "numerator": 9,
+            "rate": 0.06870229007633588
+          },
+          "format_validity": {
+            "denominator": 131,
+            "numerator": 50,
+            "rate": 0.3816793893129771
+          },
+          "json_validity": {
+            "denominator": 131,
+            "numerator": 82,
+            "rate": 0.6259541984732825
+          },
+          "no_tool_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_name_accuracy": {
+            "denominator": 131,
+            "numerator": 20,
+            "rate": 0.15267175572519084
+          },
+          "parameter_value_accuracy": {
+            "denominator": 131,
+            "numerator": 9,
+            "rate": 0.06870229007633588
+          },
+          "parameter_value_accuracy_given_names": {
+            "denominator": 20,
+            "numerator": 9,
+            "rate": 0.45
+          },
+          "protocol_validity": {
+            "denominator": 131,
+            "numerator": 99,
+            "rate": 0.7557251908396947
+          },
+          "schema_validity": {
+            "denominator": 131,
+            "numerator": 50,
+            "rate": 0.3816793893129771
+          },
+          "tool_name_accuracy": {
+            "denominator": 131,
+            "numerator": 29,
+            "rate": 0.22137404580152673
+          }
+        },
+        "samples": 131
+      },
+      "calls:1": {
+        "errors": {
+          "extra_argument": {
+            "count": 4,
+            "rate": 0.006700167504187605
+          },
+          "extra_tool": {
+            "count": 58,
+            "rate": 0.09715242881072027
+          },
+          "format_error": {
+            "count": 332,
+            "rate": 0.5561139028475712
+          },
+          "invalid_ground_truth": {
+            "count": 118,
+            "rate": 0.19765494137353434
+          },
+          "missing_argument": {
+            "count": 54,
+            "rate": 0.09045226130653267
+          },
+          "missing_tool": {
+            "count": 183,
+            "rate": 0.3065326633165829
+          },
+          "truncated_output": {
+            "count": 74,
+            "rate": 0.12395309882747069
+          },
+          "unnecessary_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_type": {
+            "count": 119,
+            "rate": 0.19932998324958123
+          },
+          "wrong_argument_value": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_call_order": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_tool": {
+            "count": 5,
+            "rate": 0.008375209380234505
+          }
+        },
+        "invalid_ground_truth": 118,
+        "legacy_api_bank_soft_match": {
+          "denominator": 597,
+          "numerator": 225,
+          "rate": 0.3768844221105528
+        },
+        "metrics": {
+          "exact_match_accuracy": {
+            "denominator": 597,
+            "numerator": 63,
+            "rate": 0.10552763819095477
+          },
+          "format_validity": {
+            "denominator": 597,
+            "numerator": 265,
+            "rate": 0.4438860971524288
+          },
+          "json_validity": {
+            "denominator": 597,
+            "numerator": 374,
+            "rate": 0.626465661641541
+          },
+          "no_tool_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_name_accuracy": {
+            "denominator": 597,
+            "numerator": 127,
+            "rate": 0.21273031825795644
+          },
+          "parameter_value_accuracy": {
+            "denominator": 597,
+            "numerator": 63,
+            "rate": 0.10552763819095477
+          },
+          "parameter_value_accuracy_given_names": {
+            "denominator": 127,
+            "numerator": 63,
+            "rate": 0.49606299212598426
+          },
+          "protocol_validity": {
+            "denominator": 597,
+            "numerator": 449,
+            "rate": 0.7520938023450586
+          },
+          "schema_validity": {
+            "denominator": 597,
+            "numerator": 265,
+            "rate": 0.4438860971524288
+          },
+          "tool_name_accuracy": {
+            "denominator": 597,
+            "numerator": 181,
+            "rate": 0.30318257956448913
+          }
+        },
+        "samples": 597
+      },
+      "parameters:0": {
+        "errors": {
+          "extra_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "extra_tool": {
+            "count": 1,
+            "rate": 0.14285714285714285
+          },
+          "format_error": {
+            "count": 2,
+            "rate": 0.2857142857142857
+          },
+          "invalid_ground_truth": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_tool": {
+            "count": 2,
+            "rate": 0.2857142857142857
+          },
+          "truncated_output": {
+            "count": 1,
+            "rate": 0.14285714285714285
+          },
+          "unnecessary_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_type": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_value": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_call_order": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_tool": {
+            "count": 0,
+            "rate": 0.0
+          }
+        },
+        "invalid_ground_truth": 0,
+        "legacy_api_bank_soft_match": {
+          "denominator": 7,
+          "numerator": 5,
+          "rate": 0.7142857142857143
+        },
+        "metrics": {
+          "exact_match_accuracy": {
+            "denominator": 7,
+            "numerator": 3,
+            "rate": 0.42857142857142855
+          },
+          "format_validity": {
+            "denominator": 7,
+            "numerator": 5,
+            "rate": 0.7142857142857143
+          },
+          "json_validity": {
+            "denominator": 7,
+            "numerator": 5,
+            "rate": 0.7142857142857143
+          },
+          "no_tool_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_name_accuracy": {
+            "denominator": 7,
+            "numerator": 3,
+            "rate": 0.42857142857142855
+          },
+          "parameter_value_accuracy": {
+            "denominator": 7,
+            "numerator": 3,
+            "rate": 0.42857142857142855
+          },
+          "parameter_value_accuracy_given_names": {
+            "denominator": 3,
+            "numerator": 3,
+            "rate": 1.0
+          },
+          "protocol_validity": {
+            "denominator": 7,
+            "numerator": 6,
+            "rate": 0.8571428571428571
+          },
+          "schema_validity": {
+            "denominator": 7,
+            "numerator": 5,
+            "rate": 0.7142857142857143
+          },
+          "tool_name_accuracy": {
+            "denominator": 7,
+            "numerator": 3,
+            "rate": 0.42857142857142855
+          }
+        },
+        "samples": 7
+      },
+      "parameters:1-2": {
+        "errors": {
+          "extra_argument": {
+            "count": 2,
+            "rate": 0.005277044854881266
+          },
+          "extra_tool": {
+            "count": 39,
+            "rate": 0.10290237467018469
+          },
+          "format_error": {
+            "count": 207,
+            "rate": 0.5461741424802111
+          },
+          "invalid_ground_truth": {
+            "count": 46,
+            "rate": 0.12137203166226913
+          },
+          "missing_argument": {
+            "count": 38,
+            "rate": 0.10026385224274406
+          },
+          "missing_tool": {
+            "count": 122,
+            "rate": 0.32189973614775724
+          },
+          "truncated_output": {
+            "count": 47,
+            "rate": 0.12401055408970976
+          },
+          "unnecessary_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_type": {
+            "count": 72,
+            "rate": 0.18997361477572558
+          },
+          "wrong_argument_value": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_call_order": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_tool": {
+            "count": 0,
+            "rate": 0.0
+          }
+        },
+        "invalid_ground_truth": 46,
+        "legacy_api_bank_soft_match": {
+          "denominator": 379,
+          "numerator": 142,
+          "rate": 0.37467018469656993
+        },
+        "metrics": {
+          "exact_match_accuracy": {
+            "denominator": 379,
+            "numerator": 43,
+            "rate": 0.11345646437994723
+          },
+          "format_validity": {
+            "denominator": 379,
+            "numerator": 172,
+            "rate": 0.45382585751978893
+          },
+          "json_validity": {
+            "denominator": 379,
+            "numerator": 240,
+            "rate": 0.633245382585752
+          },
+          "no_tool_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_name_accuracy": {
+            "denominator": 379,
+            "numerator": 93,
+            "rate": 0.24538258575197888
+          },
+          "parameter_value_accuracy": {
+            "denominator": 379,
+            "numerator": 43,
+            "rate": 0.11345646437994723
+          },
+          "parameter_value_accuracy_given_names": {
+            "denominator": 93,
+            "numerator": 43,
+            "rate": 0.46236559139784944
+          },
+          "protocol_validity": {
+            "denominator": 379,
+            "numerator": 287,
+            "rate": 0.7572559366754618
+          },
+          "schema_validity": {
+            "denominator": 379,
+            "numerator": 172,
+            "rate": 0.45382585751978893
+          },
+          "tool_name_accuracy": {
+            "denominator": 379,
+            "numerator": 131,
+            "rate": 0.34564643799472294
+          }
+        },
+        "samples": 379
+      },
+      "parameters:3-5": {
+        "errors": {
+          "extra_argument": {
+            "count": 2,
+            "rate": 0.010582010582010581
+          },
+          "extra_tool": {
+            "count": 18,
+            "rate": 0.09523809523809523
+          },
+          "format_error": {
+            "count": 105,
+            "rate": 0.5555555555555556
+          },
+          "invalid_ground_truth": {
+            "count": 50,
+            "rate": 0.26455026455026454
+          },
+          "missing_argument": {
+            "count": 16,
+            "rate": 0.08465608465608465
+          },
+          "missing_tool": {
+            "count": 59,
+            "rate": 0.31216931216931215
+          },
+          "truncated_output": {
+            "count": 24,
+            "rate": 0.12698412698412698
+          },
+          "unnecessary_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_type": {
+            "count": 40,
+            "rate": 0.21164021164021163
+          },
+          "wrong_argument_value": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_call_order": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_tool": {
+            "count": 1,
+            "rate": 0.005291005291005291
+          }
+        },
+        "invalid_ground_truth": 50,
+        "legacy_api_bank_soft_match": {
+          "denominator": 189,
+          "numerator": 69,
+          "rate": 0.36507936507936506
+        },
+        "metrics": {
+          "exact_match_accuracy": {
+            "denominator": 189,
+            "numerator": 17,
+            "rate": 0.08994708994708994
+          },
+          "format_validity": {
+            "denominator": 189,
+            "numerator": 84,
+            "rate": 0.4444444444444444
+          },
+          "json_validity": {
+            "denominator": 189,
+            "numerator": 116,
+            "rate": 0.6137566137566137
+          },
+          "no_tool_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_name_accuracy": {
+            "denominator": 189,
+            "numerator": 31,
+            "rate": 0.164021164021164
+          },
+          "parameter_value_accuracy": {
+            "denominator": 189,
+            "numerator": 17,
+            "rate": 0.08994708994708994
+          },
+          "parameter_value_accuracy_given_names": {
+            "denominator": 31,
+            "numerator": 17,
+            "rate": 0.5483870967741935
+          },
+          "protocol_validity": {
+            "denominator": 189,
+            "numerator": 137,
+            "rate": 0.7248677248677249
+          },
+          "schema_validity": {
+            "denominator": 189,
+            "numerator": 84,
+            "rate": 0.4444444444444444
+          },
+          "tool_name_accuracy": {
+            "denominator": 189,
+            "numerator": 47,
+            "rate": 0.24867724867724866
+          }
+        },
+        "samples": 189
+      },
+      "parameters:6+": {
+        "errors": {
+          "extra_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "extra_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "format_error": {
+            "count": 18,
+            "rate": 0.8181818181818182
+          },
+          "invalid_ground_truth": {
+            "count": 22,
+            "rate": 1.0
+          },
+          "missing_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "truncated_output": {
+            "count": 2,
+            "rate": 0.09090909090909091
+          },
+          "unnecessary_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_type": {
+            "count": 7,
+            "rate": 0.3181818181818182
+          },
+          "wrong_argument_value": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_call_order": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_tool": {
+            "count": 4,
+            "rate": 0.18181818181818182
+          }
+        },
+        "invalid_ground_truth": 22,
+        "legacy_api_bank_soft_match": {
+          "denominator": 22,
+          "numerator": 9,
+          "rate": 0.4090909090909091
+        },
+        "metrics": {
+          "exact_match_accuracy": {
+            "denominator": 22,
+            "numerator": 0,
+            "rate": 0.0
+          },
+          "format_validity": {
+            "denominator": 22,
+            "numerator": 4,
+            "rate": 0.18181818181818182
+          },
+          "json_validity": {
+            "denominator": 22,
+            "numerator": 13,
+            "rate": 0.5909090909090909
+          },
+          "no_tool_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_name_accuracy": {
+            "denominator": 22,
+            "numerator": 0,
+            "rate": 0.0
+          },
+          "parameter_value_accuracy": {
+            "denominator": 22,
+            "numerator": 0,
+            "rate": 0.0
+          },
+          "parameter_value_accuracy_given_names": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "protocol_validity": {
+            "denominator": 22,
+            "numerator": 19,
+            "rate": 0.8636363636363636
+          },
+          "schema_validity": {
+            "denominator": 22,
+            "numerator": 4,
+            "rate": 0.18181818181818182
+          },
+          "tool_name_accuracy": {
+            "denominator": 22,
+            "numerator": 0,
+            "rate": 0.0
+          }
+        },
+        "samples": 22
+      },
+      "task:single": {
+        "errors": {
+          "extra_argument": {
+            "count": 4,
+            "rate": 0.006700167504187605
+          },
+          "extra_tool": {
+            "count": 58,
+            "rate": 0.09715242881072027
+          },
+          "format_error": {
+            "count": 332,
+            "rate": 0.5561139028475712
+          },
+          "invalid_ground_truth": {
+            "count": 118,
+            "rate": 0.19765494137353434
+          },
+          "missing_argument": {
+            "count": 54,
+            "rate": 0.09045226130653267
+          },
+          "missing_tool": {
+            "count": 183,
+            "rate": 0.3065326633165829
+          },
+          "truncated_output": {
+            "count": 74,
+            "rate": 0.12395309882747069
+          },
+          "unnecessary_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_type": {
+            "count": 119,
+            "rate": 0.19932998324958123
+          },
+          "wrong_argument_value": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_call_order": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_tool": {
+            "count": 5,
+            "rate": 0.008375209380234505
+          }
+        },
+        "invalid_ground_truth": 118,
+        "legacy_api_bank_soft_match": {
+          "denominator": 597,
+          "numerator": 225,
+          "rate": 0.3768844221105528
+        },
+        "metrics": {
+          "exact_match_accuracy": {
+            "denominator": 597,
+            "numerator": 63,
+            "rate": 0.10552763819095477
+          },
+          "format_validity": {
+            "denominator": 597,
+            "numerator": 265,
+            "rate": 0.4438860971524288
+          },
+          "json_validity": {
+            "denominator": 597,
+            "numerator": 374,
+            "rate": 0.626465661641541
+          },
+          "no_tool_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_name_accuracy": {
+            "denominator": 597,
+            "numerator": 127,
+            "rate": 0.21273031825795644
+          },
+          "parameter_value_accuracy": {
+            "denominator": 597,
+            "numerator": 63,
+            "rate": 0.10552763819095477
+          },
+          "parameter_value_accuracy_given_names": {
+            "denominator": 127,
+            "numerator": 63,
+            "rate": 0.49606299212598426
+          },
+          "protocol_validity": {
+            "denominator": 597,
+            "numerator": 449,
+            "rate": 0.7520938023450586
+          },
+          "schema_validity": {
+            "denominator": 597,
+            "numerator": 265,
+            "rate": 0.4438860971524288
+          },
+          "tool_name_accuracy": {
+            "denominator": 597,
+            "numerator": 181,
+            "rate": 0.30318257956448913
+          }
+        },
+        "samples": 597
+      }
+    },
+    "task_execution_success_rate": null,
+    "valid_ground_truth_subset": {
+      "errors": {
+        "extra_argument": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "extra_tool": {
+          "count": 58,
+          "rate": 0.12108559498956159
+        },
+        "format_error": {
+          "count": 240,
+          "rate": 0.5010438413361169
+        },
+        "invalid_ground_truth": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "missing_argument": {
+          "count": 54,
+          "rate": 0.1127348643006263
+        },
+        "missing_tool": {
+          "count": 183,
+          "rate": 0.38204592901878914
+        },
+        "truncated_output": {
+          "count": 57,
+          "rate": 0.11899791231732777
+        },
+        "unnecessary_tool": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrong_argument_type": {
+          "count": 64,
+          "rate": 0.1336116910229645
+        },
+        "wrong_argument_value": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrong_call_order": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrong_tool": {
+          "count": 0,
+          "rate": 0.0
+        }
+      },
+      "invalid_ground_truth": 0,
+      "legacy_api_bank_soft_match": {
+        "denominator": 479,
+        "numerator": 178,
+        "rate": 0.37160751565762007
+      },
+      "metrics": {
+        "exact_match_accuracy": {
+          "denominator": 479,
+          "numerator": 63,
+          "rate": 0.1315240083507307
+        },
+        "format_validity": {
+          "denominator": 479,
+          "numerator": 239,
+          "rate": 0.4989561586638831
+        },
+        "json_validity": {
+          "denominator": 479,
+          "numerator": 303,
+          "rate": 0.6325678496868476
+        },
+        "no_tool_accuracy": {
+          "denominator": 0,
+          "numerator": 0,
+          "rate": null
+        },
+        "parameter_name_accuracy": {
+          "denominator": 479,
+          "numerator": 127,
+          "rate": 0.2651356993736952
+        },
+        "parameter_value_accuracy": {
+          "denominator": 479,
+          "numerator": 63,
+          "rate": 0.1315240083507307
+        },
+        "parameter_value_accuracy_given_names": {
+          "denominator": 127,
+          "numerator": 63,
+          "rate": 0.49606299212598426
+        },
+        "protocol_validity": {
+          "denominator": 479,
+          "numerator": 361,
+          "rate": 0.7536534446764092
+        },
+        "schema_validity": {
+          "denominator": 479,
+          "numerator": 239,
+          "rate": 0.4989561586638831
+        },
+        "tool_name_accuracy": {
+          "denominator": 479,
+          "numerator": 181,
+          "rate": 0.3778705636743215
+        }
+      },
+      "samples": 479
+    }
+  },
+  "validation-mixed": {
+    "backend_config": {},
+    "comparison": null,
+    "dataset_file_sha256": "1ea747d6d9a016da2428afe6f7551d74d71f805c18de4d35517d269c8c10d478",
+    "dataset_versions": [
+      "phase2-v1-13c266c7a084"
+    ],
+    "errors": {
+      "extra_argument": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "extra_tool": {
+        "count": 53,
+        "rate": 0.15406976744186046
+      },
+      "format_error": {
+        "count": 176,
+        "rate": 0.5116279069767442
+      },
+      "invalid_ground_truth": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "missing_argument": {
+        "count": 38,
+        "rate": 0.11046511627906977
+      },
+      "missing_tool": {
+        "count": 113,
+        "rate": 0.32848837209302323
+      },
+      "truncated_output": {
+        "count": 43,
+        "rate": 0.125
+      },
+      "unnecessary_tool": {
+        "count": 13,
+        "rate": 0.0377906976744186
+      },
+      "wrong_argument_type": {
+        "count": 33,
+        "rate": 0.09593023255813954
+      },
+      "wrong_argument_value": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "wrong_call_order": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "wrong_tool": {
+        "count": 14,
+        "rate": 0.040697674418604654
+      }
+    },
+    "free_text_semantic_accuracy": null,
+    "generation_config": {
+      "max_new_tokens": 1024,
+      "n": 1,
+      "seed": 31415,
+      "stop": null,
+      "temperature": 0.0,
+      "top_p": 1.0
+    },
+    "generation_errors": 43,
+    "generation_evaluator_code_sha256": "55b228aa6c91aa26a8360a0dbf2ac426b3499a5c8c623d55b1e8c7224caabe9e",
+    "invalid_ground_truth": 0,
+    "is_mock": true,
+    "legacy_api_bank_soft_match": {
+      "denominator": 0,
+      "numerator": 0,
+      "rate": null
+    },
+    "metrics": {
+      "exact_match_accuracy": {
+        "denominator": 344,
+        "numerator": 51,
+        "rate": 0.14825581395348839
+      },
+      "format_validity": {
+        "denominator": 344,
+        "numerator": 168,
+        "rate": 0.4883720930232558
+      },
+      "json_validity": {
+        "denominator": 344,
+        "numerator": 215,
+        "rate": 0.625
+      },
+      "no_tool_accuracy": {
+        "denominator": 52,
+        "numerator": 17,
+        "rate": 0.3269230769230769
+      },
+      "parameter_name_accuracy": {
+        "denominator": 292,
+        "numerator": 67,
+        "rate": 0.22945205479452055
+      },
+      "parameter_value_accuracy": {
+        "denominator": 292,
+        "numerator": 34,
+        "rate": 0.11643835616438356
+      },
+      "parameter_value_accuracy_given_names": {
+        "denominator": 67,
+        "numerator": 34,
+        "rate": 0.5074626865671642
+      },
+      "protocol_validity": {
+        "denominator": 344,
+        "numerator": 258,
+        "rate": 0.75
+      },
+      "schema_validity": {
+        "denominator": 344,
+        "numerator": 168,
+        "rate": 0.4883720930232558
+      },
+      "tool_name_accuracy": {
+        "denominator": 292,
+        "numerator": 105,
+        "rate": 0.3595890410958904
+      }
+    },
+    "missing_predictions": 0,
+    "model": {
+      "id": "mock-mixed",
+      "revision": "synthetic-v1"
+    },
+    "prediction_schema_version": "toolrl.prediction.v1",
+    "predictions_sha256": "21627a5b9f4bd892b458c817340f5061892b0e7995356f69fd33bba1457ba3ab",
+    "run_id": "phase2-mock-validation-mixed",
+    "samples": 344,
+    "scorer_code_sha256": "55b228aa6c91aa26a8360a0dbf2ac426b3499a5c8c623d55b1e8c7224caabe9e",
+    "slices": {
+      "calls:0": {
+        "errors": {
+          "extra_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "extra_tool": {
+            "count": 13,
+            "rate": 0.25
+          },
+          "format_error": {
+            "count": 35,
+            "rate": 0.6730769230769231
+          },
+          "invalid_ground_truth": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "truncated_output": {
+            "count": 9,
+            "rate": 0.17307692307692307
+          },
+          "unnecessary_tool": {
+            "count": 13,
+            "rate": 0.25
+          },
+          "wrong_argument_type": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_value": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_call_order": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_tool": {
+            "count": 13,
+            "rate": 0.25
+          }
+        },
+        "invalid_ground_truth": 0,
+        "legacy_api_bank_soft_match": {
+          "denominator": 0,
+          "numerator": 0,
+          "rate": null
+        },
+        "metrics": {
+          "exact_match_accuracy": {
+            "denominator": 52,
+            "numerator": 17,
+            "rate": 0.3269230769230769
+          },
+          "format_validity": {
+            "denominator": 52,
+            "numerator": 17,
+            "rate": 0.3269230769230769
+          },
+          "json_validity": {
+            "denominator": 52,
+            "numerator": 30,
+            "rate": 0.5769230769230769
+          },
+          "no_tool_accuracy": {
+            "denominator": 52,
+            "numerator": 17,
+            "rate": 0.3269230769230769
+          },
+          "parameter_name_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_value_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_value_accuracy_given_names": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "protocol_validity": {
+            "denominator": 52,
+            "numerator": 36,
+            "rate": 0.6923076923076923
+          },
+          "schema_validity": {
+            "denominator": 52,
+            "numerator": 17,
+            "rate": 0.3269230769230769
+          },
+          "tool_name_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          }
+        },
+        "samples": 52
+      },
+      "calls:1": {
+        "errors": {
+          "extra_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "extra_tool": {
+            "count": 24,
+            "rate": 0.15
+          },
+          "format_error": {
+            "count": 66,
+            "rate": 0.4125
+          },
+          "invalid_ground_truth": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_argument": {
+            "count": 24,
+            "rate": 0.15
+          },
+          "missing_tool": {
+            "count": 53,
+            "rate": 0.33125
+          },
+          "truncated_output": {
+            "count": 20,
+            "rate": 0.125
+          },
+          "unnecessary_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_type": {
+            "count": 15,
+            "rate": 0.09375
+          },
+          "wrong_argument_value": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_call_order": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_tool": {
+            "count": 1,
+            "rate": 0.00625
+          }
+        },
+        "invalid_ground_truth": 0,
+        "legacy_api_bank_soft_match": {
+          "denominator": 0,
+          "numerator": 0,
+          "rate": null
+        },
+        "metrics": {
+          "exact_match_accuracy": {
+            "denominator": 160,
+            "numerator": 24,
+            "rate": 0.15
+          },
+          "format_validity": {
+            "denominator": 160,
+            "numerator": 94,
+            "rate": 0.5875
+          },
+          "json_validity": {
+            "denominator": 160,
+            "numerator": 110,
+            "rate": 0.6875
+          },
+          "no_tool_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_name_accuracy": {
+            "denominator": 160,
+            "numerator": 39,
+            "rate": 0.24375
+          },
+          "parameter_value_accuracy": {
+            "denominator": 160,
+            "numerator": 24,
+            "rate": 0.15
+          },
+          "parameter_value_accuracy_given_names": {
+            "denominator": 39,
+            "numerator": 24,
+            "rate": 0.6153846153846154
+          },
+          "protocol_validity": {
+            "denominator": 160,
+            "numerator": 126,
+            "rate": 0.7875
+          },
+          "schema_validity": {
+            "denominator": 160,
+            "numerator": 94,
+            "rate": 0.5875
+          },
+          "tool_name_accuracy": {
+            "denominator": 160,
+            "numerator": 63,
+            "rate": 0.39375
+          }
+        },
+        "samples": 160
+      },
+      "calls:2-4": {
+        "errors": {
+          "extra_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "extra_tool": {
+            "count": 16,
+            "rate": 0.12307692307692308
+          },
+          "format_error": {
+            "count": 75,
+            "rate": 0.5769230769230769
+          },
+          "invalid_ground_truth": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_argument": {
+            "count": 13,
+            "rate": 0.1
+          },
+          "missing_tool": {
+            "count": 60,
+            "rate": 0.46153846153846156
+          },
+          "truncated_output": {
+            "count": 14,
+            "rate": 0.1076923076923077
+          },
+          "unnecessary_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_type": {
+            "count": 18,
+            "rate": 0.13846153846153847
+          },
+          "wrong_argument_value": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_call_order": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_tool": {
+            "count": 0,
+            "rate": 0.0
+          }
+        },
+        "invalid_ground_truth": 0,
+        "legacy_api_bank_soft_match": {
+          "denominator": 0,
+          "numerator": 0,
+          "rate": null
+        },
+        "metrics": {
+          "exact_match_accuracy": {
+            "denominator": 130,
+            "numerator": 9,
+            "rate": 0.06923076923076923
+          },
+          "format_validity": {
+            "denominator": 130,
+            "numerator": 55,
+            "rate": 0.4230769230769231
+          },
+          "json_validity": {
+            "denominator": 130,
+            "numerator": 73,
+            "rate": 0.5615384615384615
+          },
+          "no_tool_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_name_accuracy": {
+            "denominator": 130,
+            "numerator": 27,
+            "rate": 0.2076923076923077
+          },
+          "parameter_value_accuracy": {
+            "denominator": 130,
+            "numerator": 9,
+            "rate": 0.06923076923076923
+          },
+          "parameter_value_accuracy_given_names": {
+            "denominator": 27,
+            "numerator": 9,
+            "rate": 0.3333333333333333
+          },
+          "protocol_validity": {
+            "denominator": 130,
+            "numerator": 94,
+            "rate": 0.7230769230769231
+          },
+          "schema_validity": {
+            "denominator": 130,
+            "numerator": 55,
+            "rate": 0.4230769230769231
+          },
+          "tool_name_accuracy": {
+            "denominator": 130,
+            "numerator": 40,
+            "rate": 0.3076923076923077
+          }
+        },
+        "samples": 130
+      },
+      "calls:5+": {
+        "errors": {
+          "extra_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "extra_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "format_error": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "invalid_ground_truth": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_argument": {
+            "count": 1,
+            "rate": 0.5
+          },
+          "missing_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "truncated_output": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "unnecessary_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_type": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_value": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_call_order": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_tool": {
+            "count": 0,
+            "rate": 0.0
+          }
+        },
+        "invalid_ground_truth": 0,
+        "legacy_api_bank_soft_match": {
+          "denominator": 0,
+          "numerator": 0,
+          "rate": null
+        },
+        "metrics": {
+          "exact_match_accuracy": {
+            "denominator": 2,
+            "numerator": 1,
+            "rate": 0.5
+          },
+          "format_validity": {
+            "denominator": 2,
+            "numerator": 2,
+            "rate": 1.0
+          },
+          "json_validity": {
+            "denominator": 2,
+            "numerator": 2,
+            "rate": 1.0
+          },
+          "no_tool_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_name_accuracy": {
+            "denominator": 2,
+            "numerator": 1,
+            "rate": 0.5
+          },
+          "parameter_value_accuracy": {
+            "denominator": 2,
+            "numerator": 1,
+            "rate": 0.5
+          },
+          "parameter_value_accuracy_given_names": {
+            "denominator": 1,
+            "numerator": 1,
+            "rate": 1.0
+          },
+          "protocol_validity": {
+            "denominator": 2,
+            "numerator": 2,
+            "rate": 1.0
+          },
+          "schema_validity": {
+            "denominator": 2,
+            "numerator": 2,
+            "rate": 1.0
+          },
+          "tool_name_accuracy": {
+            "denominator": 2,
+            "numerator": 2,
+            "rate": 1.0
+          }
+        },
+        "samples": 2
+      },
+      "parameters:0": {
+        "errors": {
+          "extra_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "extra_tool": {
+            "count": 15,
+            "rate": 0.2542372881355932
+          },
+          "format_error": {
+            "count": 38,
+            "rate": 0.6440677966101694
+          },
+          "invalid_ground_truth": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_tool": {
+            "count": 4,
+            "rate": 0.06779661016949153
+          },
+          "truncated_output": {
+            "count": 10,
+            "rate": 0.1694915254237288
+          },
+          "unnecessary_tool": {
+            "count": 13,
+            "rate": 0.22033898305084745
+          },
+          "wrong_argument_type": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_value": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_call_order": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_tool": {
+            "count": 14,
+            "rate": 0.23728813559322035
+          }
+        },
+        "invalid_ground_truth": 0,
+        "legacy_api_bank_soft_match": {
+          "denominator": 0,
+          "numerator": 0,
+          "rate": null
+        },
+        "metrics": {
+          "exact_match_accuracy": {
+            "denominator": 59,
+            "numerator": 17,
+            "rate": 0.288135593220339
+          },
+          "format_validity": {
+            "denominator": 59,
+            "numerator": 21,
+            "rate": 0.3559322033898305
+          },
+          "json_validity": {
+            "denominator": 59,
+            "numerator": 35,
+            "rate": 0.5932203389830508
+          },
+          "no_tool_accuracy": {
+            "denominator": 52,
+            "numerator": 17,
+            "rate": 0.3269230769230769
+          },
+          "parameter_name_accuracy": {
+            "denominator": 7,
+            "numerator": 0,
+            "rate": 0.0
+          },
+          "parameter_value_accuracy": {
+            "denominator": 7,
+            "numerator": 0,
+            "rate": 0.0
+          },
+          "parameter_value_accuracy_given_names": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "protocol_validity": {
+            "denominator": 59,
+            "numerator": 42,
+            "rate": 0.711864406779661
+          },
+          "schema_validity": {
+            "denominator": 59,
+            "numerator": 21,
+            "rate": 0.3559322033898305
+          },
+          "tool_name_accuracy": {
+            "denominator": 7,
+            "numerator": 0,
+            "rate": 0.0
+          }
+        },
+        "samples": 59
+      },
+      "parameters:1-2": {
+        "errors": {
+          "extra_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "extra_tool": {
+            "count": 21,
+            "rate": 0.125
+          },
+          "format_error": {
+            "count": 77,
+            "rate": 0.4583333333333333
+          },
+          "invalid_ground_truth": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_argument": {
+            "count": 23,
+            "rate": 0.13690476190476192
+          },
+          "missing_tool": {
+            "count": 64,
+            "rate": 0.38095238095238093
+          },
+          "truncated_output": {
+            "count": 20,
+            "rate": 0.11904761904761904
+          },
+          "unnecessary_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_type": {
+            "count": 18,
+            "rate": 0.10714285714285714
+          },
+          "wrong_argument_value": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_call_order": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_tool": {
+            "count": 0,
+            "rate": 0.0
+          }
+        },
+        "invalid_ground_truth": 0,
+        "legacy_api_bank_soft_match": {
+          "denominator": 0,
+          "numerator": 0,
+          "rate": null
+        },
+        "metrics": {
+          "exact_match_accuracy": {
+            "denominator": 168,
+            "numerator": 22,
+            "rate": 0.13095238095238096
+          },
+          "format_validity": {
+            "denominator": 168,
+            "numerator": 91,
+            "rate": 0.5416666666666666
+          },
+          "json_validity": {
+            "denominator": 168,
+            "numerator": 109,
+            "rate": 0.6488095238095238
+          },
+          "no_tool_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_name_accuracy": {
+            "denominator": 168,
+            "numerator": 40,
+            "rate": 0.23809523809523808
+          },
+          "parameter_value_accuracy": {
+            "denominator": 168,
+            "numerator": 22,
+            "rate": 0.13095238095238096
+          },
+          "parameter_value_accuracy_given_names": {
+            "denominator": 40,
+            "numerator": 22,
+            "rate": 0.55
+          },
+          "protocol_validity": {
+            "denominator": 168,
+            "numerator": 130,
+            "rate": 0.7738095238095238
+          },
+          "schema_validity": {
+            "denominator": 168,
+            "numerator": 91,
+            "rate": 0.5416666666666666
+          },
+          "tool_name_accuracy": {
+            "denominator": 168,
+            "numerator": 63,
+            "rate": 0.375
+          }
+        },
+        "samples": 168
+      },
+      "parameters:3-5": {
+        "errors": {
+          "extra_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "extra_tool": {
+            "count": 14,
+            "rate": 0.14432989690721648
+          },
+          "format_error": {
+            "count": 49,
+            "rate": 0.5051546391752577
+          },
+          "invalid_ground_truth": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_argument": {
+            "count": 12,
+            "rate": 0.12371134020618557
+          },
+          "missing_tool": {
+            "count": 37,
+            "rate": 0.38144329896907214
+          },
+          "truncated_output": {
+            "count": 11,
+            "rate": 0.1134020618556701
+          },
+          "unnecessary_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_type": {
+            "count": 11,
+            "rate": 0.1134020618556701
+          },
+          "wrong_argument_value": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_call_order": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_tool": {
+            "count": 0,
+            "rate": 0.0
+          }
+        },
+        "invalid_ground_truth": 0,
+        "legacy_api_bank_soft_match": {
+          "denominator": 0,
+          "numerator": 0,
+          "rate": null
+        },
+        "metrics": {
+          "exact_match_accuracy": {
+            "denominator": 97,
+            "numerator": 12,
+            "rate": 0.12371134020618557
+          },
+          "format_validity": {
+            "denominator": 97,
+            "numerator": 48,
+            "rate": 0.4948453608247423
+          },
+          "json_validity": {
+            "denominator": 97,
+            "numerator": 59,
+            "rate": 0.6082474226804123
+          },
+          "no_tool_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_name_accuracy": {
+            "denominator": 97,
+            "numerator": 23,
+            "rate": 0.23711340206185566
+          },
+          "parameter_value_accuracy": {
+            "denominator": 97,
+            "numerator": 12,
+            "rate": 0.12371134020618557
+          },
+          "parameter_value_accuracy_given_names": {
+            "denominator": 23,
+            "numerator": 12,
+            "rate": 0.5217391304347826
+          },
+          "protocol_validity": {
+            "denominator": 97,
+            "numerator": 71,
+            "rate": 0.7319587628865979
+          },
+          "schema_validity": {
+            "denominator": 97,
+            "numerator": 48,
+            "rate": 0.4948453608247423
+          },
+          "tool_name_accuracy": {
+            "denominator": 97,
+            "numerator": 35,
+            "rate": 0.36082474226804123
+          }
+        },
+        "samples": 97
+      },
+      "parameters:6+": {
+        "errors": {
+          "extra_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "extra_tool": {
+            "count": 3,
+            "rate": 0.15
+          },
+          "format_error": {
+            "count": 12,
+            "rate": 0.6
+          },
+          "invalid_ground_truth": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_argument": {
+            "count": 3,
+            "rate": 0.15
+          },
+          "missing_tool": {
+            "count": 8,
+            "rate": 0.4
+          },
+          "truncated_output": {
+            "count": 2,
+            "rate": 0.1
+          },
+          "unnecessary_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_type": {
+            "count": 4,
+            "rate": 0.2
+          },
+          "wrong_argument_value": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_call_order": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_tool": {
+            "count": 0,
+            "rate": 0.0
+          }
+        },
+        "invalid_ground_truth": 0,
+        "legacy_api_bank_soft_match": {
+          "denominator": 0,
+          "numerator": 0,
+          "rate": null
+        },
+        "metrics": {
+          "exact_match_accuracy": {
+            "denominator": 20,
+            "numerator": 0,
+            "rate": 0.0
+          },
+          "format_validity": {
+            "denominator": 20,
+            "numerator": 8,
+            "rate": 0.4
+          },
+          "json_validity": {
+            "denominator": 20,
+            "numerator": 12,
+            "rate": 0.6
+          },
+          "no_tool_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_name_accuracy": {
+            "denominator": 20,
+            "numerator": 4,
+            "rate": 0.2
+          },
+          "parameter_value_accuracy": {
+            "denominator": 20,
+            "numerator": 0,
+            "rate": 0.0
+          },
+          "parameter_value_accuracy_given_names": {
+            "denominator": 4,
+            "numerator": 0,
+            "rate": 0.0
+          },
+          "protocol_validity": {
+            "denominator": 20,
+            "numerator": 15,
+            "rate": 0.75
+          },
+          "schema_validity": {
+            "denominator": 20,
+            "numerator": 8,
+            "rate": 0.4
+          },
+          "tool_name_accuracy": {
+            "denominator": 20,
+            "numerator": 7,
+            "rate": 0.35
+          }
+        },
+        "samples": 20
+      },
+      "task:multi": {
+        "errors": {
+          "extra_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "extra_tool": {
+            "count": 16,
+            "rate": 0.12121212121212122
+          },
+          "format_error": {
+            "count": 75,
+            "rate": 0.5681818181818182
+          },
+          "invalid_ground_truth": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_argument": {
+            "count": 14,
+            "rate": 0.10606060606060606
+          },
+          "missing_tool": {
+            "count": 60,
+            "rate": 0.45454545454545453
+          },
+          "truncated_output": {
+            "count": 14,
+            "rate": 0.10606060606060606
+          },
+          "unnecessary_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_type": {
+            "count": 18,
+            "rate": 0.13636363636363635
+          },
+          "wrong_argument_value": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_call_order": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_tool": {
+            "count": 0,
+            "rate": 0.0
+          }
+        },
+        "invalid_ground_truth": 0,
+        "legacy_api_bank_soft_match": {
+          "denominator": 0,
+          "numerator": 0,
+          "rate": null
+        },
+        "metrics": {
+          "exact_match_accuracy": {
+            "denominator": 132,
+            "numerator": 10,
+            "rate": 0.07575757575757576
+          },
+          "format_validity": {
+            "denominator": 132,
+            "numerator": 57,
+            "rate": 0.4318181818181818
+          },
+          "json_validity": {
+            "denominator": 132,
+            "numerator": 75,
+            "rate": 0.5681818181818182
+          },
+          "no_tool_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_name_accuracy": {
+            "denominator": 132,
+            "numerator": 28,
+            "rate": 0.21212121212121213
+          },
+          "parameter_value_accuracy": {
+            "denominator": 132,
+            "numerator": 10,
+            "rate": 0.07575757575757576
+          },
+          "parameter_value_accuracy_given_names": {
+            "denominator": 28,
+            "numerator": 10,
+            "rate": 0.35714285714285715
+          },
+          "protocol_validity": {
+            "denominator": 132,
+            "numerator": 96,
+            "rate": 0.7272727272727273
+          },
+          "schema_validity": {
+            "denominator": 132,
+            "numerator": 57,
+            "rate": 0.4318181818181818
+          },
+          "tool_name_accuracy": {
+            "denominator": 132,
+            "numerator": 42,
+            "rate": 0.3181818181818182
+          }
+        },
+        "samples": 132
+      },
+      "task:no_tool": {
+        "errors": {
+          "extra_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "extra_tool": {
+            "count": 13,
+            "rate": 0.25
+          },
+          "format_error": {
+            "count": 35,
+            "rate": 0.6730769230769231
+          },
+          "invalid_ground_truth": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "truncated_output": {
+            "count": 9,
+            "rate": 0.17307692307692307
+          },
+          "unnecessary_tool": {
+            "count": 13,
+            "rate": 0.25
+          },
+          "wrong_argument_type": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_value": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_call_order": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_tool": {
+            "count": 13,
+            "rate": 0.25
+          }
+        },
+        "invalid_ground_truth": 0,
+        "legacy_api_bank_soft_match": {
+          "denominator": 0,
+          "numerator": 0,
+          "rate": null
+        },
+        "metrics": {
+          "exact_match_accuracy": {
+            "denominator": 52,
+            "numerator": 17,
+            "rate": 0.3269230769230769
+          },
+          "format_validity": {
+            "denominator": 52,
+            "numerator": 17,
+            "rate": 0.3269230769230769
+          },
+          "json_validity": {
+            "denominator": 52,
+            "numerator": 30,
+            "rate": 0.5769230769230769
+          },
+          "no_tool_accuracy": {
+            "denominator": 52,
+            "numerator": 17,
+            "rate": 0.3269230769230769
+          },
+          "parameter_name_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_value_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_value_accuracy_given_names": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "protocol_validity": {
+            "denominator": 52,
+            "numerator": 36,
+            "rate": 0.6923076923076923
+          },
+          "schema_validity": {
+            "denominator": 52,
+            "numerator": 17,
+            "rate": 0.3269230769230769
+          },
+          "tool_name_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          }
+        },
+        "samples": 52
+      },
+      "task:single": {
+        "errors": {
+          "extra_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "extra_tool": {
+            "count": 24,
+            "rate": 0.15
+          },
+          "format_error": {
+            "count": 66,
+            "rate": 0.4125
+          },
+          "invalid_ground_truth": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_argument": {
+            "count": 24,
+            "rate": 0.15
+          },
+          "missing_tool": {
+            "count": 53,
+            "rate": 0.33125
+          },
+          "truncated_output": {
+            "count": 20,
+            "rate": 0.125
+          },
+          "unnecessary_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_type": {
+            "count": 15,
+            "rate": 0.09375
+          },
+          "wrong_argument_value": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_call_order": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_tool": {
+            "count": 1,
+            "rate": 0.00625
+          }
+        },
+        "invalid_ground_truth": 0,
+        "legacy_api_bank_soft_match": {
+          "denominator": 0,
+          "numerator": 0,
+          "rate": null
+        },
+        "metrics": {
+          "exact_match_accuracy": {
+            "denominator": 160,
+            "numerator": 24,
+            "rate": 0.15
+          },
+          "format_validity": {
+            "denominator": 160,
+            "numerator": 94,
+            "rate": 0.5875
+          },
+          "json_validity": {
+            "denominator": 160,
+            "numerator": 110,
+            "rate": 0.6875
+          },
+          "no_tool_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_name_accuracy": {
+            "denominator": 160,
+            "numerator": 39,
+            "rate": 0.24375
+          },
+          "parameter_value_accuracy": {
+            "denominator": 160,
+            "numerator": 24,
+            "rate": 0.15
+          },
+          "parameter_value_accuracy_given_names": {
+            "denominator": 39,
+            "numerator": 24,
+            "rate": 0.6153846153846154
+          },
+          "protocol_validity": {
+            "denominator": 160,
+            "numerator": 126,
+            "rate": 0.7875
+          },
+          "schema_validity": {
+            "denominator": 160,
+            "numerator": 94,
+            "rate": 0.5875
+          },
+          "tool_name_accuracy": {
+            "denominator": 160,
+            "numerator": 63,
+            "rate": 0.39375
+          }
+        },
+        "samples": 160
+      }
+    },
+    "task_execution_success_rate": null,
+    "valid_ground_truth_subset": {
+      "errors": {
+        "extra_argument": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "extra_tool": {
+          "count": 53,
+          "rate": 0.15406976744186046
+        },
+        "format_error": {
+          "count": 176,
+          "rate": 0.5116279069767442
+        },
+        "invalid_ground_truth": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "missing_argument": {
+          "count": 38,
+          "rate": 0.11046511627906977
+        },
+        "missing_tool": {
+          "count": 113,
+          "rate": 0.32848837209302323
+        },
+        "truncated_output": {
+          "count": 43,
+          "rate": 0.125
+        },
+        "unnecessary_tool": {
+          "count": 13,
+          "rate": 0.0377906976744186
+        },
+        "wrong_argument_type": {
+          "count": 33,
+          "rate": 0.09593023255813954
+        },
+        "wrong_argument_value": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrong_call_order": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrong_tool": {
+          "count": 14,
+          "rate": 0.040697674418604654
+        }
+      },
+      "invalid_ground_truth": 0,
+      "legacy_api_bank_soft_match": {
+        "denominator": 0,
+        "numerator": 0,
+        "rate": null
+      },
+      "metrics": {
+        "exact_match_accuracy": {
+          "denominator": 344,
+          "numerator": 51,
+          "rate": 0.14825581395348839
+        },
+        "format_validity": {
+          "denominator": 344,
+          "numerator": 168,
+          "rate": 0.4883720930232558
+        },
+        "json_validity": {
+          "denominator": 344,
+          "numerator": 215,
+          "rate": 0.625
+        },
+        "no_tool_accuracy": {
+          "denominator": 52,
+          "numerator": 17,
+          "rate": 0.3269230769230769
+        },
+        "parameter_name_accuracy": {
+          "denominator": 292,
+          "numerator": 67,
+          "rate": 0.22945205479452055
+        },
+        "parameter_value_accuracy": {
+          "denominator": 292,
+          "numerator": 34,
+          "rate": 0.11643835616438356
+        },
+        "parameter_value_accuracy_given_names": {
+          "denominator": 67,
+          "numerator": 34,
+          "rate": 0.5074626865671642
+        },
+        "protocol_validity": {
+          "denominator": 344,
+          "numerator": 258,
+          "rate": 0.75
+        },
+        "schema_validity": {
+          "denominator": 344,
+          "numerator": 168,
+          "rate": 0.4883720930232558
+        },
+        "tool_name_accuracy": {
+          "denominator": 292,
+          "numerator": 105,
+          "rate": 0.3595890410958904
+        }
+      },
+      "samples": 344
+    }
+  },
+  "validation-oracle": {
+    "backend_config": {},
+    "comparison": {
+      "changed_error_labels": [
+        "rl_012c10375b64cd71be7f0a9a6bb6883c7c7a78f38eec035c3d9b267ca9a03b3b",
+        "rl_0133362c5f78221bc51f86be90a9ce734ef93cf8e1f11fa8a17d559738f818fe",
+        "rl_01ab318226d7e75bf702c4a39cf7c8635536c113eb572298efa0de2af6afe396",
+        "rl_0384dae279a9db098e418758d54cdecf9bce62f208dea486561da5881f1b9a64",
+        "rl_039b0b3cd8c8302c8585d7dcdf5176943782008591b07f64f7d07cd94ceb3bbb",
+        "rl_04a723d8641fb5b3387af95f6fa883e19527374e642df85ee3781921ed0d39fe",
+        "rl_0714a73cfcb39df851799e0a847594aa06d3d994458accafe82572bac2bd3ea4",
+        "rl_075154d256373fd466ebe63ac759375cde25d8769c0728292fc2d65bffdd6d35",
+        "rl_07d5d58fd7842310d5c8c7247f3d230ba0b2ecc8c45a72b0a914b889548501cd",
+        "rl_0869fa899e8639516c987d32c1f93ec9d8768ee45429ed905d1668291eb4189f",
+        "rl_086e4be22cc8147757fca087a5f28a50e91f692c0d8bfcd53c4f6fc385191c5e",
+        "rl_087490d5d9f4ae8d98ff7160c21561bb9436de8ad13c4e890e65c67e599337b2",
+        "rl_0925fb5a46d33af740a0ab2d0ce6dad2c0bec4a814f576f218e53f078abc278d",
+        "rl_09ec6c1cfcdf79ae0535510a90811ccc0d5f5deea3a6090300b170f1f1255f09",
+        "rl_0a1dfc050d9f9b538dd371d822de6e8bedf2fceeed974ae820faf2c724c62b7d",
+        "rl_0aebc7dd12979ec81304d3b1949396975f99edae65a783df30868e9953baba6e",
+        "rl_0b192b255d58bf77f87516b72f73f89936086fdda91621f32d32c8972c048108",
+        "rl_0b3b4631b2ae8b9d2fb8e0490309dee88344e981507f6bc213cb87bfc62f3278",
+        "rl_0b503acaf1060dfce79bf316aac838fbc575d3ba791847bdbf5c9c0620a4fabe",
+        "rl_0b7b597f89fbfecf3b031a71f70a21358467b6a4dad0239fa0f70c1bea0fe4db",
+        "rl_0c81061f83802605f0ab29c90467a6d9f546229e5fc55e28a417f1c46a0d4da8",
+        "rl_0d064bd06e24b8b6abdfef2914922d1ac4a9b488147ffe9b57f79d4e94ae64ef",
+        "rl_0d5b6d44b668ad009a490f41365761359a59648b9c4ef7c1271ddb1695d682c9",
+        "rl_0d985dcb928a5c7b1f43be6d1af428ef8f8e3483e09e5b694e7e456c9111fb69",
+        "rl_0dfbb37077fd062faeba7324f8a1883685f3ad51edc00f3a9b0640b9d37e5e05",
+        "rl_0e38d37d1677141dbd03ee19ab85baddd164c85846213e1720a5136f8d75c93e",
+        "rl_0ea524a784c0a6dd5f3dbc0afedc9535d15e04e8c719e3c3907b20563efbb6ed",
+        "rl_0fc7bcab05bacd37e7029abe28e2ae55c4713fe5967a6048366c662886899b4e",
+        "rl_109d6d631efc0864253c2ff090b86b2229a6100e653fbc3c223ea7577110eebc",
+        "rl_13ab5afd10129c18475b64d4860a68c4a0dcbb68f60e294e12200333327765fd",
+        "rl_13b4b3da4240aee208b9f127c88ac018fc3cce26d8ff92d44c3e11059d49ca33",
+        "rl_14dcd06d7619160fa58aad1a6d87184d95e5b5603701c0034b37ed3a0007d579",
+        "rl_172fc0481b6b1ad2704dd7085a4a3a7e7c03721ffdc7cc9fe3d4d65adffb525a",
+        "rl_1750a939cfa28848349fc31f3ec7992c6fe366a46cc200e730976b4d8f52e6cd",
+        "rl_18ffe370b994afd8f67c187daa7a9211d4fbdfd1e5dedabe05036b0e098f837a",
+        "rl_196093e399e5a1c85761773ddf8298407973ac5fa34af27b8092834c6554cfbf",
+        "rl_1ab5a134882572951c0b0c2300c630614ab99bbd5284664854fd3bdff5e8712c",
+        "rl_1c2d426dde08eb469e75a24cf27ff01c17594319ef794f76c96a564e63832b40",
+        "rl_1c323afb7cd4ade1794d441b4d7d37ab1cfa996330e42e550eeef229b0e1a041",
+        "rl_1e8805a27cea506b9ccba2269c9e1c782d07873dc4005e25fe590ee31740a118",
+        "rl_236674bba0ef402cc558a21ed5657c092a754a9005fd8aa9cc0fedd62fefb432",
+        "rl_2414e3adbd04cb6748798b206d761d455cd086d12b39abb4408ee7e82c00058f",
+        "rl_25b7a335364b45d65c5abb381bb9b1f2002baede55b06c6fddddf112f55d2a38",
+        "rl_26c050db60db77850ed1e9e209cced055d4c344f33faa3aebffca5ea69c30180",
+        "rl_27842fccba310a795c777e6403958fb2d91344ecd72658936e3057fbf7e45c5e",
+        "rl_2b13496ce78648fa8a7d12dcb07083afabcdae1f3ebcc122a9c0028c39f95876",
+        "rl_2c3731f39e4a9274e844312c05d1ce129aee2eb8acd2efc990930a30bf79263c",
+        "rl_2ff7f9105a1ee61269f9ef41d48d8ed23fa25f3df80789d8d1795ded8cc3c090",
+        "rl_30f6640616378a80c0924aa01e77d5e32fd596e60eea63f059dce0db47057b79",
+        "rl_319a91b9cb67109044a84ee961ef7c39b46ae8cf966e8cff4f9c0947c1d19511",
+        "rl_331672a63be00531b2b6beca1dcce01861f2433ba78bfef7b14461ec89272f3c",
+        "rl_337119c8f1627a16c49bfafe2e247b2568849b714cad50de82b6d61ebf44c2d5",
+        "rl_3389af107781df6590ec8427206656d7cf5e08c4095a5b93cb1693c166830ba3",
+        "rl_343cb3049df0410338df0593468041e664cf3c9087466ab026c6dd481d2a9516",
+        "rl_363aa1ad875e3f4098ff9944decd7ebaa1d16c009f875accd34d8d65fb890268",
+        "rl_366345f940e59a8bc71fe052a68f440e1d71d0b4c77b71ee3b358abeb2771fbf",
+        "rl_376bdb51b00040e7bcf48aa00fc23217e0aa5ef286f41d9b524ec0ebe6fd0ae9",
+        "rl_37efaa4edaa21b0a11d9f191c0d0b59766ceec3bb1640720e0c20d1c1cf249f5",
+        "rl_37fde48b4c8bab2fcd14bb42be0baa096098ae568306ca08bc8af2f636d7c9d6",
+        "rl_3866cd09bafbce95856f35995940bed3e7913129d23a1d32b07fa3dcfbb643df",
+        "rl_3967c36b54385d902e0da7d5441b8c0b64d02381c60251bf4b9cf80910fa6c5a",
+        "rl_3ae5eb3af75b42d68074231a38254d7ddb685a2717351d40e727d81a6530977e",
+        "rl_3afde9ffcb55357b40d9e9e1ed4cab762fba139af75b96ae8c0be7db92a283cc",
+        "rl_3c9e830bb87618418e97ad18037835a1b843e5fa87ffd9ef7644bb7f62478a3f",
+        "rl_3db2c72b79908c847287af3543dd73e0271a420a7a9b0a488bcfa320e9a56ee2",
+        "rl_4043ac065924d83f7e97c494a3fb836743dae0651af1be97b43b9fb9b8c51226",
+        "rl_40e829716e71d44b6f8e23c9c2ba3a19471303e1034e48c7c1c076ddead7fcf9",
+        "rl_42abde77156a464b23b03c6b73bb98c044708b2ec9a10fab493b6e84c2eaedb5",
+        "rl_43326e8d00e5389e467ad60b1cb12c56191519d6fd8e169c753b6582f8c27ed5",
+        "rl_444435347f24d025912d103dd4c359d75f04876160d091ff0b6821c79d88dd05",
+        "rl_449f84a3d8cb3c51fd563f5231c3acb755a2cf3254a071f99abe32e2b4027d30",
+        "rl_4560a5e113d8a5c05bfb83e11bbe83c59c1184b1a4beb97e0ba6b908109c9758",
+        "rl_47008df6fbeaacaacf7213ff3a9f0c994bb723b607e5097009b6077708c5e898",
+        "rl_47d56ecbc615d433f458c727d29d6da745fe9debd37887f2694121022f08b9ed",
+        "rl_491f2233b802e3ca71f348eeaeca2721ea677db5d35e7c200837a4e446f3d063",
+        "rl_4956c465e4743a8f4af5be49843fbdf4bf2aed732be344d774409e3c8e53c14a",
+        "rl_49784ca1cc809b20261b97f4a4114d6475b28eb5c5f8f7404ed3154d608e1f91",
+        "rl_499d2922e2039de2c1ecd027331eb38f26fb2c0d1e0ea3f35b2f7dbb06464591",
+        "rl_49d7569ea85c20265ad714c277f51f3f1b6e77a0dfef6da48d0aeca2d364a862",
+        "rl_4b61f6f85a7b4fb59b09254161954944fef450c98ee0805c0c6a022ffefc3c8e",
+        "rl_4c94f3febb72719a318cabdc848fc474251d1ca19a1e32912eea2d5560b71e87",
+        "rl_4fde642ad1d525bdc06951bbdea063492cb4ea6d986aec0ab4610d3c8fbf7ed2",
+        "rl_5180681ca1bc0c9ccf5e04b1e5d4fd44255acad5d5bec662929d097e11545c34",
+        "rl_51b84b734b98e04bea0790215967feedaa6aacc31c52012f1f0c644ebe2e9912",
+        "rl_520efbcdbb92327b57d9076aba21c50905edf196d0dcaa537102f7c7fe53ff39",
+        "rl_535886950510ecddd79bd252b0d4ec67bc338e140e3426aa1aa21aed4c30b3e7",
+        "rl_53ce44a50ae6fc18529b36510acd9d14050d8fa045e75999b193b46a95b36e5b",
+        "rl_5412ab14ab8e0b39d7b2feaf8805cc0201b74b52abc466b63f52c5651fa79583",
+        "rl_546910629115247733c0320f1f5b485ed60a4467ec00aa25a1779fabf2e3de4d",
+        "rl_560d23dcb5ea76bf15d1916d6ce83caa6802bf444e9d854b5128f0416f269423",
+        "rl_569166c3a13a2572ad4e924e18958b4b589c08d3426f073ce762ef935c84643b",
+        "rl_579d764bf12285f1ead2eeb478f6693d21055ffef4b4f277ce53f276048e29fc",
+        "rl_584d808e853b3eadaf2c0a018301e01932c18e69c4866bf72b17fb6abfb1dd83",
+        "rl_58524b2f544a57e1b240d1bef215dadd634e40a3a61b7a02cf46722cb8b70384",
+        "rl_5ac8f7d38497c4e9c214b90cb52e0f66cd53954245a3d2f815b46170cfce1a48",
+        "rl_5c79bbb7516b71e9558eaf63e3f47fdde8934434502c15ebe03e4db9303bc29e",
+        "rl_5d2ba016d3b3679c9073d0e6a150b73d1425cbb8bc5b68db8b46a239577e6712",
+        "rl_5e5f8c994997cedfa7ba644d07d9675dc11cd9a23b004e6e2a79ad1e8a3e3412",
+        "rl_5e69cd148638f84234e275bfc4efb5871de13be51b1b0ce6a0a94f260e3c6342",
+        "rl_5fb871ee450be55e8fa9bdbb30b317220916644e451cedc17881d923f6ccd3df",
+        "rl_5fd5cdc69e2269b774867d8021f25bfe0c07374759a12132ce63f43c0b8ce21b",
+        "rl_60289c6b5e0c6f0dc01057e5e6040e831506e6d697f9fb39711b09c199fd6536",
+        "rl_602b1c9f23f94b81c7c80eba7dbd4fa4e8ef7202a18bb645057e52022fb26268",
+        "rl_614fa5ca02970312fb43fc1d00172cc5203459db651dbd8d5414ac9fc92fd917",
+        "rl_619e85c273b00fba0ca8a4573c036fb7889ad273c395ead5c8bee80a7fd52564",
+        "rl_63880ebddd3e00635774fbea1d7c0906165335100cbf333c6e4d9392492d096e",
+        "rl_63a2f61ec0f15fe34e9364d5cae2dde88921c53f6839675c045ec71df97e7bdf",
+        "rl_657281dbcfba821c23df0e410d2167a7a6c40231f576ba841d18242149f217d4",
+        "rl_675b1a0600b82e8526713081d75135965a1b58f15d6b603b32513c89764f9ca8",
+        "rl_68ae792ba9b16c0e440078d7b1ff803b17e13025a8b487894c89020e0272f594",
+        "rl_6c710eb89488453d15805def6040f329c73ce6d1c4f23a01195c06efbf089321",
+        "rl_6d4c0291889b05993e1958a04285186e08da09be18a81552e3e04fa7f4d5a8dd",
+        "rl_6e2f33f90be859dd60f770c7686c741a602e2600d9f18a4f235d00a78be9ceb8",
+        "rl_6f8466d06c41c2f9b5d787ff2223ae52d4823ff4e07cd90d7670d5f0187b3743",
+        "rl_705d13293c1591b1892d8d3d0ebae232c5677860fe7bcd46005365ec3e078391",
+        "rl_7144002d519207caab570100f1ad0e0336b8eef0d3d586216e9a9a5aa422d6e2",
+        "rl_776618ebca560aa6364fa9bbc0b0a0ccf64bdc55f451110c007830b26a04dd14",
+        "rl_7849831c039632973854fb4b6c4256f5743a32c34aebf387978fc121f78943f9",
+        "rl_78fd39f03e8b0fe5f8ded4bd2bffd5f3912bd2e9c1c73c439d7e3672aff911c8",
+        "rl_79537064713bd44169c235dcfbdbfff6815545b5126a14dbb8bc5b3f6e4a00e8",
+        "rl_7a329a20711520eb2fe5515cea24c084e830c4d06197cb65af930d1e9d63c9e6",
+        "rl_7b769816f32603a0129c8087783496eeb18f890d11f1db0db8440ca65cc080ff",
+        "rl_7ba5f7f2926754f8b9b5b7691fab338f0b9521b34eef403b8c828609e118b62c",
+        "rl_7d2cd83a8145f07d9aff42e61a95a00657ab630242ba9d4de32a21fef648701c",
+        "rl_7d81a955453bbbe995b7ee6d754e71ceb69fb493b48676d6dbe8d19e5109c0fa",
+        "rl_7ff228389372207a764fa90328c1d20f201b747279beee26423f7197e6dda998",
+        "rl_7ff570a7e1dbbcdff62591a112fa7120559be01a4182dd4cbcf906c130a6154e",
+        "rl_801029415407bbbf71ec5904f8a4974896ea1378cd9b28f7a0f85e9a3b33c583",
+        "rl_8088e5a8ec6dfb5767356821f5713d03f121407e2121495fd79c457025ccba14",
+        "rl_82b7f84179de15bc7983433bb0c626c21b65ea25f7f59dac96fe2532c4dc731b",
+        "rl_84090720b43d9074ff1fcc43d4f4331e2d2fab46a86f696030bdda3900b2a32c",
+        "rl_8467cba3fa1ca3e794a15c2d3be5513a96e89a92c7b35185842d8cc5160ffe36",
+        "rl_8565e9feed9359041fc063a6342f7f4d7c1522a0dec2fcdf4273fe4399ba0047",
+        "rl_8567ff2fcb37d4b83ba27521ceb9a8aecf894d0a31246b3129aa7e359a11a1a6",
+        "rl_85a06aac115a8e69e3358f753cc7cb82f6b1c7a49b299656943290c155d1441d",
+        "rl_8660314063c4bfcaad56593e55b26f62b3aff5c8d2a2a1a8575fd5ac42552eda",
+        "rl_87669bf644f3c161bd32fb5e89f8efa88881896b90eac0c30047187344ab1bdb",
+        "rl_87b1cf57a397b093a6c7d20f80f298a8b075949222c4ae6cc2333a887f56d5d1",
+        "rl_89ecfc2ba77f15d0fc6a0f6869bd0c77c2a26939f37f2d49f11e72657aa602dc",
+        "rl_8acbd11d40dca814f1c87112db27e25539f1268e24c65bb0d38afdce56162bb6",
+        "rl_8d0e3092cc165d9b88f049bf274984d974b71e3907d7b2e9885d4e6f745e3172",
+        "rl_8d9cc8dd43b64a85f25b56c0114a58cae343a3082a821ec90dcf5e5e19fc2371",
+        "rl_8e6e63d8791e0bebb5787ebb421b72faf6b6eb172f325c92ab1a3f26e747a36b",
+        "rl_8f430e87030ce699202354acc8b9fb5331a9701c1d6386e80d2f42348df40b33",
+        "rl_90313eebfa8229999b5374bc2d3af2fa348096e93f998a1186510185467c5284",
+        "rl_909e334ad4351ddcb6c2e947af24086dea4da2469875591cb672bd0bbb27cb5e",
+        "rl_942cd20ef34d16371257e4cfd4fe6d37f263045b2de5e849af13b20a8eb7c523",
+        "rl_951b59cef859d536a24114ca21e0b1bf219710a67db5a8fb3bf28e2fe68beb4f",
+        "rl_96ef6b92a7acb6abca119c9594f93c449b7e5cd14596e011547b98d7cda16ccc",
+        "rl_978ad5edd4cca842bc0592d09852c41929ebe1236ade63ee699fa554b0a7e302",
+        "rl_97e6bccd640ec1106e06381563ef020aaedb394a9437022e1471309a46917e34",
+        "rl_981fcd1f2a110652f44c4d0eab1821d003b257d92d718e98384fc20beb9bac8a",
+        "rl_9837a82244832df37872d5b3013b33a533093b1390e4cb753b9da0858a135ae8",
+        "rl_99226e6814d26965b2b6be423daf384e5077f9c66ae773f8c494b4c35e1732fb",
+        "rl_99aa2397a5ad9d556672efdd01bf93f0e7680d837ea6d5e4321b3974a4fbd05d",
+        "rl_9ac359557014a62edaf05473eb0558952fed1855bdf74e6d8c4d61e3e6e0c86d",
+        "rl_9e6c8765da7e5ee00d6bd078f9bf0bbc6f1633bf8a1b4c764bafa9c6c96656fd",
+        "rl_9f66e3af2c05020ff31fc5c81e675947622fd84702b0cb3e475d7ce7cbb6d3dd",
+        "rl_9fe63b01839568972cd787e530ab9597f9ce25101ee3698adc9e0a2e5409b003",
+        "rl_a13d77fe5a3c5b0adb1cb96d74b83e8a43e28ea7031607bcb10b8133e0162fd3",
+        "rl_a3205e2fb87e73a0af015b250547ec611b1a3c8ef5f2cd416e1ae2371f92f6d3",
+        "rl_a37bb083ad59284480c9d119d25e9cd4f0998bc756b438e080cd0c297f2d86a2",
+        "rl_a4168976c2da621a516a694dba0f05ce1b1ed43bf38a1513e8b5be6972d9c33c",
+        "rl_a4dac0562ef330782e4a343ada8d2ddb50aeb0c787937f7ef9a5614232ed2ed4",
+        "rl_a52296e4b6d2243c89fdbcd6ca7716a4fc7438185d387e4caead83758a4f28c7",
+        "rl_a6d4497481fd321e31db16a7f38dc7905dab22a1501349fbfc71d06c5bb0ff26",
+        "rl_a6ffdffedeceff27dc087749917c4e1b3fbd041336b0744687bec7075ab68534",
+        "rl_a840bebdd44f39a4263f3dfed083b83b117c59ce63a42696cb14ab47e702845d",
+        "rl_a8594b931645ee3c0134394c0591bd19e9fcb4faf10a1d3faa51c62c69a78f4f",
+        "rl_a870b82b087a7f96a39c6c311baeb9fa5029a4f2c2dd471eb0fcee09ec9414c0",
+        "rl_a9011180d92ed1df36e87be451e4a00ea102e01fce27658f06a937c771b061cc",
+        "rl_a9bc75096fb84b151d3c4a6f9ea9b55a3385908a491d66522c056e35f734b4ed",
+        "rl_aac61c7c6a4f44c2cbb4df263b725bd9b6649e0ce5f02ee632d6cb84bfa78ebc",
+        "rl_aaf6d3c8846b4f85177a2f922c25869c0a4d0215d876d0e983fc63d05119191e",
+        "rl_ace395a02dc782b70e5063c094085c8ff3b293d5906705b3d72b1cf17e10f10a",
+        "rl_ad15af7a9e1676988dbaf384be4bd21445b4403d979153caeeaa53724f42a71f",
+        "rl_ae5c2b6100272a78533d91b161a0226521da9872f10ed98fea085d67ebbc9059",
+        "rl_af6a60fd120873ef02bd0b87d0c2d984d77afe0d77315adfaf6a42b7f14b3149",
+        "rl_b11d67b29449c1ca1a8bf9d4eab8f6a6342f766388e185d20917db893bcc57fa",
+        "rl_b2802699620b7a20bc7444234464a01745de709ecfaac6737552ea4c2c77a1ef",
+        "rl_b4cfd13d4e1bcd30cc0daa5fa7a6186e117e80776b2cde9a536b6a9eb88830fd",
+        "rl_b51cefafcee9f23ce2a9fc9fdd83032fb78af51b2ba23cfc03fed7976ab7353e",
+        "rl_b734b60731aaddef5a12ff38dc9a44290ba3a6e3e504ee5e1c15ebc94fe93b0a",
+        "rl_b932b7a249e35d9d9d64c07191d7ed0e63092f81cf9731e4bd21401952722de6",
+        "rl_b96a9960a68e87d5b4d9d909580ee520cb3b397b7aa646c490259a4c8e4e0abe",
+        "rl_b97c234f52cddf74781402b93c5d868c003884d76c78fdd5ee7c8663b178c73b",
+        "rl_ba55be3a4c9ffe6b7f1728c978d70c3d6bbcd5135897f8850f1159b5b0aedfbe",
+        "rl_ba86c9f28c5e577b83dddaa4db4df90d1846411b64e253f23fd280c37fe42d62",
+        "rl_bb08275d8b9550c43fa4f77a0d4e43facf5077bd75e60ed30400e636a384da8d",
+        "rl_bb3547bc8e9efe00ffa473f81130aa09f8b9863b9daf427cf05ed9decc698c6f",
+        "rl_bd1c2fe32951e485ca9afa2701029c1bcbb3ae69ae2578d016d61a5dc946c7ca",
+        "rl_bdaedd4e8effb1793e6b23851067aed9737627e2b605b7e721ef44f756e12226",
+        "rl_c4e9cd049ad04644da9c21fce537af797a2a99bdc461df8e8a8573fcb304266b",
+        "rl_c60ade69cfbdaf4638c59e88c7fd1b1ec1e819c3f15d477b24f1c308e0af45e0",
+        "rl_c875d61ae2ff7082813a6d55fe66feeeb7f2b1994459339caedf989bac86e9ad",
+        "rl_cb3843ceb2dde7f7f7b93caa80da221ddef14f3b2f3138be5d22799654573139",
+        "rl_cb4c9996bbe3513a0cec91f98d20bc847050c5d63d155adbdd4e35f507e31ce9",
+        "rl_cc26ed24889da6eeaf57e999c2c7d5fa599eee644dc143391bf98ea46b06b75b",
+        "rl_cdd221e5ce6d434c47719b92efa03a1e346d42626dfaea713360c6d138bde0dd",
+        "rl_cdfba9c4a5b76661089edb87950cb3024a6c4fa2dff8cf81ad9a3b8741b8d4ab",
+        "rl_ce250c0bf82d92782f1a43982a56888912042677bd614260ecf9dcc7ea60a5a6",
+        "rl_ce349a63091665a672fb3b50492d23d5dae9a0496181a7291f27dfe61a158baf",
+        "rl_ce568d6a97da34c06ffed6bcbce9db655fcd7e9aab146ab3f6f1f8ee9c83712d",
+        "rl_ce8caf201bff9c23cb4330651d043b1521cd4a87b4c5d5bb1f281a0c02a0cd00",
+        "rl_cf4ce7c01e053a6526852c73523b8b5a6738bb3634e3892c202e4bc5d6654cd5",
+        "rl_d1a9cb38a9f2ea83e062d5f7b3a88ff587a655c0c75151dfa5406a6d88070b8e",
+        "rl_d1f7142b2214d671c07815e3a25ff6b4221106538d5883afb454ce60b0e9d707",
+        "rl_d23db9b27d6318995cc6a8feb10f4077037149f18fa8f517359caf0b633c27ec",
+        "rl_d352a52951989fa5faa354312067a72bda4a9bbf33ac56a55c45ef194278b76b",
+        "rl_d3d0e75cedb01b8d67e9a72223aafdb92982f1b49ab7063ec3cd95e2553f6f4d",
+        "rl_d4029bce0baa2a647416ccd14d4ae720d333a5eb3bbd5308f87ba8856e88d52b",
+        "rl_d913bd6e24f693aad6ecbe7e4ff18ccb2883519d68a23bfdca1ec90eed792f31",
+        "rl_d97358b50ab74440ff1b93572f167122ae87c56999be12ba7f2f14e7dc550282",
+        "rl_d97435a40a15500950a433901d7f36dd2a00a5b79f26c496dd04abfdfbede99d",
+        "rl_d9c37282cd0a0589f82445911159c14a758f86e358019f9813d9f467afe220fb",
+        "rl_d9c3bd503f6156c2c9bef0c6dd5e1d932dc52cda5e32abe60e25d12ea731b2f7",
+        "rl_d9cbbdc9a679faac2669db9aab5f8743bb796ddfbc2cdd98e436a3db082a1e13",
+        "rl_dcea948056400447cd94fcd97d0c3749c2f7b835e5e1a903eca475472d99fdf5",
+        "rl_dd4613a935a3d29b47ef44afe69245be43213f6c24430e63aced32f5903c006e",
+        "rl_de85498b70aab67b3d0f3ea98c6be7ef9bc97e031ea17feadf5829fc049a352d",
+        "rl_de96c641801d248dccd5582dd8c6b8dad4d1d54ecb9044bd47ba330de2841041",
+        "rl_dea6d0afe05a307dd582eab63b7031aeb228b60a0017bfa71ae567a7ea0adc82",
+        "rl_dea90526416c31f906b4ce5b705b967e432bc06a6b26152a18d395642e0bb690",
+        "rl_df6d30c582d24e39f11f985198085b410ed1a0c737fd5e9fea07e36bf88eaf4e",
+        "rl_e1b3f6d1d89c5910c267b5bb78a1ac1055a331bc2f742a2ae5bfc7aee8252477",
+        "rl_e1bec2f30b180e18f906bbffc9a6f043bdcb1ae4c0b07a14da9deb84619101ef",
+        "rl_e1ca5f4edb4644826418e4c4ac822e092fbc7bbe60ea467f61b31e63c74b6ed6",
+        "rl_e2584da5b7fc2585d8f6f1c169962eaded6b1637df98e8bfb20c91e4a8179018",
+        "rl_e38d721051fd85ad08727451068cbefc77bcd011ca970c11d94eb06abd4b40f7",
+        "rl_e6e2e917f17a847c2e4056d09cef925387a8fd184365e16edaa2d45fbde9ca01",
+        "rl_e6fdf02966773f736ca9f8f11ecadc5850aa2852bf144defa4ac2c39dac8aa9a",
+        "rl_e9017838ecc3d61d7da5cc107fca0bdc294c3c1eef331bff670f0df0ce8420ac",
+        "rl_e97860249e2a7bd204da2561afba6946312586ea8ee16ab40d92d1510d484126",
+        "rl_e995ef46ecf714da20bbaf5a34c05fe159485f1fdb975a4591ef5a82be38b4c9",
+        "rl_e999338eba71d0912d1072ae61326bd431002cf220e341e2033ffaa4ceace426",
+        "rl_e99d0fcf1abd8d5afa2ccf3257a1235cb0cb6c5ccae47bd37a4e37193125d067",
+        "rl_e9ba2f1e73c852869ccb987e5c4c7c87c24692343a4081bd242b7f9145c2cb16",
+        "rl_eae34f616d34ffffc5805f886380fc0b5ac423360da04084c7f69bd3491a7748",
+        "rl_eb0d3520f5b048fc4a2cf0509e192596e7b6d2a3459cec8f6035d99dfb30777d",
+        "rl_ec39df18393d3de1ef58827fae55f9808775db9dd0ab9d9fcad118304f9c739f",
+        "rl_ed021063c83d465493848a8fcc2e2979eef111dbf5d997427c10205b9feae98b",
+        "rl_eda00a5018e2c6a0792f42d40c66198ff88a69b5d78f965d210d1b1f9abd0384",
+        "rl_eeac540b4117ac434cad3fcd2c447f9bf681af61ccab7a55cf390524da015271",
+        "rl_f0d6f7618daa49d42170e7aaa3c157813abc65161555e88553855030933d8c3b",
+        "rl_f12b4f05db4f0d48b71c1211b4b048dc46a75ee827198cc5fe20174dbca650db",
+        "rl_f2689c25aa91f75479cde6f03b5245561c8e50b911f010a9064483ca9c64e6b7",
+        "rl_f3168ad4c4011442a4e15edbe8296cb3cf045f16aed7fb1e51df20638bb3740a",
+        "rl_f31ba1843f4a219443e394d75c856b307f033a82a6f0fa26c0a7cb897fd69408",
+        "rl_f3c5ddf9cbb570b2dca528dbb3db1a770fa306986b81d1e0d4668b85c1cfe443",
+        "rl_f4cfbdc4885241ec20fa5fdaa8e08ccc67a6b31bf67fd7a7b721e0df0e8bda5c",
+        "rl_f535e7373816d8035b62a468f58a8c435191a2b7eb97f3046071a760c21c9b00",
+        "rl_f5cb826b75b4c02d85e215bd4ec2406ccda04919b9c2273e6339597dc28337c9",
+        "rl_f79819ea46a4c0e898b23c8a21caa0ff9b28d927cbcf6dead536dc75d7eb2259",
+        "rl_f98c3e37d9ef669c0f8c4b3ef89e6041d3f1aad623bd6f63d915a3f221979149",
+        "rl_f9a6c9789f76ca47f1a59c8f320f252fed831ea0cdd8d0b0b5398dd3d9c7cc06",
+        "rl_fb2677226cafa1760362eb1efc1534f2be621a35ad5861318f11b1da86d50559",
+        "rl_fb7eeb10266c7cd79ecabd857b7626b1be87b16541705c87a6f28936eb4959b1",
+        "rl_fc7b5e7c214c6b48b47c75d346b50fa27979e85a18ab93efb16bdfecf6c0e576",
+        "rl_fd42ea1f55be20b6ab1241e16137cdcc764f864aefeedbc6f3fec3565bc29ff5",
+        "rl_fe5b7c2ffb997c8bcdb6c5749ab9f4a45b050646b99a866dccf010017ae2971b",
+        "rl_ff331327c4db02bcc527edae8b57735e8a70209a5162bc40d108afdd55dc6785",
+        "sft_089b054c0df44b35b84f0dc02dd4ed6258f0ae69459e5d256bbacf3957c07e7f",
+        "sft_092f1f4540f5d3eb74088b9867c85f33545f805cd0296bf2d425ca9cb3b38cf5",
+        "sft_0a1915ba5aae69aea1dd080ba84ed4ca17fe859f68a04029ced7fb77101a7c70",
+        "sft_15a3a897e28e036519021edbda4dd2232e0eee12b08691cfeba618307fdb055f",
+        "sft_1a0365f55500ee78f00a588bf136a90c05dcd8bea30405674b3051c4056b7c9c",
+        "sft_2c635d7cafd4a5026158c0f690b06150d3fd464ba9721e74d4d5f35237596e81",
+        "sft_2cab8421f6c0e4a122dafc800d1cae1c05ca6f3a6bef40f2e7b2b18589517fde",
+        "sft_32b891f01ac3c95d63df668419e975df5e6bfe33e57c86076a14efcea4030792",
+        "sft_4daf440be3bddfa719cfb7d88dfd4267876ecd1c1c290de13377bc01e9c0dea4",
+        "sft_4eeacaffbaa1f46a02cb9aa10a12e8f146d7d7520a07ee8d860a37f8a49c4f10",
+        "sft_5609eef7e9ec887ea0a7e2801817cf7f2db2dd74644efcb7b5344919af36c7c3",
+        "sft_731078e1a3d37ba04ca59021a0119b02680049a2389277fbe5c3bec307a4eb77",
+        "sft_7327c947ef3ea6679edd59c72755826f62ff20224ffdfc0b4434f81f441670e3",
+        "sft_78017820d345da6300c606dd4f481946630d6106f45e90346df657e7ca296479",
+        "sft_84c08ed9937bff531c346043f96cfa89f72b116ec59df8ca2bc84877c7422a79",
+        "sft_8bae600a5448e72b90ee3f1a033f967d4128216a178c30a3169063cd79f086cb",
+        "sft_94d9ea067551f08501cfbf6ffe083753da9b2acc12164ba6e9c2b9302bcd907b",
+        "sft_9cd7cedb7da8687cfb7683f979a05fe20bcd46dba1b784ee5700e63f51104162",
+        "sft_a9c4dce363f7335f1559d9e5a98eae77daa16de50038a062e986d749f3ca4d2d",
+        "sft_af27b78c1f22d953ee52431401e46b997a769a3ac93c8c677f0872c6f8e956bf",
+        "sft_b615c9d2e5b9eeb1681b6af5dc1e641cde13a3cae8284a1c3c2a980e23846fb2",
+        "sft_bea507cd1909ba6c61cd0f36a0387b7c9bc09a130ac7cc8d7904fae445e4ce9b",
+        "sft_c498de02c432739cd4fdd401f29945e0e02612c394741f338c0cd0848a958727",
+        "sft_ca7fee3f5d05fc3c7f062b15c040da45aa461a3df6a2e62219ed5e6552d081ec",
+        "sft_cdf1816b185775f4d9ccddf05d46679462638639afeea442ca41f0272becaaa0",
+        "sft_d238efac77a8fdf5c3575a5ff5c5a807a3a10f95e28c015cd3115e723439fb61",
+        "sft_d3a3791848960467bd8fe75bfa9b24b39097035a851921803e2cd53b57b7ac4e",
+        "sft_d524f80cb727ea4e90b29b7a92aae21107865115ea0d09052b081a676216361d",
+        "sft_dcbfe297af368510fb789f66c95a5fe599081f4ceb6314adf0fddbb6eb0bfddc",
+        "sft_e7bbd9bc0494632d7c23b04fefaa970a83a3b72e667623d0504e72a33127d487",
+        "sft_f62abff67f37e2b35cbefb489787726f1efcfaacc1a51a0a195e5e4a120e5e75",
+        "sft_f9296036bb32ad6aaf7a419115f4ea2adc249744b2d7cd9ac96fa2fda36d13cb"
+      ],
+      "error_count_deltas": {
+        "extra_argument": 0,
+        "extra_tool": -53,
+        "format_error": -176,
+        "invalid_ground_truth": 0,
+        "missing_argument": -38,
+        "missing_tool": -113,
+        "truncated_output": -43,
+        "unnecessary_tool": -13,
+        "wrong_argument_type": -33,
+        "wrong_argument_value": 0,
+        "wrong_call_order": 0,
+        "wrong_tool": -14
+      },
+      "fixed": [
+        "rl_012c10375b64cd71be7f0a9a6bb6883c7c7a78f38eec035c3d9b267ca9a03b3b",
+        "rl_0133362c5f78221bc51f86be90a9ce734ef93cf8e1f11fa8a17d559738f818fe",
+        "rl_01ab318226d7e75bf702c4a39cf7c8635536c113eb572298efa0de2af6afe396",
+        "rl_0384dae279a9db098e418758d54cdecf9bce62f208dea486561da5881f1b9a64",
+        "rl_039b0b3cd8c8302c8585d7dcdf5176943782008591b07f64f7d07cd94ceb3bbb",
+        "rl_04a723d8641fb5b3387af95f6fa883e19527374e642df85ee3781921ed0d39fe",
+        "rl_0714a73cfcb39df851799e0a847594aa06d3d994458accafe82572bac2bd3ea4",
+        "rl_075154d256373fd466ebe63ac759375cde25d8769c0728292fc2d65bffdd6d35",
+        "rl_07d5d58fd7842310d5c8c7247f3d230ba0b2ecc8c45a72b0a914b889548501cd",
+        "rl_0869fa899e8639516c987d32c1f93ec9d8768ee45429ed905d1668291eb4189f",
+        "rl_086e4be22cc8147757fca087a5f28a50e91f692c0d8bfcd53c4f6fc385191c5e",
+        "rl_087490d5d9f4ae8d98ff7160c21561bb9436de8ad13c4e890e65c67e599337b2",
+        "rl_0925fb5a46d33af740a0ab2d0ce6dad2c0bec4a814f576f218e53f078abc278d",
+        "rl_09ec6c1cfcdf79ae0535510a90811ccc0d5f5deea3a6090300b170f1f1255f09",
+        "rl_0a1dfc050d9f9b538dd371d822de6e8bedf2fceeed974ae820faf2c724c62b7d",
+        "rl_0aebc7dd12979ec81304d3b1949396975f99edae65a783df30868e9953baba6e",
+        "rl_0b192b255d58bf77f87516b72f73f89936086fdda91621f32d32c8972c048108",
+        "rl_0b3b4631b2ae8b9d2fb8e0490309dee88344e981507f6bc213cb87bfc62f3278",
+        "rl_0b503acaf1060dfce79bf316aac838fbc575d3ba791847bdbf5c9c0620a4fabe",
+        "rl_0b7b597f89fbfecf3b031a71f70a21358467b6a4dad0239fa0f70c1bea0fe4db",
+        "rl_0c81061f83802605f0ab29c90467a6d9f546229e5fc55e28a417f1c46a0d4da8",
+        "rl_0d064bd06e24b8b6abdfef2914922d1ac4a9b488147ffe9b57f79d4e94ae64ef",
+        "rl_0d5b6d44b668ad009a490f41365761359a59648b9c4ef7c1271ddb1695d682c9",
+        "rl_0d985dcb928a5c7b1f43be6d1af428ef8f8e3483e09e5b694e7e456c9111fb69",
+        "rl_0dfbb37077fd062faeba7324f8a1883685f3ad51edc00f3a9b0640b9d37e5e05",
+        "rl_0e38d37d1677141dbd03ee19ab85baddd164c85846213e1720a5136f8d75c93e",
+        "rl_0ea524a784c0a6dd5f3dbc0afedc9535d15e04e8c719e3c3907b20563efbb6ed",
+        "rl_0fc7bcab05bacd37e7029abe28e2ae55c4713fe5967a6048366c662886899b4e",
+        "rl_109d6d631efc0864253c2ff090b86b2229a6100e653fbc3c223ea7577110eebc",
+        "rl_13ab5afd10129c18475b64d4860a68c4a0dcbb68f60e294e12200333327765fd",
+        "rl_13b4b3da4240aee208b9f127c88ac018fc3cce26d8ff92d44c3e11059d49ca33",
+        "rl_14dcd06d7619160fa58aad1a6d87184d95e5b5603701c0034b37ed3a0007d579",
+        "rl_172fc0481b6b1ad2704dd7085a4a3a7e7c03721ffdc7cc9fe3d4d65adffb525a",
+        "rl_1750a939cfa28848349fc31f3ec7992c6fe366a46cc200e730976b4d8f52e6cd",
+        "rl_18ffe370b994afd8f67c187daa7a9211d4fbdfd1e5dedabe05036b0e098f837a",
+        "rl_196093e399e5a1c85761773ddf8298407973ac5fa34af27b8092834c6554cfbf",
+        "rl_1ab5a134882572951c0b0c2300c630614ab99bbd5284664854fd3bdff5e8712c",
+        "rl_1c2d426dde08eb469e75a24cf27ff01c17594319ef794f76c96a564e63832b40",
+        "rl_1c323afb7cd4ade1794d441b4d7d37ab1cfa996330e42e550eeef229b0e1a041",
+        "rl_1e8805a27cea506b9ccba2269c9e1c782d07873dc4005e25fe590ee31740a118",
+        "rl_236674bba0ef402cc558a21ed5657c092a754a9005fd8aa9cc0fedd62fefb432",
+        "rl_2414e3adbd04cb6748798b206d761d455cd086d12b39abb4408ee7e82c00058f",
+        "rl_25b7a335364b45d65c5abb381bb9b1f2002baede55b06c6fddddf112f55d2a38",
+        "rl_26c050db60db77850ed1e9e209cced055d4c344f33faa3aebffca5ea69c30180",
+        "rl_27842fccba310a795c777e6403958fb2d91344ecd72658936e3057fbf7e45c5e",
+        "rl_2b13496ce78648fa8a7d12dcb07083afabcdae1f3ebcc122a9c0028c39f95876",
+        "rl_2c3731f39e4a9274e844312c05d1ce129aee2eb8acd2efc990930a30bf79263c",
+        "rl_2ff7f9105a1ee61269f9ef41d48d8ed23fa25f3df80789d8d1795ded8cc3c090",
+        "rl_30f6640616378a80c0924aa01e77d5e32fd596e60eea63f059dce0db47057b79",
+        "rl_319a91b9cb67109044a84ee961ef7c39b46ae8cf966e8cff4f9c0947c1d19511",
+        "rl_331672a63be00531b2b6beca1dcce01861f2433ba78bfef7b14461ec89272f3c",
+        "rl_337119c8f1627a16c49bfafe2e247b2568849b714cad50de82b6d61ebf44c2d5",
+        "rl_3389af107781df6590ec8427206656d7cf5e08c4095a5b93cb1693c166830ba3",
+        "rl_343cb3049df0410338df0593468041e664cf3c9087466ab026c6dd481d2a9516",
+        "rl_363aa1ad875e3f4098ff9944decd7ebaa1d16c009f875accd34d8d65fb890268",
+        "rl_366345f940e59a8bc71fe052a68f440e1d71d0b4c77b71ee3b358abeb2771fbf",
+        "rl_376bdb51b00040e7bcf48aa00fc23217e0aa5ef286f41d9b524ec0ebe6fd0ae9",
+        "rl_37efaa4edaa21b0a11d9f191c0d0b59766ceec3bb1640720e0c20d1c1cf249f5",
+        "rl_37fde48b4c8bab2fcd14bb42be0baa096098ae568306ca08bc8af2f636d7c9d6",
+        "rl_3866cd09bafbce95856f35995940bed3e7913129d23a1d32b07fa3dcfbb643df",
+        "rl_3967c36b54385d902e0da7d5441b8c0b64d02381c60251bf4b9cf80910fa6c5a",
+        "rl_3ae5eb3af75b42d68074231a38254d7ddb685a2717351d40e727d81a6530977e",
+        "rl_3afde9ffcb55357b40d9e9e1ed4cab762fba139af75b96ae8c0be7db92a283cc",
+        "rl_3c9e830bb87618418e97ad18037835a1b843e5fa87ffd9ef7644bb7f62478a3f",
+        "rl_3db2c72b79908c847287af3543dd73e0271a420a7a9b0a488bcfa320e9a56ee2",
+        "rl_4043ac065924d83f7e97c494a3fb836743dae0651af1be97b43b9fb9b8c51226",
+        "rl_40e829716e71d44b6f8e23c9c2ba3a19471303e1034e48c7c1c076ddead7fcf9",
+        "rl_42abde77156a464b23b03c6b73bb98c044708b2ec9a10fab493b6e84c2eaedb5",
+        "rl_43326e8d00e5389e467ad60b1cb12c56191519d6fd8e169c753b6582f8c27ed5",
+        "rl_444435347f24d025912d103dd4c359d75f04876160d091ff0b6821c79d88dd05",
+        "rl_449f84a3d8cb3c51fd563f5231c3acb755a2cf3254a071f99abe32e2b4027d30",
+        "rl_4560a5e113d8a5c05bfb83e11bbe83c59c1184b1a4beb97e0ba6b908109c9758",
+        "rl_47008df6fbeaacaacf7213ff3a9f0c994bb723b607e5097009b6077708c5e898",
+        "rl_47d56ecbc615d433f458c727d29d6da745fe9debd37887f2694121022f08b9ed",
+        "rl_491f2233b802e3ca71f348eeaeca2721ea677db5d35e7c200837a4e446f3d063",
+        "rl_4956c465e4743a8f4af5be49843fbdf4bf2aed732be344d774409e3c8e53c14a",
+        "rl_49784ca1cc809b20261b97f4a4114d6475b28eb5c5f8f7404ed3154d608e1f91",
+        "rl_499d2922e2039de2c1ecd027331eb38f26fb2c0d1e0ea3f35b2f7dbb06464591",
+        "rl_49d7569ea85c20265ad714c277f51f3f1b6e77a0dfef6da48d0aeca2d364a862",
+        "rl_4b61f6f85a7b4fb59b09254161954944fef450c98ee0805c0c6a022ffefc3c8e",
+        "rl_4c94f3febb72719a318cabdc848fc474251d1ca19a1e32912eea2d5560b71e87",
+        "rl_4fde642ad1d525bdc06951bbdea063492cb4ea6d986aec0ab4610d3c8fbf7ed2",
+        "rl_5180681ca1bc0c9ccf5e04b1e5d4fd44255acad5d5bec662929d097e11545c34",
+        "rl_51b84b734b98e04bea0790215967feedaa6aacc31c52012f1f0c644ebe2e9912",
+        "rl_520efbcdbb92327b57d9076aba21c50905edf196d0dcaa537102f7c7fe53ff39",
+        "rl_535886950510ecddd79bd252b0d4ec67bc338e140e3426aa1aa21aed4c30b3e7",
+        "rl_53ce44a50ae6fc18529b36510acd9d14050d8fa045e75999b193b46a95b36e5b",
+        "rl_5412ab14ab8e0b39d7b2feaf8805cc0201b74b52abc466b63f52c5651fa79583",
+        "rl_546910629115247733c0320f1f5b485ed60a4467ec00aa25a1779fabf2e3de4d",
+        "rl_560d23dcb5ea76bf15d1916d6ce83caa6802bf444e9d854b5128f0416f269423",
+        "rl_569166c3a13a2572ad4e924e18958b4b589c08d3426f073ce762ef935c84643b",
+        "rl_579d764bf12285f1ead2eeb478f6693d21055ffef4b4f277ce53f276048e29fc",
+        "rl_584d808e853b3eadaf2c0a018301e01932c18e69c4866bf72b17fb6abfb1dd83",
+        "rl_58524b2f544a57e1b240d1bef215dadd634e40a3a61b7a02cf46722cb8b70384",
+        "rl_5ac8f7d38497c4e9c214b90cb52e0f66cd53954245a3d2f815b46170cfce1a48",
+        "rl_5c79bbb7516b71e9558eaf63e3f47fdde8934434502c15ebe03e4db9303bc29e",
+        "rl_5d2ba016d3b3679c9073d0e6a150b73d1425cbb8bc5b68db8b46a239577e6712",
+        "rl_5e5f8c994997cedfa7ba644d07d9675dc11cd9a23b004e6e2a79ad1e8a3e3412",
+        "rl_5e69cd148638f84234e275bfc4efb5871de13be51b1b0ce6a0a94f260e3c6342",
+        "rl_5fb871ee450be55e8fa9bdbb30b317220916644e451cedc17881d923f6ccd3df",
+        "rl_5fd5cdc69e2269b774867d8021f25bfe0c07374759a12132ce63f43c0b8ce21b",
+        "rl_60289c6b5e0c6f0dc01057e5e6040e831506e6d697f9fb39711b09c199fd6536",
+        "rl_602b1c9f23f94b81c7c80eba7dbd4fa4e8ef7202a18bb645057e52022fb26268",
+        "rl_614fa5ca02970312fb43fc1d00172cc5203459db651dbd8d5414ac9fc92fd917",
+        "rl_619e85c273b00fba0ca8a4573c036fb7889ad273c395ead5c8bee80a7fd52564",
+        "rl_63880ebddd3e00635774fbea1d7c0906165335100cbf333c6e4d9392492d096e",
+        "rl_63a2f61ec0f15fe34e9364d5cae2dde88921c53f6839675c045ec71df97e7bdf",
+        "rl_657281dbcfba821c23df0e410d2167a7a6c40231f576ba841d18242149f217d4",
+        "rl_675b1a0600b82e8526713081d75135965a1b58f15d6b603b32513c89764f9ca8",
+        "rl_68ae792ba9b16c0e440078d7b1ff803b17e13025a8b487894c89020e0272f594",
+        "rl_6c710eb89488453d15805def6040f329c73ce6d1c4f23a01195c06efbf089321",
+        "rl_6d4c0291889b05993e1958a04285186e08da09be18a81552e3e04fa7f4d5a8dd",
+        "rl_6e2f33f90be859dd60f770c7686c741a602e2600d9f18a4f235d00a78be9ceb8",
+        "rl_6f8466d06c41c2f9b5d787ff2223ae52d4823ff4e07cd90d7670d5f0187b3743",
+        "rl_705d13293c1591b1892d8d3d0ebae232c5677860fe7bcd46005365ec3e078391",
+        "rl_7144002d519207caab570100f1ad0e0336b8eef0d3d586216e9a9a5aa422d6e2",
+        "rl_776618ebca560aa6364fa9bbc0b0a0ccf64bdc55f451110c007830b26a04dd14",
+        "rl_7849831c039632973854fb4b6c4256f5743a32c34aebf387978fc121f78943f9",
+        "rl_78fd39f03e8b0fe5f8ded4bd2bffd5f3912bd2e9c1c73c439d7e3672aff911c8",
+        "rl_79537064713bd44169c235dcfbdbfff6815545b5126a14dbb8bc5b3f6e4a00e8",
+        "rl_7a329a20711520eb2fe5515cea24c084e830c4d06197cb65af930d1e9d63c9e6",
+        "rl_7b769816f32603a0129c8087783496eeb18f890d11f1db0db8440ca65cc080ff",
+        "rl_7ba5f7f2926754f8b9b5b7691fab338f0b9521b34eef403b8c828609e118b62c",
+        "rl_7d2cd83a8145f07d9aff42e61a95a00657ab630242ba9d4de32a21fef648701c",
+        "rl_7d81a955453bbbe995b7ee6d754e71ceb69fb493b48676d6dbe8d19e5109c0fa",
+        "rl_7ff228389372207a764fa90328c1d20f201b747279beee26423f7197e6dda998",
+        "rl_7ff570a7e1dbbcdff62591a112fa7120559be01a4182dd4cbcf906c130a6154e",
+        "rl_801029415407bbbf71ec5904f8a4974896ea1378cd9b28f7a0f85e9a3b33c583",
+        "rl_8088e5a8ec6dfb5767356821f5713d03f121407e2121495fd79c457025ccba14",
+        "rl_82b7f84179de15bc7983433bb0c626c21b65ea25f7f59dac96fe2532c4dc731b",
+        "rl_84090720b43d9074ff1fcc43d4f4331e2d2fab46a86f696030bdda3900b2a32c",
+        "rl_8467cba3fa1ca3e794a15c2d3be5513a96e89a92c7b35185842d8cc5160ffe36",
+        "rl_8565e9feed9359041fc063a6342f7f4d7c1522a0dec2fcdf4273fe4399ba0047",
+        "rl_8567ff2fcb37d4b83ba27521ceb9a8aecf894d0a31246b3129aa7e359a11a1a6",
+        "rl_85a06aac115a8e69e3358f753cc7cb82f6b1c7a49b299656943290c155d1441d",
+        "rl_8660314063c4bfcaad56593e55b26f62b3aff5c8d2a2a1a8575fd5ac42552eda",
+        "rl_87669bf644f3c161bd32fb5e89f8efa88881896b90eac0c30047187344ab1bdb",
+        "rl_87b1cf57a397b093a6c7d20f80f298a8b075949222c4ae6cc2333a887f56d5d1",
+        "rl_89ecfc2ba77f15d0fc6a0f6869bd0c77c2a26939f37f2d49f11e72657aa602dc",
+        "rl_8acbd11d40dca814f1c87112db27e25539f1268e24c65bb0d38afdce56162bb6",
+        "rl_8d0e3092cc165d9b88f049bf274984d974b71e3907d7b2e9885d4e6f745e3172",
+        "rl_8d9cc8dd43b64a85f25b56c0114a58cae343a3082a821ec90dcf5e5e19fc2371",
+        "rl_8e6e63d8791e0bebb5787ebb421b72faf6b6eb172f325c92ab1a3f26e747a36b",
+        "rl_8f430e87030ce699202354acc8b9fb5331a9701c1d6386e80d2f42348df40b33",
+        "rl_90313eebfa8229999b5374bc2d3af2fa348096e93f998a1186510185467c5284",
+        "rl_909e334ad4351ddcb6c2e947af24086dea4da2469875591cb672bd0bbb27cb5e",
+        "rl_942cd20ef34d16371257e4cfd4fe6d37f263045b2de5e849af13b20a8eb7c523",
+        "rl_951b59cef859d536a24114ca21e0b1bf219710a67db5a8fb3bf28e2fe68beb4f",
+        "rl_96ef6b92a7acb6abca119c9594f93c449b7e5cd14596e011547b98d7cda16ccc",
+        "rl_978ad5edd4cca842bc0592d09852c41929ebe1236ade63ee699fa554b0a7e302",
+        "rl_97e6bccd640ec1106e06381563ef020aaedb394a9437022e1471309a46917e34",
+        "rl_981fcd1f2a110652f44c4d0eab1821d003b257d92d718e98384fc20beb9bac8a",
+        "rl_9837a82244832df37872d5b3013b33a533093b1390e4cb753b9da0858a135ae8",
+        "rl_99226e6814d26965b2b6be423daf384e5077f9c66ae773f8c494b4c35e1732fb",
+        "rl_99aa2397a5ad9d556672efdd01bf93f0e7680d837ea6d5e4321b3974a4fbd05d",
+        "rl_9ac359557014a62edaf05473eb0558952fed1855bdf74e6d8c4d61e3e6e0c86d",
+        "rl_9e6c8765da7e5ee00d6bd078f9bf0bbc6f1633bf8a1b4c764bafa9c6c96656fd",
+        "rl_9f66e3af2c05020ff31fc5c81e675947622fd84702b0cb3e475d7ce7cbb6d3dd",
+        "rl_9fe63b01839568972cd787e530ab9597f9ce25101ee3698adc9e0a2e5409b003",
+        "rl_a13d77fe5a3c5b0adb1cb96d74b83e8a43e28ea7031607bcb10b8133e0162fd3",
+        "rl_a3205e2fb87e73a0af015b250547ec611b1a3c8ef5f2cd416e1ae2371f92f6d3",
+        "rl_a37bb083ad59284480c9d119d25e9cd4f0998bc756b438e080cd0c297f2d86a2",
+        "rl_a4168976c2da621a516a694dba0f05ce1b1ed43bf38a1513e8b5be6972d9c33c",
+        "rl_a4dac0562ef330782e4a343ada8d2ddb50aeb0c787937f7ef9a5614232ed2ed4",
+        "rl_a52296e4b6d2243c89fdbcd6ca7716a4fc7438185d387e4caead83758a4f28c7",
+        "rl_a6d4497481fd321e31db16a7f38dc7905dab22a1501349fbfc71d06c5bb0ff26",
+        "rl_a6ffdffedeceff27dc087749917c4e1b3fbd041336b0744687bec7075ab68534",
+        "rl_a840bebdd44f39a4263f3dfed083b83b117c59ce63a42696cb14ab47e702845d",
+        "rl_a8594b931645ee3c0134394c0591bd19e9fcb4faf10a1d3faa51c62c69a78f4f",
+        "rl_a870b82b087a7f96a39c6c311baeb9fa5029a4f2c2dd471eb0fcee09ec9414c0",
+        "rl_a9011180d92ed1df36e87be451e4a00ea102e01fce27658f06a937c771b061cc",
+        "rl_a9bc75096fb84b151d3c4a6f9ea9b55a3385908a491d66522c056e35f734b4ed",
+        "rl_aac61c7c6a4f44c2cbb4df263b725bd9b6649e0ce5f02ee632d6cb84bfa78ebc",
+        "rl_aaf6d3c8846b4f85177a2f922c25869c0a4d0215d876d0e983fc63d05119191e",
+        "rl_ace395a02dc782b70e5063c094085c8ff3b293d5906705b3d72b1cf17e10f10a",
+        "rl_ad15af7a9e1676988dbaf384be4bd21445b4403d979153caeeaa53724f42a71f",
+        "rl_ae5c2b6100272a78533d91b161a0226521da9872f10ed98fea085d67ebbc9059",
+        "rl_af6a60fd120873ef02bd0b87d0c2d984d77afe0d77315adfaf6a42b7f14b3149",
+        "rl_b11d67b29449c1ca1a8bf9d4eab8f6a6342f766388e185d20917db893bcc57fa",
+        "rl_b2802699620b7a20bc7444234464a01745de709ecfaac6737552ea4c2c77a1ef",
+        "rl_b4cfd13d4e1bcd30cc0daa5fa7a6186e117e80776b2cde9a536b6a9eb88830fd",
+        "rl_b51cefafcee9f23ce2a9fc9fdd83032fb78af51b2ba23cfc03fed7976ab7353e",
+        "rl_b734b60731aaddef5a12ff38dc9a44290ba3a6e3e504ee5e1c15ebc94fe93b0a",
+        "rl_b932b7a249e35d9d9d64c07191d7ed0e63092f81cf9731e4bd21401952722de6",
+        "rl_b96a9960a68e87d5b4d9d909580ee520cb3b397b7aa646c490259a4c8e4e0abe",
+        "rl_b97c234f52cddf74781402b93c5d868c003884d76c78fdd5ee7c8663b178c73b",
+        "rl_ba55be3a4c9ffe6b7f1728c978d70c3d6bbcd5135897f8850f1159b5b0aedfbe",
+        "rl_ba86c9f28c5e577b83dddaa4db4df90d1846411b64e253f23fd280c37fe42d62",
+        "rl_bb08275d8b9550c43fa4f77a0d4e43facf5077bd75e60ed30400e636a384da8d",
+        "rl_bb3547bc8e9efe00ffa473f81130aa09f8b9863b9daf427cf05ed9decc698c6f",
+        "rl_bd1c2fe32951e485ca9afa2701029c1bcbb3ae69ae2578d016d61a5dc946c7ca",
+        "rl_bdaedd4e8effb1793e6b23851067aed9737627e2b605b7e721ef44f756e12226",
+        "rl_c4e9cd049ad04644da9c21fce537af797a2a99bdc461df8e8a8573fcb304266b",
+        "rl_c60ade69cfbdaf4638c59e88c7fd1b1ec1e819c3f15d477b24f1c308e0af45e0",
+        "rl_c875d61ae2ff7082813a6d55fe66feeeb7f2b1994459339caedf989bac86e9ad",
+        "rl_cb3843ceb2dde7f7f7b93caa80da221ddef14f3b2f3138be5d22799654573139",
+        "rl_cb4c9996bbe3513a0cec91f98d20bc847050c5d63d155adbdd4e35f507e31ce9",
+        "rl_cc26ed24889da6eeaf57e999c2c7d5fa599eee644dc143391bf98ea46b06b75b",
+        "rl_cdd221e5ce6d434c47719b92efa03a1e346d42626dfaea713360c6d138bde0dd",
+        "rl_cdfba9c4a5b76661089edb87950cb3024a6c4fa2dff8cf81ad9a3b8741b8d4ab",
+        "rl_ce250c0bf82d92782f1a43982a56888912042677bd614260ecf9dcc7ea60a5a6",
+        "rl_ce349a63091665a672fb3b50492d23d5dae9a0496181a7291f27dfe61a158baf",
+        "rl_ce568d6a97da34c06ffed6bcbce9db655fcd7e9aab146ab3f6f1f8ee9c83712d",
+        "rl_ce8caf201bff9c23cb4330651d043b1521cd4a87b4c5d5bb1f281a0c02a0cd00",
+        "rl_cf4ce7c01e053a6526852c73523b8b5a6738bb3634e3892c202e4bc5d6654cd5",
+        "rl_d1a9cb38a9f2ea83e062d5f7b3a88ff587a655c0c75151dfa5406a6d88070b8e",
+        "rl_d1f7142b2214d671c07815e3a25ff6b4221106538d5883afb454ce60b0e9d707",
+        "rl_d23db9b27d6318995cc6a8feb10f4077037149f18fa8f517359caf0b633c27ec",
+        "rl_d352a52951989fa5faa354312067a72bda4a9bbf33ac56a55c45ef194278b76b",
+        "rl_d3d0e75cedb01b8d67e9a72223aafdb92982f1b49ab7063ec3cd95e2553f6f4d",
+        "rl_d4029bce0baa2a647416ccd14d4ae720d333a5eb3bbd5308f87ba8856e88d52b",
+        "rl_d913bd6e24f693aad6ecbe7e4ff18ccb2883519d68a23bfdca1ec90eed792f31",
+        "rl_d97358b50ab74440ff1b93572f167122ae87c56999be12ba7f2f14e7dc550282",
+        "rl_d97435a40a15500950a433901d7f36dd2a00a5b79f26c496dd04abfdfbede99d",
+        "rl_d9c37282cd0a0589f82445911159c14a758f86e358019f9813d9f467afe220fb",
+        "rl_d9c3bd503f6156c2c9bef0c6dd5e1d932dc52cda5e32abe60e25d12ea731b2f7",
+        "rl_d9cbbdc9a679faac2669db9aab5f8743bb796ddfbc2cdd98e436a3db082a1e13",
+        "rl_dcea948056400447cd94fcd97d0c3749c2f7b835e5e1a903eca475472d99fdf5",
+        "rl_dd4613a935a3d29b47ef44afe69245be43213f6c24430e63aced32f5903c006e",
+        "rl_de85498b70aab67b3d0f3ea98c6be7ef9bc97e031ea17feadf5829fc049a352d",
+        "rl_de96c641801d248dccd5582dd8c6b8dad4d1d54ecb9044bd47ba330de2841041",
+        "rl_dea6d0afe05a307dd582eab63b7031aeb228b60a0017bfa71ae567a7ea0adc82",
+        "rl_dea90526416c31f906b4ce5b705b967e432bc06a6b26152a18d395642e0bb690",
+        "rl_df6d30c582d24e39f11f985198085b410ed1a0c737fd5e9fea07e36bf88eaf4e",
+        "rl_e1b3f6d1d89c5910c267b5bb78a1ac1055a331bc2f742a2ae5bfc7aee8252477",
+        "rl_e1bec2f30b180e18f906bbffc9a6f043bdcb1ae4c0b07a14da9deb84619101ef",
+        "rl_e1ca5f4edb4644826418e4c4ac822e092fbc7bbe60ea467f61b31e63c74b6ed6",
+        "rl_e2584da5b7fc2585d8f6f1c169962eaded6b1637df98e8bfb20c91e4a8179018",
+        "rl_e38d721051fd85ad08727451068cbefc77bcd011ca970c11d94eb06abd4b40f7",
+        "rl_e6e2e917f17a847c2e4056d09cef925387a8fd184365e16edaa2d45fbde9ca01",
+        "rl_e6fdf02966773f736ca9f8f11ecadc5850aa2852bf144defa4ac2c39dac8aa9a",
+        "rl_e9017838ecc3d61d7da5cc107fca0bdc294c3c1eef331bff670f0df0ce8420ac",
+        "rl_e97860249e2a7bd204da2561afba6946312586ea8ee16ab40d92d1510d484126",
+        "rl_e995ef46ecf714da20bbaf5a34c05fe159485f1fdb975a4591ef5a82be38b4c9",
+        "rl_e999338eba71d0912d1072ae61326bd431002cf220e341e2033ffaa4ceace426",
+        "rl_e99d0fcf1abd8d5afa2ccf3257a1235cb0cb6c5ccae47bd37a4e37193125d067",
+        "rl_e9ba2f1e73c852869ccb987e5c4c7c87c24692343a4081bd242b7f9145c2cb16",
+        "rl_eae34f616d34ffffc5805f886380fc0b5ac423360da04084c7f69bd3491a7748",
+        "rl_eb0d3520f5b048fc4a2cf0509e192596e7b6d2a3459cec8f6035d99dfb30777d",
+        "rl_ec39df18393d3de1ef58827fae55f9808775db9dd0ab9d9fcad118304f9c739f",
+        "rl_ed021063c83d465493848a8fcc2e2979eef111dbf5d997427c10205b9feae98b",
+        "rl_eda00a5018e2c6a0792f42d40c66198ff88a69b5d78f965d210d1b1f9abd0384",
+        "rl_eeac540b4117ac434cad3fcd2c447f9bf681af61ccab7a55cf390524da015271",
+        "rl_f0d6f7618daa49d42170e7aaa3c157813abc65161555e88553855030933d8c3b",
+        "rl_f12b4f05db4f0d48b71c1211b4b048dc46a75ee827198cc5fe20174dbca650db",
+        "rl_f2689c25aa91f75479cde6f03b5245561c8e50b911f010a9064483ca9c64e6b7",
+        "rl_f3168ad4c4011442a4e15edbe8296cb3cf045f16aed7fb1e51df20638bb3740a",
+        "rl_f31ba1843f4a219443e394d75c856b307f033a82a6f0fa26c0a7cb897fd69408",
+        "rl_f3c5ddf9cbb570b2dca528dbb3db1a770fa306986b81d1e0d4668b85c1cfe443",
+        "rl_f4cfbdc4885241ec20fa5fdaa8e08ccc67a6b31bf67fd7a7b721e0df0e8bda5c",
+        "rl_f535e7373816d8035b62a468f58a8c435191a2b7eb97f3046071a760c21c9b00",
+        "rl_f5cb826b75b4c02d85e215bd4ec2406ccda04919b9c2273e6339597dc28337c9",
+        "rl_f79819ea46a4c0e898b23c8a21caa0ff9b28d927cbcf6dead536dc75d7eb2259",
+        "rl_f98c3e37d9ef669c0f8c4b3ef89e6041d3f1aad623bd6f63d915a3f221979149",
+        "rl_f9a6c9789f76ca47f1a59c8f320f252fed831ea0cdd8d0b0b5398dd3d9c7cc06",
+        "rl_fb2677226cafa1760362eb1efc1534f2be621a35ad5861318f11b1da86d50559",
+        "rl_fb7eeb10266c7cd79ecabd857b7626b1be87b16541705c87a6f28936eb4959b1",
+        "rl_fc7b5e7c214c6b48b47c75d346b50fa27979e85a18ab93efb16bdfecf6c0e576",
+        "rl_fd42ea1f55be20b6ab1241e16137cdcc764f864aefeedbc6f3fec3565bc29ff5",
+        "rl_fe5b7c2ffb997c8bcdb6c5749ab9f4a45b050646b99a866dccf010017ae2971b",
+        "rl_ff331327c4db02bcc527edae8b57735e8a70209a5162bc40d108afdd55dc6785",
+        "sft_089b054c0df44b35b84f0dc02dd4ed6258f0ae69459e5d256bbacf3957c07e7f",
+        "sft_092f1f4540f5d3eb74088b9867c85f33545f805cd0296bf2d425ca9cb3b38cf5",
+        "sft_0a1915ba5aae69aea1dd080ba84ed4ca17fe859f68a04029ced7fb77101a7c70",
+        "sft_15a3a897e28e036519021edbda4dd2232e0eee12b08691cfeba618307fdb055f",
+        "sft_1a0365f55500ee78f00a588bf136a90c05dcd8bea30405674b3051c4056b7c9c",
+        "sft_2c635d7cafd4a5026158c0f690b06150d3fd464ba9721e74d4d5f35237596e81",
+        "sft_2cab8421f6c0e4a122dafc800d1cae1c05ca6f3a6bef40f2e7b2b18589517fde",
+        "sft_32b891f01ac3c95d63df668419e975df5e6bfe33e57c86076a14efcea4030792",
+        "sft_4daf440be3bddfa719cfb7d88dfd4267876ecd1c1c290de13377bc01e9c0dea4",
+        "sft_4eeacaffbaa1f46a02cb9aa10a12e8f146d7d7520a07ee8d860a37f8a49c4f10",
+        "sft_5609eef7e9ec887ea0a7e2801817cf7f2db2dd74644efcb7b5344919af36c7c3",
+        "sft_731078e1a3d37ba04ca59021a0119b02680049a2389277fbe5c3bec307a4eb77",
+        "sft_7327c947ef3ea6679edd59c72755826f62ff20224ffdfc0b4434f81f441670e3",
+        "sft_78017820d345da6300c606dd4f481946630d6106f45e90346df657e7ca296479",
+        "sft_84c08ed9937bff531c346043f96cfa89f72b116ec59df8ca2bc84877c7422a79",
+        "sft_8bae600a5448e72b90ee3f1a033f967d4128216a178c30a3169063cd79f086cb",
+        "sft_94d9ea067551f08501cfbf6ffe083753da9b2acc12164ba6e9c2b9302bcd907b",
+        "sft_9cd7cedb7da8687cfb7683f979a05fe20bcd46dba1b784ee5700e63f51104162",
+        "sft_a9c4dce363f7335f1559d9e5a98eae77daa16de50038a062e986d749f3ca4d2d",
+        "sft_af27b78c1f22d953ee52431401e46b997a769a3ac93c8c677f0872c6f8e956bf",
+        "sft_b615c9d2e5b9eeb1681b6af5dc1e641cde13a3cae8284a1c3c2a980e23846fb2",
+        "sft_bea507cd1909ba6c61cd0f36a0387b7c9bc09a130ac7cc8d7904fae445e4ce9b",
+        "sft_c498de02c432739cd4fdd401f29945e0e02612c394741f338c0cd0848a958727",
+        "sft_ca7fee3f5d05fc3c7f062b15c040da45aa461a3df6a2e62219ed5e6552d081ec",
+        "sft_cdf1816b185775f4d9ccddf05d46679462638639afeea442ca41f0272becaaa0",
+        "sft_d238efac77a8fdf5c3575a5ff5c5a807a3a10f95e28c015cd3115e723439fb61",
+        "sft_d3a3791848960467bd8fe75bfa9b24b39097035a851921803e2cd53b57b7ac4e",
+        "sft_d524f80cb727ea4e90b29b7a92aae21107865115ea0d09052b081a676216361d",
+        "sft_dcbfe297af368510fb789f66c95a5fe599081f4ceb6314adf0fddbb6eb0bfddc",
+        "sft_e7bbd9bc0494632d7c23b04fefaa970a83a3b72e667623d0504e72a33127d487",
+        "sft_f62abff67f37e2b35cbefb489787726f1efcfaacc1a51a0a195e5e4a120e5e75",
+        "sft_f9296036bb32ad6aaf7a419115f4ea2adc249744b2d7cd9ac96fa2fda36d13cb"
+      ],
+      "metric_rate_deltas": {
+        "exact_match_accuracy": 0.8517441860465116,
+        "format_validity": 0.5116279069767442,
+        "json_validity": 0.375,
+        "no_tool_accuracy": 0.6730769230769231,
+        "parameter_name_accuracy": 0.7705479452054794,
+        "parameter_value_accuracy": 0.8835616438356164,
+        "parameter_value_accuracy_given_names": 0.4925373134328358,
+        "protocol_validity": 0.25,
+        "schema_validity": 0.5116279069767442,
+        "tool_name_accuracy": 0.6404109589041096
+      },
+      "regressed": []
+    },
+    "dataset_file_sha256": "1ea747d6d9a016da2428afe6f7551d74d71f805c18de4d35517d269c8c10d478",
+    "dataset_versions": [
+      "phase2-v1-13c266c7a084"
+    ],
+    "errors": {
+      "extra_argument": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "extra_tool": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "format_error": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "invalid_ground_truth": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "missing_argument": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "missing_tool": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "truncated_output": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "unnecessary_tool": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "wrong_argument_type": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "wrong_argument_value": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "wrong_call_order": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "wrong_tool": {
+        "count": 0,
+        "rate": 0.0
+      }
+    },
+    "free_text_semantic_accuracy": null,
+    "generation_config": {
+      "max_new_tokens": 1024,
+      "n": 1,
+      "seed": 31415,
+      "stop": null,
+      "temperature": 0.0,
+      "top_p": 1.0
+    },
+    "generation_errors": 0,
+    "generation_evaluator_code_sha256": "55b228aa6c91aa26a8360a0dbf2ac426b3499a5c8c623d55b1e8c7224caabe9e",
+    "invalid_ground_truth": 0,
+    "is_mock": true,
+    "legacy_api_bank_soft_match": {
+      "denominator": 0,
+      "numerator": 0,
+      "rate": null
+    },
+    "metrics": {
+      "exact_match_accuracy": {
+        "denominator": 344,
+        "numerator": 344,
+        "rate": 1.0
+      },
+      "format_validity": {
+        "denominator": 344,
+        "numerator": 344,
+        "rate": 1.0
+      },
+      "json_validity": {
+        "denominator": 344,
+        "numerator": 344,
+        "rate": 1.0
+      },
+      "no_tool_accuracy": {
+        "denominator": 52,
+        "numerator": 52,
+        "rate": 1.0
+      },
+      "parameter_name_accuracy": {
+        "denominator": 292,
+        "numerator": 292,
+        "rate": 1.0
+      },
+      "parameter_value_accuracy": {
+        "denominator": 292,
+        "numerator": 292,
+        "rate": 1.0
+      },
+      "parameter_value_accuracy_given_names": {
+        "denominator": 292,
+        "numerator": 292,
+        "rate": 1.0
+      },
+      "protocol_validity": {
+        "denominator": 344,
+        "numerator": 344,
+        "rate": 1.0
+      },
+      "schema_validity": {
+        "denominator": 344,
+        "numerator": 344,
+        "rate": 1.0
+      },
+      "tool_name_accuracy": {
+        "denominator": 292,
+        "numerator": 292,
+        "rate": 1.0
+      }
+    },
+    "missing_predictions": 0,
+    "model": {
+      "id": "mock-oracle",
+      "revision": "synthetic-v1"
+    },
+    "prediction_schema_version": "toolrl.prediction.v1",
+    "predictions_sha256": "0c431ea3778452d066aee26b2bbb26d4031eb4f06e65d79b8d3f118e6fafd8b1",
+    "run_id": "phase2-mock-validation-oracle",
+    "samples": 344,
+    "scorer_code_sha256": "55b228aa6c91aa26a8360a0dbf2ac426b3499a5c8c623d55b1e8c7224caabe9e",
+    "slices": {
+      "calls:0": {
+        "errors": {
+          "extra_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "extra_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "format_error": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "invalid_ground_truth": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "truncated_output": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "unnecessary_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_type": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_value": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_call_order": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_tool": {
+            "count": 0,
+            "rate": 0.0
+          }
+        },
+        "invalid_ground_truth": 0,
+        "legacy_api_bank_soft_match": {
+          "denominator": 0,
+          "numerator": 0,
+          "rate": null
+        },
+        "metrics": {
+          "exact_match_accuracy": {
+            "denominator": 52,
+            "numerator": 52,
+            "rate": 1.0
+          },
+          "format_validity": {
+            "denominator": 52,
+            "numerator": 52,
+            "rate": 1.0
+          },
+          "json_validity": {
+            "denominator": 52,
+            "numerator": 52,
+            "rate": 1.0
+          },
+          "no_tool_accuracy": {
+            "denominator": 52,
+            "numerator": 52,
+            "rate": 1.0
+          },
+          "parameter_name_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_value_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_value_accuracy_given_names": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "protocol_validity": {
+            "denominator": 52,
+            "numerator": 52,
+            "rate": 1.0
+          },
+          "schema_validity": {
+            "denominator": 52,
+            "numerator": 52,
+            "rate": 1.0
+          },
+          "tool_name_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          }
+        },
+        "samples": 52
+      },
+      "calls:1": {
+        "errors": {
+          "extra_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "extra_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "format_error": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "invalid_ground_truth": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "truncated_output": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "unnecessary_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_type": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_value": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_call_order": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_tool": {
+            "count": 0,
+            "rate": 0.0
+          }
+        },
+        "invalid_ground_truth": 0,
+        "legacy_api_bank_soft_match": {
+          "denominator": 0,
+          "numerator": 0,
+          "rate": null
+        },
+        "metrics": {
+          "exact_match_accuracy": {
+            "denominator": 160,
+            "numerator": 160,
+            "rate": 1.0
+          },
+          "format_validity": {
+            "denominator": 160,
+            "numerator": 160,
+            "rate": 1.0
+          },
+          "json_validity": {
+            "denominator": 160,
+            "numerator": 160,
+            "rate": 1.0
+          },
+          "no_tool_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_name_accuracy": {
+            "denominator": 160,
+            "numerator": 160,
+            "rate": 1.0
+          },
+          "parameter_value_accuracy": {
+            "denominator": 160,
+            "numerator": 160,
+            "rate": 1.0
+          },
+          "parameter_value_accuracy_given_names": {
+            "denominator": 160,
+            "numerator": 160,
+            "rate": 1.0
+          },
+          "protocol_validity": {
+            "denominator": 160,
+            "numerator": 160,
+            "rate": 1.0
+          },
+          "schema_validity": {
+            "denominator": 160,
+            "numerator": 160,
+            "rate": 1.0
+          },
+          "tool_name_accuracy": {
+            "denominator": 160,
+            "numerator": 160,
+            "rate": 1.0
+          }
+        },
+        "samples": 160
+      },
+      "calls:2-4": {
+        "errors": {
+          "extra_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "extra_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "format_error": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "invalid_ground_truth": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "truncated_output": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "unnecessary_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_type": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_value": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_call_order": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_tool": {
+            "count": 0,
+            "rate": 0.0
+          }
+        },
+        "invalid_ground_truth": 0,
+        "legacy_api_bank_soft_match": {
+          "denominator": 0,
+          "numerator": 0,
+          "rate": null
+        },
+        "metrics": {
+          "exact_match_accuracy": {
+            "denominator": 130,
+            "numerator": 130,
+            "rate": 1.0
+          },
+          "format_validity": {
+            "denominator": 130,
+            "numerator": 130,
+            "rate": 1.0
+          },
+          "json_validity": {
+            "denominator": 130,
+            "numerator": 130,
+            "rate": 1.0
+          },
+          "no_tool_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_name_accuracy": {
+            "denominator": 130,
+            "numerator": 130,
+            "rate": 1.0
+          },
+          "parameter_value_accuracy": {
+            "denominator": 130,
+            "numerator": 130,
+            "rate": 1.0
+          },
+          "parameter_value_accuracy_given_names": {
+            "denominator": 130,
+            "numerator": 130,
+            "rate": 1.0
+          },
+          "protocol_validity": {
+            "denominator": 130,
+            "numerator": 130,
+            "rate": 1.0
+          },
+          "schema_validity": {
+            "denominator": 130,
+            "numerator": 130,
+            "rate": 1.0
+          },
+          "tool_name_accuracy": {
+            "denominator": 130,
+            "numerator": 130,
+            "rate": 1.0
+          }
+        },
+        "samples": 130
+      },
+      "calls:5+": {
+        "errors": {
+          "extra_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "extra_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "format_error": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "invalid_ground_truth": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "truncated_output": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "unnecessary_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_type": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_value": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_call_order": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_tool": {
+            "count": 0,
+            "rate": 0.0
+          }
+        },
+        "invalid_ground_truth": 0,
+        "legacy_api_bank_soft_match": {
+          "denominator": 0,
+          "numerator": 0,
+          "rate": null
+        },
+        "metrics": {
+          "exact_match_accuracy": {
+            "denominator": 2,
+            "numerator": 2,
+            "rate": 1.0
+          },
+          "format_validity": {
+            "denominator": 2,
+            "numerator": 2,
+            "rate": 1.0
+          },
+          "json_validity": {
+            "denominator": 2,
+            "numerator": 2,
+            "rate": 1.0
+          },
+          "no_tool_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_name_accuracy": {
+            "denominator": 2,
+            "numerator": 2,
+            "rate": 1.0
+          },
+          "parameter_value_accuracy": {
+            "denominator": 2,
+            "numerator": 2,
+            "rate": 1.0
+          },
+          "parameter_value_accuracy_given_names": {
+            "denominator": 2,
+            "numerator": 2,
+            "rate": 1.0
+          },
+          "protocol_validity": {
+            "denominator": 2,
+            "numerator": 2,
+            "rate": 1.0
+          },
+          "schema_validity": {
+            "denominator": 2,
+            "numerator": 2,
+            "rate": 1.0
+          },
+          "tool_name_accuracy": {
+            "denominator": 2,
+            "numerator": 2,
+            "rate": 1.0
+          }
+        },
+        "samples": 2
+      },
+      "parameters:0": {
+        "errors": {
+          "extra_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "extra_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "format_error": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "invalid_ground_truth": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "truncated_output": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "unnecessary_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_type": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_value": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_call_order": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_tool": {
+            "count": 0,
+            "rate": 0.0
+          }
+        },
+        "invalid_ground_truth": 0,
+        "legacy_api_bank_soft_match": {
+          "denominator": 0,
+          "numerator": 0,
+          "rate": null
+        },
+        "metrics": {
+          "exact_match_accuracy": {
+            "denominator": 59,
+            "numerator": 59,
+            "rate": 1.0
+          },
+          "format_validity": {
+            "denominator": 59,
+            "numerator": 59,
+            "rate": 1.0
+          },
+          "json_validity": {
+            "denominator": 59,
+            "numerator": 59,
+            "rate": 1.0
+          },
+          "no_tool_accuracy": {
+            "denominator": 52,
+            "numerator": 52,
+            "rate": 1.0
+          },
+          "parameter_name_accuracy": {
+            "denominator": 7,
+            "numerator": 7,
+            "rate": 1.0
+          },
+          "parameter_value_accuracy": {
+            "denominator": 7,
+            "numerator": 7,
+            "rate": 1.0
+          },
+          "parameter_value_accuracy_given_names": {
+            "denominator": 7,
+            "numerator": 7,
+            "rate": 1.0
+          },
+          "protocol_validity": {
+            "denominator": 59,
+            "numerator": 59,
+            "rate": 1.0
+          },
+          "schema_validity": {
+            "denominator": 59,
+            "numerator": 59,
+            "rate": 1.0
+          },
+          "tool_name_accuracy": {
+            "denominator": 7,
+            "numerator": 7,
+            "rate": 1.0
+          }
+        },
+        "samples": 59
+      },
+      "parameters:1-2": {
+        "errors": {
+          "extra_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "extra_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "format_error": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "invalid_ground_truth": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "truncated_output": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "unnecessary_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_type": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_value": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_call_order": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_tool": {
+            "count": 0,
+            "rate": 0.0
+          }
+        },
+        "invalid_ground_truth": 0,
+        "legacy_api_bank_soft_match": {
+          "denominator": 0,
+          "numerator": 0,
+          "rate": null
+        },
+        "metrics": {
+          "exact_match_accuracy": {
+            "denominator": 168,
+            "numerator": 168,
+            "rate": 1.0
+          },
+          "format_validity": {
+            "denominator": 168,
+            "numerator": 168,
+            "rate": 1.0
+          },
+          "json_validity": {
+            "denominator": 168,
+            "numerator": 168,
+            "rate": 1.0
+          },
+          "no_tool_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_name_accuracy": {
+            "denominator": 168,
+            "numerator": 168,
+            "rate": 1.0
+          },
+          "parameter_value_accuracy": {
+            "denominator": 168,
+            "numerator": 168,
+            "rate": 1.0
+          },
+          "parameter_value_accuracy_given_names": {
+            "denominator": 168,
+            "numerator": 168,
+            "rate": 1.0
+          },
+          "protocol_validity": {
+            "denominator": 168,
+            "numerator": 168,
+            "rate": 1.0
+          },
+          "schema_validity": {
+            "denominator": 168,
+            "numerator": 168,
+            "rate": 1.0
+          },
+          "tool_name_accuracy": {
+            "denominator": 168,
+            "numerator": 168,
+            "rate": 1.0
+          }
+        },
+        "samples": 168
+      },
+      "parameters:3-5": {
+        "errors": {
+          "extra_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "extra_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "format_error": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "invalid_ground_truth": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "truncated_output": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "unnecessary_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_type": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_value": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_call_order": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_tool": {
+            "count": 0,
+            "rate": 0.0
+          }
+        },
+        "invalid_ground_truth": 0,
+        "legacy_api_bank_soft_match": {
+          "denominator": 0,
+          "numerator": 0,
+          "rate": null
+        },
+        "metrics": {
+          "exact_match_accuracy": {
+            "denominator": 97,
+            "numerator": 97,
+            "rate": 1.0
+          },
+          "format_validity": {
+            "denominator": 97,
+            "numerator": 97,
+            "rate": 1.0
+          },
+          "json_validity": {
+            "denominator": 97,
+            "numerator": 97,
+            "rate": 1.0
+          },
+          "no_tool_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_name_accuracy": {
+            "denominator": 97,
+            "numerator": 97,
+            "rate": 1.0
+          },
+          "parameter_value_accuracy": {
+            "denominator": 97,
+            "numerator": 97,
+            "rate": 1.0
+          },
+          "parameter_value_accuracy_given_names": {
+            "denominator": 97,
+            "numerator": 97,
+            "rate": 1.0
+          },
+          "protocol_validity": {
+            "denominator": 97,
+            "numerator": 97,
+            "rate": 1.0
+          },
+          "schema_validity": {
+            "denominator": 97,
+            "numerator": 97,
+            "rate": 1.0
+          },
+          "tool_name_accuracy": {
+            "denominator": 97,
+            "numerator": 97,
+            "rate": 1.0
+          }
+        },
+        "samples": 97
+      },
+      "parameters:6+": {
+        "errors": {
+          "extra_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "extra_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "format_error": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "invalid_ground_truth": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "truncated_output": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "unnecessary_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_type": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_value": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_call_order": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_tool": {
+            "count": 0,
+            "rate": 0.0
+          }
+        },
+        "invalid_ground_truth": 0,
+        "legacy_api_bank_soft_match": {
+          "denominator": 0,
+          "numerator": 0,
+          "rate": null
+        },
+        "metrics": {
+          "exact_match_accuracy": {
+            "denominator": 20,
+            "numerator": 20,
+            "rate": 1.0
+          },
+          "format_validity": {
+            "denominator": 20,
+            "numerator": 20,
+            "rate": 1.0
+          },
+          "json_validity": {
+            "denominator": 20,
+            "numerator": 20,
+            "rate": 1.0
+          },
+          "no_tool_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_name_accuracy": {
+            "denominator": 20,
+            "numerator": 20,
+            "rate": 1.0
+          },
+          "parameter_value_accuracy": {
+            "denominator": 20,
+            "numerator": 20,
+            "rate": 1.0
+          },
+          "parameter_value_accuracy_given_names": {
+            "denominator": 20,
+            "numerator": 20,
+            "rate": 1.0
+          },
+          "protocol_validity": {
+            "denominator": 20,
+            "numerator": 20,
+            "rate": 1.0
+          },
+          "schema_validity": {
+            "denominator": 20,
+            "numerator": 20,
+            "rate": 1.0
+          },
+          "tool_name_accuracy": {
+            "denominator": 20,
+            "numerator": 20,
+            "rate": 1.0
+          }
+        },
+        "samples": 20
+      },
+      "task:multi": {
+        "errors": {
+          "extra_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "extra_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "format_error": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "invalid_ground_truth": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "truncated_output": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "unnecessary_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_type": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_value": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_call_order": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_tool": {
+            "count": 0,
+            "rate": 0.0
+          }
+        },
+        "invalid_ground_truth": 0,
+        "legacy_api_bank_soft_match": {
+          "denominator": 0,
+          "numerator": 0,
+          "rate": null
+        },
+        "metrics": {
+          "exact_match_accuracy": {
+            "denominator": 132,
+            "numerator": 132,
+            "rate": 1.0
+          },
+          "format_validity": {
+            "denominator": 132,
+            "numerator": 132,
+            "rate": 1.0
+          },
+          "json_validity": {
+            "denominator": 132,
+            "numerator": 132,
+            "rate": 1.0
+          },
+          "no_tool_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_name_accuracy": {
+            "denominator": 132,
+            "numerator": 132,
+            "rate": 1.0
+          },
+          "parameter_value_accuracy": {
+            "denominator": 132,
+            "numerator": 132,
+            "rate": 1.0
+          },
+          "parameter_value_accuracy_given_names": {
+            "denominator": 132,
+            "numerator": 132,
+            "rate": 1.0
+          },
+          "protocol_validity": {
+            "denominator": 132,
+            "numerator": 132,
+            "rate": 1.0
+          },
+          "schema_validity": {
+            "denominator": 132,
+            "numerator": 132,
+            "rate": 1.0
+          },
+          "tool_name_accuracy": {
+            "denominator": 132,
+            "numerator": 132,
+            "rate": 1.0
+          }
+        },
+        "samples": 132
+      },
+      "task:no_tool": {
+        "errors": {
+          "extra_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "extra_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "format_error": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "invalid_ground_truth": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "truncated_output": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "unnecessary_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_type": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_value": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_call_order": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_tool": {
+            "count": 0,
+            "rate": 0.0
+          }
+        },
+        "invalid_ground_truth": 0,
+        "legacy_api_bank_soft_match": {
+          "denominator": 0,
+          "numerator": 0,
+          "rate": null
+        },
+        "metrics": {
+          "exact_match_accuracy": {
+            "denominator": 52,
+            "numerator": 52,
+            "rate": 1.0
+          },
+          "format_validity": {
+            "denominator": 52,
+            "numerator": 52,
+            "rate": 1.0
+          },
+          "json_validity": {
+            "denominator": 52,
+            "numerator": 52,
+            "rate": 1.0
+          },
+          "no_tool_accuracy": {
+            "denominator": 52,
+            "numerator": 52,
+            "rate": 1.0
+          },
+          "parameter_name_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_value_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_value_accuracy_given_names": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "protocol_validity": {
+            "denominator": 52,
+            "numerator": 52,
+            "rate": 1.0
+          },
+          "schema_validity": {
+            "denominator": 52,
+            "numerator": 52,
+            "rate": 1.0
+          },
+          "tool_name_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          }
+        },
+        "samples": 52
+      },
+      "task:single": {
+        "errors": {
+          "extra_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "extra_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "format_error": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "invalid_ground_truth": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_argument": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "missing_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "truncated_output": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "unnecessary_tool": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_type": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_argument_value": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_call_order": {
+            "count": 0,
+            "rate": 0.0
+          },
+          "wrong_tool": {
+            "count": 0,
+            "rate": 0.0
+          }
+        },
+        "invalid_ground_truth": 0,
+        "legacy_api_bank_soft_match": {
+          "denominator": 0,
+          "numerator": 0,
+          "rate": null
+        },
+        "metrics": {
+          "exact_match_accuracy": {
+            "denominator": 160,
+            "numerator": 160,
+            "rate": 1.0
+          },
+          "format_validity": {
+            "denominator": 160,
+            "numerator": 160,
+            "rate": 1.0
+          },
+          "json_validity": {
+            "denominator": 160,
+            "numerator": 160,
+            "rate": 1.0
+          },
+          "no_tool_accuracy": {
+            "denominator": 0,
+            "numerator": 0,
+            "rate": null
+          },
+          "parameter_name_accuracy": {
+            "denominator": 160,
+            "numerator": 160,
+            "rate": 1.0
+          },
+          "parameter_value_accuracy": {
+            "denominator": 160,
+            "numerator": 160,
+            "rate": 1.0
+          },
+          "parameter_value_accuracy_given_names": {
+            "denominator": 160,
+            "numerator": 160,
+            "rate": 1.0
+          },
+          "protocol_validity": {
+            "denominator": 160,
+            "numerator": 160,
+            "rate": 1.0
+          },
+          "schema_validity": {
+            "denominator": 160,
+            "numerator": 160,
+            "rate": 1.0
+          },
+          "tool_name_accuracy": {
+            "denominator": 160,
+            "numerator": 160,
+            "rate": 1.0
+          }
+        },
+        "samples": 160
+      }
+    },
+    "task_execution_success_rate": null,
+    "valid_ground_truth_subset": {
+      "errors": {
+        "extra_argument": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "extra_tool": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "format_error": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid_ground_truth": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "missing_argument": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "missing_tool": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "truncated_output": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "unnecessary_tool": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrong_argument_type": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrong_argument_value": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrong_call_order": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "wrong_tool": {
+          "count": 0,
+          "rate": 0.0
+        }
+      },
+      "invalid_ground_truth": 0,
+      "legacy_api_bank_soft_match": {
+        "denominator": 0,
+        "numerator": 0,
+        "rate": null
+      },
+      "metrics": {
+        "exact_match_accuracy": {
+          "denominator": 344,
+          "numerator": 344,
+          "rate": 1.0
+        },
+        "format_validity": {
+          "denominator": 344,
+          "numerator": 344,
+          "rate": 1.0
+        },
+        "json_validity": {
+          "denominator": 344,
+          "numerator": 344,
+          "rate": 1.0
+        },
+        "no_tool_accuracy": {
+          "denominator": 52,
+          "numerator": 52,
+          "rate": 1.0
+        },
+        "parameter_name_accuracy": {
+          "denominator": 292,
+          "numerator": 292,
+          "rate": 1.0
+        },
+        "parameter_value_accuracy": {
+          "denominator": 292,
+          "numerator": 292,
+          "rate": 1.0
+        },
+        "parameter_value_accuracy_given_names": {
+          "denominator": 292,
+          "numerator": 292,
+          "rate": 1.0
+        },
+        "protocol_validity": {
+          "denominator": 344,
+          "numerator": 344,
+          "rate": 1.0
+        },
+        "schema_validity": {
+          "denominator": 344,
+          "numerator": 344,
+          "rate": 1.0
+        },
+        "tool_name_accuracy": {
+          "denominator": 292,
+          "numerator": 292,
+          "rate": 1.0
+        }
+      },
+      "samples": 344
+    }
+  }
+}

@@ -1,0 +1,374 @@
+{
+  "actions": {
+    "rl": {
+      "delete_duplicate": 9,
+      "keep": 3125,
+      "quarantine": 866
+    },
+    "sft": {
+      "keep": 319,
+      "quarantine": 81
+    }
+  },
+  "api_bank_invalid_ground_truth": 118,
+  "cross_source_prompt_overlap": {
+    "policy": "Preserve valid shared prompts in train; quarantine only for independently recorded quality issues.",
+    "raw_unique_prompts": 37,
+    "retained_exact_train_overlap": 27,
+    "shared_sft_dispositions": {
+      "keep": 27,
+      "quarantine": 10
+    }
+  },
+  "dataset_version": "phase2-v1-13c266c7a084",
+  "decision_categories": {
+    "certain_duplicate": 9,
+    "manual_review": 809,
+    "structurally_valid": 3444,
+    "unverifiable_without_source": 138
+  },
+  "grouping": {
+    "edge_reasons": {
+      "complete_input_history_prefix": 23,
+      "exact_prompt": 2327,
+      "high_risk_query_near_duplicate": 15,
+      "normalized_input": 35,
+      "shared_history_utterance": 733
+    },
+    "groups": 8831,
+    "largest_group_occurrences": 597,
+    "limitations": [
+      "Lexical grouping cannot prove absence of paraphrase or pretraining contamination.",
+      "Shingles occurring in >200 rows are excluded from candidate generation; substantive exact utterances are still grouped."
+    ],
+    "near_candidates": 671424,
+    "near_pairs_above_threshold": 4153,
+    "near_threshold": 0.9
+  },
+  "leakage_checks": {
+    "benchmark_question_counts": {
+      "API-Bank": 597,
+      "BFCL-v3": 6842,
+      "Bamboogle": 125
+    },
+    "bfcl_coverage": "snapshot files only",
+    "bfcl_files_checked": 17,
+    "external_quarantined_occurrences": 0,
+    "retained_external_overlap_groups": 0,
+    "retained_group_intersections": 0
+  },
+  "limitations": [
+    "Schema validates declared fields/types only; omitted required information is not invented.",
+    "Unknown source provenance and non-lexical paraphrases remain unverified.",
+    "Multi-call order cues are quarantined rather than guessed; this changes task distribution.",
+    "No semantic correctness claim for free-text responses or external tool execution."
+  ],
+  "quarantine_reason_occurrences": {
+    "ambiguous_multi_call_order": 203,
+    "conflicting_duplicate_tool_name": 4,
+    "extra_argument": 120,
+    "unparseable_target": 1,
+    "unsupported_schema": 6,
+    "wrong_argument_type": 809,
+    "wrong_tool": 13
+  },
+  "raw_counts": {
+    "rl": 4000,
+    "sft": 400
+  },
+  "repairs": [],
+  "split_policy": {
+    "anchored_cross_source_train_groups": 48,
+    "policy": "Keep cross-source retained groups in train; group-size-aware stratification of remaining groups; no row-wise split.",
+    "seed": 31415,
+    "target_ratios": {
+      "test": 0.1,
+      "train": 0.8,
+      "validation": 0.1
+    }
+  },
+  "splits": {
+    "benchmarks/api_bank.jsonl": {
+      "call_counts": {
+        "1": 597
+      },
+      "parameter_counts": {
+        "0": 7,
+        "1": 197,
+        "2": 182,
+        "3": 146,
+        "4": 33,
+        "5": 10,
+        "6": 22
+      },
+      "rows": 597,
+      "sources": {
+        "api_bank": 597
+      },
+      "task_types": {
+        "single": 597
+      }
+    },
+    "eval/test.jsonl": {
+      "call_counts": {
+        "0": 56,
+        "1": 156,
+        "2": 96,
+        "3": 29,
+        "4": 6,
+        "5": 1
+      },
+      "parameter_counts": {
+        "0": 66,
+        "1": 84,
+        "16": 1,
+        "2": 74,
+        "3": 58,
+        "4": 29,
+        "5": 9,
+        "6": 14,
+        "7": 3,
+        "8": 5,
+        "9": 1
+      },
+      "rows": 344,
+      "sources": {
+        "rl": 307,
+        "sft": 37
+      },
+      "task_types": {
+        "multi": 132,
+        "no_tool": 56,
+        "single": 156
+      }
+    },
+    "eval/validation.jsonl": {
+      "call_counts": {
+        "0": 52,
+        "1": 160,
+        "2": 100,
+        "3": 20,
+        "4": 10,
+        "5": 1,
+        "7": 1
+      },
+      "parameter_counts": {
+        "0": 59,
+        "1": 79,
+        "10": 1,
+        "12": 1,
+        "2": 89,
+        "24": 1,
+        "3": 53,
+        "4": 35,
+        "5": 9,
+        "6": 11,
+        "8": 5,
+        "9": 1
+      },
+      "rows": 344,
+      "sources": {
+        "rl": 307,
+        "sft": 37
+      },
+      "task_types": {
+        "multi": 132,
+        "no_tool": 52,
+        "single": 160
+      }
+    },
+    "rl/test.jsonl": {
+      "call_counts": {
+        "0": 48,
+        "1": 139,
+        "2": 86,
+        "3": 28,
+        "4": 5,
+        "5": 1
+      },
+      "parameter_counts": {
+        "0": 57,
+        "1": 76,
+        "16": 1,
+        "2": 66,
+        "3": 53,
+        "4": 25,
+        "5": 8,
+        "6": 13,
+        "7": 3,
+        "8": 4,
+        "9": 1
+      },
+      "rows": 307,
+      "sources": {
+        "rl": 307
+      },
+      "task_types": {
+        "multi": 120,
+        "no_tool": 48,
+        "single": 139
+      }
+    },
+    "rl/train.jsonl": {
+      "call_counts": {
+        "0": 390,
+        "1": 1155,
+        "2": 708,
+        "3": 158,
+        "4": 79,
+        "5": 15,
+        "6": 4,
+        "7": 1,
+        "8": 1
+      },
+      "parameter_counts": {
+        "0": 460,
+        "1": 539,
+        "10": 6,
+        "11": 1,
+        "12": 7,
+        "13": 2,
+        "16": 2,
+        "2": 614,
+        "3": 429,
+        "4": 230,
+        "44": 1,
+        "5": 67,
+        "6": 89,
+        "7": 19,
+        "8": 36,
+        "9": 9
+      },
+      "rows": 2511,
+      "sources": {
+        "rl": 2511
+      },
+      "task_types": {
+        "multi": 966,
+        "no_tool": 390,
+        "single": 1155
+      }
+    },
+    "rl/validation.jsonl": {
+      "call_counts": {
+        "0": 44,
+        "1": 143,
+        "2": 90,
+        "3": 18,
+        "4": 10,
+        "5": 1,
+        "7": 1
+      },
+      "parameter_counts": {
+        "0": 51,
+        "1": 68,
+        "10": 1,
+        "12": 1,
+        "2": 79,
+        "24": 1,
+        "3": 47,
+        "4": 33,
+        "5": 9,
+        "6": 11,
+        "8": 5,
+        "9": 1
+      },
+      "rows": 307,
+      "sources": {
+        "rl": 307
+      },
+      "task_types": {
+        "multi": 120,
+        "no_tool": 44,
+        "single": 143
+      }
+    },
+    "sft/test.jsonl": {
+      "call_counts": {
+        "0": 8,
+        "1": 17,
+        "2": 10,
+        "3": 1,
+        "4": 1
+      },
+      "parameter_counts": {
+        "0": 9,
+        "1": 8,
+        "2": 8,
+        "3": 5,
+        "4": 4,
+        "5": 1,
+        "6": 1,
+        "8": 1
+      },
+      "rows": 37,
+      "sources": {
+        "sft": 37
+      },
+      "task_types": {
+        "multi": 12,
+        "no_tool": 8,
+        "single": 17
+      }
+    },
+    "sft/train.jsonl": {
+      "call_counts": {
+        "0": 38,
+        "1": 120,
+        "2": 60,
+        "3": 19,
+        "4": 7,
+        "5": 1
+      },
+      "parameter_counts": {
+        "0": 47,
+        "1": 57,
+        "16": 1,
+        "2": 66,
+        "3": 32,
+        "4": 28,
+        "5": 2,
+        "6": 8,
+        "7": 3,
+        "8": 1
+      },
+      "rows": 245,
+      "sources": {
+        "sft": 245
+      },
+      "task_types": {
+        "multi": 87,
+        "no_tool": 38,
+        "single": 120
+      }
+    },
+    "sft/validation.jsonl": {
+      "call_counts": {
+        "0": 8,
+        "1": 17,
+        "2": 10,
+        "3": 2
+      },
+      "parameter_counts": {
+        "0": 8,
+        "1": 11,
+        "2": 10,
+        "3": 6,
+        "4": 2
+      },
+      "rows": 37,
+      "sources": {
+        "sft": 37
+      },
+      "task_types": {
+        "multi": 12,
+        "no_tool": 8,
+        "single": 17
+      }
+    }
+  },
+  "tool_definition_reuse": {
+    "note": "Repeated tool schemas across different requests are measured, not automatically deleted or grouped.",
+    "unique_schema_sets": 4033
+  }
+}

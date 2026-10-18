@@ -1,0 +1,132 @@
+{
+  "base_file_sha256": "cfe33c761d8c1005816091e25f4a0e1d55b2f586e1a8d8621f3c24ea31606b5a",
+  "base_git_blob_sha1": "5530fd7fad4f87961aeaea58a55b28668ef5c1cb",
+  "commit": "a84eb805fe8d66635a8e402a78783f13044decba",
+  "downloaded_question_assets": {
+    "commit": "a84eb805fe8d66635a8e402a78783f13044decba",
+    "files": [
+      {
+        "bytes": 160114,
+        "git_blob_sha1": "9daeeff29ddb6ba7edb6383d42ca322a3ad0d7fe",
+        "name": "BFCL_v3_irrelevance.json",
+        "sha256": "975f51c51f688649fd190078efd87081241e0a326f9114a2ea3c1ca2440d8690"
+      },
+      {
+        "bytes": 85919,
+        "git_blob_sha1": "0f8b3f138b00e0091b06a69fc395e4a6ed05d7ae",
+        "name": "BFCL_v3_java.json",
+        "sha256": "261d327d50c1bb505614dd5f75a29167d5bd9f938e5cefefef989c325cb67848"
+      },
+      {
+        "bytes": 46713,
+        "git_blob_sha1": "93e7fb051ba4e7a8655291e665da52bf22ab26e9",
+        "name": "BFCL_v3_javascript.json",
+        "sha256": "b69b6a99548f72e151be7abed4beb0ed70873d3370d5b78feed75b66f33795d3"
+      },
+      {
+        "bytes": 2202715,
+        "git_blob_sha1": "5a8ca8eb2f00dba7b55f20647dd7a7a73e679a10",
+        "name": "BFCL_v3_live_irrelevance.json",
+        "sha256": "0d259e1c3ab6ba06c2a51911e2f49ecaa2eac3723a4a14f183a7687955e61338"
+      },
+      {
+        "bytes": 3891342,
+        "git_blob_sha1": "fd956897939d662b40562a5f045beb694195e44c",
+        "name": "BFCL_v3_live_multiple.json",
+        "sha256": "af2520ac5bb0b05aa9b8abe14a79b87198e5a3137a707d4f5633c792330f0cee"
+      },
+      {
+        "bytes": 15649,
+        "git_blob_sha1": "fb88e7e7f12cb0e557750a043833bab87c6f98b1",
+        "name": "BFCL_v3_live_parallel.json",
+        "sha256": "6c26e9fdc3350cf596e6d1ea9c179cbff834761bccf562f4141ed29a839ca421"
+      },
+      {
+        "bytes": 82332,
+        "git_blob_sha1": "54997d2e1fa4061d5701f6f42079c95102f8c09e",
+        "name": "BFCL_v3_live_parallel_multiple.json",
+        "sha256": "21d4b9319c1faac431e22757b367ea28917fe467364c3a4b17f16ec06d4f6e79"
+      },
+      {
+        "bytes": 54134,
+        "git_blob_sha1": "e8af6aa22ae8a2b5ac87e37134eaeb7a73336e6b",
+        "name": "BFCL_v3_live_relevance.json",
+        "sha256": "294ef3f21909e6f84c735faf688f5cbd72226ad012b7ea53c1e177c40cbbf053"
+      },
+      {
+        "bytes": 260127,
+        "git_blob_sha1": "2c449440319c4aef6e4b908803b3471ddff2ec8f",
+        "name": "BFCL_v3_live_simple.json",
+        "sha256": "10e5cedb6dc73cd16bc430755643c658d6032a69363dfc41a22a84988eaa312a"
+      },
+      {
+        "bytes": 391058,
+        "git_blob_sha1": "0349c2c6f8c2ecc0b23eb1ea8dcbff42c3ed626a",
+        "name": "BFCL_v3_multi_turn_base.json",
+        "sha256": "edaea7666e0089062c30f3ac511914d5c27414dbe9b8214488191980d873b145"
+      },
+      {
+        "bytes": 392651,
+        "git_blob_sha1": "aa34b70b598ed6444deefe8867fb9000f5f5f470",
+        "name": "BFCL_v3_multi_turn_long_context.json",
+        "sha256": "a7c2b44cfe14e243e66acbb0737970f1085460fed5793bfa0137fb4782ff8fc4"
+      },
+      {
+        "bytes": 401840,
+        "git_blob_sha1": "93bda0b2ea83d84ec3d3357ae96b7efec49c4e7e",
+        "name": "BFCL_v3_multi_turn_miss_func.json",
+        "sha256": "e6cfbd225ac1182c82bfcd0a83410babd410a8cf2050942894017829e9a57e23"
+      },
+      {
+        "bytes": 403181,
+        "git_blob_sha1": "d665c1f04fec053c11b2331f660d345e91bd3395",
+        "name": "BFCL_v3_multi_turn_miss_param.json",
+        "sha256": "21a850b8bb0b41aba63e0bbcd9b4af6c7997144180eadd4bcdf4bdfd98077c1a"
+      },
+      {
+        "bytes": 316583,
+        "git_blob_sha1": "83643fa853e7a29a50e7303b0279284c37dd63c8",
+        "name": "BFCL_v3_multiple.json",
+        "sha256": "aef168155ebd74b7ac2401198b201343bc7d16d7a3d7e0d4e6d8ee82c6969b2a"
+      },
+      {
+        "bytes": 172094,
+        "git_blob_sha1": "adb343e9d4139976924239026c3689ae4886ed6d",
+        "name": "BFCL_v3_parallel.json",
+        "sha256": "fad375d68295776efb63e5aa331dd884f8635e7bb50e05908113c74f14281c3c"
+      },
+      {
+        "bytes": 347080,
+        "git_blob_sha1": "832039d6758e2569d65342b3fc9524924a03832a",
+        "name": "BFCL_v3_parallel_multiple.json",
+        "sha256": "8863ea8433239f55c5f016154cf0830853c89f693c6ea270396a2fa121960579"
+      },
+      {
+        "bytes": 280474,
+        "git_blob_sha1": "927611976758b084570299cbda641199b9368765",
+        "name": "BFCL_v3_simple.json",
+        "sha256": "fbc37b2ad252bf9af985582e0e07b456173fe627d957491472ea9cef5fb83158"
+      }
+    ],
+    "repository": "ShishirPatil/gorilla"
+  },
+  "official_framework_imported": false,
+  "official_scoring_run": false,
+  "signatures": {
+    "_format_prompt": [
+      "self",
+      "messages",
+      "function"
+    ],
+    "decode_ast": [
+      "self",
+      "result",
+      "language"
+    ],
+    "decode_execute": [
+      "self",
+      "result"
+    ]
+  },
+  "status": "PASS_CPU_STATIC_CONTRACT_ONLY"
+}

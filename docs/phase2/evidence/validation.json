@@ -1,0 +1,44 @@
+{
+  "checks": {
+    "data_and_schema": {
+      "data_hashes": 20,
+      "decision_evidence_sha256": {
+        "rl": "85f703e48886e60548d6b8ea63a44a80d899ce01aee52c3643d0c6d6a0cd8349",
+        "sft": "ed31799bc74fdff6fe1c15c8af43302307fa4fadc7c2b9d9840aa9679a6d4977"
+      },
+      "manifest_hashes": 9,
+      "raw_occurrences_accounted": 4400,
+      "retained": 3444,
+      "split_group_and_exact_prompt_intersections": 0,
+      "status": "PASS"
+    },
+    "git_diff_check": "PASS",
+    "mock_evaluation": {
+      "api_bank_fixed_denominator": 597,
+      "comparison_and_bad_case_reports": true,
+      "final_test_scored": false,
+      "oracle_validation_em": 1.0,
+      "status": "PASS",
+      "validation_samples": 344
+    },
+    "no_torch_or_vllm_installed_in_cpu_environment": true,
+    "pip_check": "No broken requirements found.",
+    "python_ast_files": 195,
+    "shell_syntax_files": 4,
+    "unit_tests": {
+      "skipped": 0,
+      "status": "PASS",
+      "tests_passed": 35
+    }
+  },
+  "dataset_version": "phase2-v1-13c266c7a084",
+  "not_validated": [
+    "GPU/CUDA/FlashAttention/Ray/FSDP",
+    "real model inference",
+    "SFT/GRPO updates",
+    "BFCL official execution/scoring",
+    "free-text semantic or task execution success",
+    "paid API services"
+  ],
+  "status": "PASS"
+}

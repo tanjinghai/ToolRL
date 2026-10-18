@@ -13,7 +13,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 from toolrl_pipeline.evaluation import generate, make_run, mock_backend, score
-from toolrl_pipeline.io import file_hash, read_jsonl, write_json, write_text
+from toolrl_pipeline.io import file_hash, read_jsonl, write_json, write_jsonl, write_text
 from toolrl_pipeline.schema import validate_calls
 
 
@@ -66,10 +66,17 @@ def main():
         assert not prompts[a] & prompts[b]
     ledger = read_jsonl(args.data_root/'lineage.jsonl')
     assert len(ledger) == 4400 and all(r['decision_reason'] for r in ledger)
+    # Small versioned review evidence; full lineage/group edges stay with generated data.
+    for source in ('rl', 'sft'):
+        decisions = [{'raw_index': r['raw_index'], 'sample_id': r['sample_id'], 'action': r['action'],
+                      'reason_codes': r['reasons'] or ['passed_declared_structural_checks'], 'split': r['split']}
+                     for r in ledger if r['source'] == source]
+        write_jsonl(args.output_dir/'decisions'/(source+'.jsonl'), decisions)
     assert len({r['sample_id'] for r in retained}) == len(retained)
     checks['data_and_schema'] = {'status': 'PASS', 'raw_occurrences_accounted': len(ledger), 'retained': len(retained),
                                  'split_group_and_exact_prompt_intersections': 0,
                                  'data_hashes': len(version['files_sha256']), 'manifest_hashes': len(version['manifests_sha256'])}
+    checks['data_and_schema']['decision_evidence_sha256'] = {source: file_hash(args.output_dir/'decisions'/(source+'.jsonl')) for source in ('rl', 'sft')}
     subprocess.run([sys.executable, str(ROOT/'scripts/phase2/check_tokenizer.py'), '--data-root', str(args.data_root),
                     '--tokenizer', str(args.tokenizer), '--output', str(args.output_dir/'tokenizer_validation.json')], check=True)
     summaries = {}
