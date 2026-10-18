@@ -1,0 +1,200 @@
+{
+  "version": "toolrl.plan.v1",
+  "is_mock": true,
+  "data_version": "phase2-v1-13c266c7a084",
+  "model_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "data_root": "dataset/generated/phase2-v1",
+  "manifests": "data_manifests/phase2-v1",
+  "model_path": "/root/autodl-tmp/toolrl/cache/base",
+  "backup_root": "runs/phase3-mock-backups",
+  "final_freeze": "/root/toolrl-candidates-frozen.json",
+  "e4_review": "/root/toolrl-e4-review.json",
+  "decision_rules": {
+    "em_drop_threshold": 0.03,
+    "on_sft_regression": "skip"
+  },
+  "stages": [
+    {
+      "id": "reward_gate",
+      "kind": "reward_gate",
+      "deps": [],
+      "timeout_seconds": 120,
+      "cost_cap_rmb": 50,
+      "retries": 0,
+      "api_bank": false
+    },
+    {
+      "id": "E0",
+      "kind": "evaluate",
+      "deps": [],
+      "timeout_seconds": 120,
+      "cost_cap_rmb": 50,
+      "retries": 0,
+      "api_bank": true,
+      "model_from": "base"
+    },
+    {
+      "id": "E1",
+      "kind": "train",
+      "deps": [
+        "E0"
+      ],
+      "timeout_seconds": 120,
+      "cost_cap_rmb": 50,
+      "retries": 0,
+      "model_from": "base",
+      "config": "configs/phase3/sft_small.json",
+      "config_sha256": "3f5a2920dc6f201417156f2117a2618a051d5e2ff42b18da4b6d90428bc4f828",
+      "api_bank": false
+    },
+    {
+      "id": "E1_eval",
+      "kind": "evaluate",
+      "deps": [
+        "E1"
+      ],
+      "timeout_seconds": 120,
+      "cost_cap_rmb": 50,
+      "retries": 0,
+      "model_from": "E1",
+      "compare_to": [
+        "E0"
+      ],
+      "api_bank": true
+    },
+    {
+      "id": "decision_e1",
+      "kind": "decision",
+      "deps": [
+        "E1_eval"
+      ],
+      "timeout_seconds": 120,
+      "cost_cap_rmb": 50,
+      "retries": 0,
+      "api_bank": false
+    },
+    {
+      "id": "E2",
+      "kind": "train",
+      "deps": [
+        "E0",
+        "reward_gate"
+      ],
+      "timeout_seconds": 120,
+      "cost_cap_rmb": 50,
+      "retries": 0,
+      "model_from": "base",
+      "config": "configs/phase3/grpo_small.json",
+      "config_sha256": "17708c681af67605803d4e05b60b5e90e4af8240e4c246ff272b293d7960fd7e",
+      "api_bank": false
+    },
+    {
+      "id": "E2_eval",
+      "kind": "evaluate",
+      "deps": [
+        "E2"
+      ],
+      "timeout_seconds": 120,
+      "cost_cap_rmb": 50,
+      "retries": 0,
+      "model_from": "E2",
+      "compare_to": [
+        "E0"
+      ],
+      "api_bank": true
+    },
+    {
+      "id": "E3",
+      "kind": "train",
+      "deps": [
+        "E1",
+        "decision_e1",
+        "reward_gate"
+      ],
+      "timeout_seconds": 120,
+      "cost_cap_rmb": 50,
+      "retries": 0,
+      "model_from": "E1",
+      "config": "configs/phase3/grpo_small.json",
+      "config_sha256": "17708c681af67605803d4e05b60b5e90e4af8240e4c246ff272b293d7960fd7e",
+      "decision_from": "decision_e1",
+      "diagnostic_updates": 10,
+      "api_bank": false
+    },
+    {
+      "id": "E3_eval",
+      "kind": "evaluate",
+      "deps": [
+        "E3",
+        "E2_eval"
+      ],
+      "timeout_seconds": 120,
+      "cost_cap_rmb": 50,
+      "retries": 0,
+      "model_from": "E3",
+      "compare_to": [
+        "E1_eval",
+        "E2_eval"
+      ],
+      "api_bank": true
+    },
+    {
+      "id": "E4",
+      "kind": "train",
+      "deps": [
+        "E2_eval",
+        "reward_gate"
+      ],
+      "timeout_seconds": 120,
+      "cost_cap_rmb": 50,
+      "retries": 0,
+      "model_from": "base",
+      "config": "configs/phase3/grpo_small.json",
+      "config_sha256": "17708c681af67605803d4e05b60b5e90e4af8240e4c246ff272b293d7960fd7e",
+      "reward_version": "strict_matching",
+      "api_bank": false
+    },
+    {
+      "id": "E4_eval",
+      "kind": "evaluate",
+      "deps": [
+        "E4",
+        "E3_eval"
+      ],
+      "timeout_seconds": 120,
+      "cost_cap_rmb": 50,
+      "retries": 0,
+      "model_from": "E4",
+      "compare_to": [
+        "E2_eval",
+        "E3_eval"
+      ],
+      "api_bank": true
+    },
+    {
+      "id": "final",
+      "kind": "final",
+      "deps": [
+        "E1_eval",
+        "E2_eval",
+        "E3_eval",
+        "E4_eval"
+      ],
+      "timeout_seconds": 120,
+      "cost_cap_rmb": 50,
+      "retries": 0,
+      "api_bank": false
+    },
+    {
+      "id": "backup",
+      "kind": "backup",
+      "deps": [
+        "final"
+      ],
+      "timeout_seconds": 120,
+      "cost_cap_rmb": 50,
+      "retries": 0,
+      "api_bank": false
+    }
+  ]
+}

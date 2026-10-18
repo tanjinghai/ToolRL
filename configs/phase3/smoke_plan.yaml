@@ -1,0 +1,84 @@
+{
+  "version": "toolrl.plan.v1",
+  "is_mock": false,
+  "data_version": "phase2-v1-13c266c7a084",
+  "model_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "data_root": "dataset/generated/phase2-v1",
+  "manifests": "data_manifests/phase2-v1",
+  "model_path": "/root/autodl-tmp/toolrl/cache/base",
+  "backup_root": "/root/toolrl-persistent-backups",
+  "final_freeze": "/root/toolrl-candidates-frozen.json",
+  "e4_review": "/root/toolrl-e4-review.json",
+  "decision_rules": {
+    "em_drop_threshold": 0.03,
+    "on_sft_regression": "skip"
+  },
+  "stages": [
+    {
+      "id": "environment",
+      "kind": "environment",
+      "deps": [],
+      "timeout_seconds": 1200,
+      "cost_cap_rmb": 50,
+      "retries": 0
+    },
+    {
+      "id": "reward_gate",
+      "kind": "reward_gate",
+      "deps": [],
+      "timeout_seconds": 60,
+      "cost_cap_rmb": 50,
+      "retries": 0
+    },
+    {
+      "id": "SFT_smoke",
+      "kind": "train",
+      "deps": [
+        "environment"
+      ],
+      "timeout_seconds": 3600,
+      "cost_cap_rmb": 50,
+      "retries": 0,
+      "model_from": "base",
+      "config": "configs/phase3/sft_small.json",
+      "config_sha256": "3f5a2920dc6f201417156f2117a2618a051d5e2ff42b18da4b6d90428bc4f828"
+    },
+    {
+      "id": "GRPO_smoke",
+      "kind": "train",
+      "deps": [
+        "environment",
+        "reward_gate"
+      ],
+      "timeout_seconds": 3600,
+      "cost_cap_rmb": 50,
+      "retries": 0,
+      "model_from": "base",
+      "config": "configs/phase3/grpo_smoke.json",
+      "config_sha256": "9be836f1e600153c1258270f4e195cd0514dbefadfc8e1ecea3ba0ea5161bea1"
+    },
+    {
+      "id": "smoke_eval",
+      "kind": "evaluate",
+      "deps": [
+        "SFT_smoke",
+        "GRPO_smoke"
+      ],
+      "timeout_seconds": 1800,
+      "cost_cap_rmb": 50,
+      "retries": 0,
+      "model_from": "GRPO_smoke",
+      "api_bank": false
+    },
+    {
+      "id": "backup",
+      "kind": "backup",
+      "deps": [
+        "smoke_eval"
+      ],
+      "timeout_seconds": 900,
+      "cost_cap_rmb": 50,
+      "retries": 0
+    }
+  ]
+}
