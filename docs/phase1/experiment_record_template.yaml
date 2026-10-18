@@ -1,0 +1,103 @@
+# 复制后填写；null 表示未记录，不能当作0或已通过。大模型/原始预测放Git外。
+run_id: null
+experiment: null # E0 / E1 / E2 / E3 / E4
+status: planned # planned / running / completed / failed / stopped
+date_timezone: Asia/Shanghai
+hypothesis: null
+git:
+  sha: null
+  branch: null
+  dirty: null
+  evaluator_sha: null
+  framework_sha: null
+model:
+  id: null
+  revision: null
+  tokenizer_revision: null
+  init_checkpoint: null
+  reference_checkpoint: null
+  artifact_uri: null
+  artifact_sha256: null
+  precision: null
+  sft_method: null # full / lora / qlora / N/A
+  adapter_and_merge_config: null
+data:
+  version: null
+  source_hashes: {}
+  train_manifest_sha256: null
+  validation_manifest_sha256: null
+  test_manifest_sha256: null
+  unique_prompts: null
+  sample_exposures: null
+  leakage_audit_uri: null
+config:
+  resolved_config_uri: null
+  seed: null
+  prompt_protocol_hash: null
+  max_prompt_tokens: null
+  max_response_tokens: null
+  rollout_n: null
+  sampling: {}
+  optimizer: {}
+  effective_batches: {}
+  reward_code_sha: null
+  reward_env_all_flags: {}
+  kl_mode_and_coef: null
+  advantage_std_correction: null
+  policy_loss_reduction: null
+  planned_updates: null
+  actual_updates: null
+  checkpoint_selection_rule: null
+environment:
+  route: null # A / B
+  image_digest: null
+  pip_freeze_uri: null
+  python_torch_cuda_vllm_ray_fa_transformers: {}
+  gpu_name: null
+  gpu_count: null
+  gpu_vram_gib: null
+  driver: null
+  cpu_ram_gib: null
+performance:
+  setup_minutes: null
+  train_minutes: null
+  eval_and_save_minutes: null
+  instance_on_minutes: null
+  seconds_per_update_p50_p95: null
+  peak_gpu_allocated_reserved_gib: null
+  peak_gpu_nvidia_smi_gib: null
+  peak_cpu_ram_gib: null
+  zero_advantage_group_ratio: null
+cost_cny:
+  approved_cap: null
+  instance_hourly_rate: null
+  rate_scope: null # whole_instance / per_gpu
+  gpu_actual: null
+  disk_actual: null
+  api_actual: null
+  other_actual: null
+  run_total: null
+  project_spent_before: null
+  project_remaining: null
+  bill_uri: null
+evaluation:
+  dataset_version_and_count: {}
+  decoding_config: {}
+  predictions_uri: null
+  predictions_sha256: null
+  metrics_uri: null
+  tool_name_accuracy: null
+  parameter_name_accuracy: null
+  parameter_value_accuracy: null
+  exact_match_accuracy: null
+  format_protocol_json_schema_validity: null
+  no_tool_accuracy: null
+  extra_call_rate: null
+  official_benchmark_scores: {}
+  confidence_intervals: {}
+  failures_and_missing_count: null
+findings:
+  bad_case_summary: null
+  decision: null
+  limitations: null
+  next_action: null

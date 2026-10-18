@@ -108,3 +108,26 @@ ENV/
 # vim
 *.swp
 
+# Local experiment artifacts and credentials (keep small versioned source data).
+.venv/
+.env.*
+!.env.example
+**/secret.json
+**/secrets.json
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+*.safetensors
+*.bin
+*.pth
+*.onnx
+models/
+checkpoints/
+runs/
+results/
+data_local/
+dataset/generated/
+benchmarks/**/output/
+benchmarks/**/leaderboard.json
+

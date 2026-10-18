@@ -7,6 +7,13 @@ ToolRL is the code repository for paper "ToolRL: Reward is All Tool Learning Nee
 
 Our code is built upon [veRL](https://github.com/volcengine/verl) and [TinyZero](https://github.com/Jiayi-Pan/TinyZero).
 
+## 本分支的低成本实验审计
+
+中文 Phase 1 审计、架构图、数据/奖励/评测问题与 AutoDL 方案见 [docs/phase1](docs/phase1/README.md)。
+本阶段未执行模型训练；原训练脚本及下方论文复现说明保留。原始依赖和数据划分需先审计验证，不建议直接启动长训练。
+实验记录模板见 [experiment_record_template.yaml](docs/phase1/experiment_record_template.yaml)。
+Bamboogle 凭据占位文件移至 `benchmarks/Bamboogle/secret.example.json`；运行前复制为本地被忽略的 `secret.json`，不要提交实际密钥。
+
 ## 🔍 Installation
 Please install torch, vllm and ray according to your own environment configuration. We provide a configuration example adapted from TinyZero in the following:
 ```
