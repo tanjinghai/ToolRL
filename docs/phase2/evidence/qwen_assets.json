@@ -1,0 +1,43 @@
+{
+  "download_endpoint": "https://hf-mirror.com",
+  "files": [
+    {
+      "blobId": "f81ead14ab072d65a07817f83a3ee0e5a1890d10",
+      "rfilename": "config.json",
+      "size": 660
+    },
+    {
+      "blobId": "443909a61d429dff23010e5bddd28ff530edda00",
+      "rfilename": "tokenizer.json",
+      "size": 7031645
+    },
+    {
+      "blobId": "07bfe0640cb5a0037f9322287fbfc682806cf672",
+      "rfilename": "tokenizer_config.json",
+      "size": 7305
+    }
+  ],
+  "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+  "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "total_bytes": 7039610,
+  "verified_files": [
+    {
+      "bytes": 660,
+      "git_blob_sha1": "f81ead14ab072d65a07817f83a3ee0e5a1890d10",
+      "name": "config.json",
+      "sha256": "98d2ff8cc47488d08a2b0b3acf4eb99ef210779b42bd48605f6b8e36acdbf670"
+    },
+    {
+      "bytes": 7031645,
+      "git_blob_sha1": "443909a61d429dff23010e5bddd28ff530edda00",
+      "name": "tokenizer.json",
+      "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+    },
+    {
+      "bytes": 7305,
+      "git_blob_sha1": "07bfe0640cb5a0037f9322287fbfc682806cf672",
+      "name": "tokenizer_config.json",
+      "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583"
+    }
+  ]
+}

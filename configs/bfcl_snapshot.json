@@ -1,0 +1,109 @@
+{
+  "commit": "a84eb805fe8d66635a8e402a78783f13044decba",
+  "contract": {
+    "base_oss_blob": "5530fd7fad4f87961aeaea58a55b28668ef5c1cb",
+    "decode_ast_parameters": [
+      "self",
+      "result",
+      "language"
+    ],
+    "decode_execute_parameters": [
+      "self",
+      "result"
+    ],
+    "format_prompt_parameters": [
+      "self",
+      "messages",
+      "function"
+    ]
+  },
+  "files": [
+    {
+      "path": "berkeley-function-call-leaderboard/data/BFCL_v3_irrelevance.json",
+      "sha": "9daeeff29ddb6ba7edb6383d42ca322a3ad0d7fe",
+      "size": 160114
+    },
+    {
+      "path": "berkeley-function-call-leaderboard/data/BFCL_v3_java.json",
+      "sha": "0f8b3f138b00e0091b06a69fc395e4a6ed05d7ae",
+      "size": 85919
+    },
+    {
+      "path": "berkeley-function-call-leaderboard/data/BFCL_v3_javascript.json",
+      "sha": "93e7fb051ba4e7a8655291e665da52bf22ab26e9",
+      "size": 46713
+    },
+    {
+      "path": "berkeley-function-call-leaderboard/data/BFCL_v3_live_irrelevance.json",
+      "sha": "5a8ca8eb2f00dba7b55f20647dd7a7a73e679a10",
+      "size": 2202715
+    },
+    {
+      "path": "berkeley-function-call-leaderboard/data/BFCL_v3_live_multiple.json",
+      "sha": "fd956897939d662b40562a5f045beb694195e44c",
+      "size": 3891342
+    },
+    {
+      "path": "berkeley-function-call-leaderboard/data/BFCL_v3_live_parallel.json",
+      "sha": "fb88e7e7f12cb0e557750a043833bab87c6f98b1",
+      "size": 15649
+    },
+    {
+      "path": "berkeley-function-call-leaderboard/data/BFCL_v3_live_parallel_multiple.json",
+      "sha": "54997d2e1fa4061d5701f6f42079c95102f8c09e",
+      "size": 82332
+    },
+    {
+      "path": "berkeley-function-call-leaderboard/data/BFCL_v3_live_relevance.json",
+      "sha": "e8af6aa22ae8a2b5ac87e37134eaeb7a73336e6b",
+      "size": 54134
+    },
+    {
+      "path": "berkeley-function-call-leaderboard/data/BFCL_v3_live_simple.json",
+      "sha": "2c449440319c4aef6e4b908803b3471ddff2ec8f",
+      "size": 260127
+    },
+    {
+      "path": "berkeley-function-call-leaderboard/data/BFCL_v3_multi_turn_base.json",
+      "sha": "0349c2c6f8c2ecc0b23eb1ea8dcbff42c3ed626a",
+      "size": 391058
+    },
+    {
+      "path": "berkeley-function-call-leaderboard/data/BFCL_v3_multi_turn_long_context.json",
+      "sha": "aa34b70b598ed6444deefe8867fb9000f5f5f470",
+      "size": 392651
+    },
+    {
+      "path": "berkeley-function-call-leaderboard/data/BFCL_v3_multi_turn_miss_func.json",
+      "sha": "93bda0b2ea83d84ec3d3357ae96b7efec49c4e7e",
+      "size": 401840
+    },
+    {
+      "path": "berkeley-function-call-leaderboard/data/BFCL_v3_multi_turn_miss_param.json",
+      "sha": "d665c1f04fec053c11b2331f660d345e91bd3395",
+      "size": 403181
+    },
+    {
+      "path": "berkeley-function-call-leaderboard/data/BFCL_v3_multiple.json",
+      "sha": "83643fa853e7a29a50e7303b0279284c37dd63c8",
+      "size": 316583
+    },
+    {
+      "path": "berkeley-function-call-leaderboard/data/BFCL_v3_parallel.json",
+      "sha": "adb343e9d4139976924239026c3689ae4886ed6d",
+      "size": 172094
+    },
+    {
+      "path": "berkeley-function-call-leaderboard/data/BFCL_v3_parallel_multiple.json",
+      "sha": "832039d6758e2569d65342b3fc9524924a03832a",
+      "size": 347080
+    },
+    {
+      "path": "berkeley-function-call-leaderboard/data/BFCL_v3_simple.json",
+      "sha": "927611976758b084570299cbda641199b9368765",
+      "size": 280474
+    }
+  ],
+  "repository": "ShishirPatil/gorilla",
+  "scope": "17 top-level BFCL v3 question files; excludes possible_answer, executable environments and auxiliary code"
+}

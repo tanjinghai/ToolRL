@@ -1,0 +1,81 @@
+{
+  "api_bank_hashes": {
+    "level-1-api_processed.json": "51ebc8209ba467ce4cc1854d23b2cfd89759f3c45ff2aaf90de4f003162ea98f",
+    "level-2-api_processed.json": "75c8097b3127d1f7aec13edb6b7a8428565d753b107f2b1e20daa3d0cfda51db",
+    "level-3-api_processed.json": "57228427976f05725d9cf2f0ab03ac16487efaed67d5a929b28e974b9b27ef05"
+  },
+  "config": {
+    "bfcl_hashes": {
+      "BFCL_v3_irrelevance.json": "975f51c51f688649fd190078efd87081241e0a326f9114a2ea3c1ca2440d8690",
+      "BFCL_v3_java.json": "261d327d50c1bb505614dd5f75a29167d5bd9f938e5cefefef989c325cb67848",
+      "BFCL_v3_javascript.json": "b69b6a99548f72e151be7abed4beb0ed70873d3370d5b78feed75b66f33795d3",
+      "BFCL_v3_live_irrelevance.json": "0d259e1c3ab6ba06c2a51911e2f49ecaa2eac3723a4a14f183a7687955e61338",
+      "BFCL_v3_live_multiple.json": "af2520ac5bb0b05aa9b8abe14a79b87198e5a3137a707d4f5633c792330f0cee",
+      "BFCL_v3_live_parallel.json": "6c26e9fdc3350cf596e6d1ea9c179cbff834761bccf562f4141ed29a839ca421",
+      "BFCL_v3_live_parallel_multiple.json": "21d4b9319c1faac431e22757b367ea28917fe467364c3a4b17f16ec06d4f6e79",
+      "BFCL_v3_live_relevance.json": "294ef3f21909e6f84c735faf688f5cbd72226ad012b7ea53c1e177c40cbbf053",
+      "BFCL_v3_live_simple.json": "10e5cedb6dc73cd16bc430755643c658d6032a69363dfc41a22a84988eaa312a",
+      "BFCL_v3_multi_turn_base.json": "edaea7666e0089062c30f3ac511914d5c27414dbe9b8214488191980d873b145",
+      "BFCL_v3_multi_turn_long_context.json": "a7c2b44cfe14e243e66acbb0737970f1085460fed5793bfa0137fb4782ff8fc4",
+      "BFCL_v3_multi_turn_miss_func.json": "e6cfbd225ac1182c82bfcd0a83410babd410a8cf2050942894017829e9a57e23",
+      "BFCL_v3_multi_turn_miss_param.json": "21a850b8bb0b41aba63e0bbcd9b4af6c7997144180eadd4bcdf4bdfd98077c1a",
+      "BFCL_v3_multiple.json": "aef168155ebd74b7ac2401198b201343bc7d16d7a3d7e0d4e6d8ee82c6969b2a",
+      "BFCL_v3_parallel.json": "fad375d68295776efb63e5aa331dd884f8635e7bb50e05908113c74f14281c3c",
+      "BFCL_v3_parallel_multiple.json": "8863ea8433239f55c5f016154cf0830853c89f693c6ea270396a2fa121960579",
+      "BFCL_v3_simple.json": "fbc37b2ad252bf9af985582e0e07b456173fe627d957491472ea9cef5fb83158"
+    },
+    "code_hashes": {
+      "benchmarks.py": "4d7dfd572b12f5168e1b5a67b9bfd53ed5f212a70ce0f7d6531dee3aff8979f5",
+      "data.py": "c32f5386f6120f3e1eec0fe16cb9c96264b605938f22ba17b7ef79bc08ea93bd",
+      "grouping.py": "3d55d40eee97fa2487898815fd503087a674005a34e4b4841f9ce3eb0192fb5d",
+      "io.py": "29a5685cb08da6131c5584c0c120322c98342595dab33e79b947f7aad0f14552",
+      "protocol.py": "3bc5eb4a3612dba737206809cc320e7732a462d42b73579dcf680c908c0004fe",
+      "schema.py": "b441239ec41b494d42f5084a1d485d92f227830ee831ed6f11f79520f39dd826"
+    },
+    "policy": "phase2-grouped-schema-v1",
+    "raw_hashes": {
+      "benchmarks/API-Bank/level-1-api_processed.json": "51ebc8209ba467ce4cc1854d23b2cfd89759f3c45ff2aaf90de4f003162ea98f",
+      "benchmarks/API-Bank/level-2-api_processed.json": "75c8097b3127d1f7aec13edb6b7a8428565d753b107f2b1e20daa3d0cfda51db",
+      "benchmarks/API-Bank/level-3-api_processed.json": "57228427976f05725d9cf2f0ab03ac16487efaed67d5a929b28e974b9b27ef05",
+      "benchmarks/Bamboogle/data.json": "82d2ff3996093300bf207c01f0a91a6fe7bd3608287ae623650788b712777f0c",
+      "dataset/rlla_4k_raw/rlla_rl.json": "f61cf5820afa8ced1a7fcc6b5078d3ccdfdf85623e7ec70783a1a63591620ff0",
+      "dataset/rlla_4k_raw/rlla_sft.json": "ef42a7b1574f1552d6cc7bf9f060a6425458ff67bae2baf53e945dc640dc125c"
+    },
+    "seed": 31415
+  },
+  "dataset_version": "phase2-v1-13c266c7a084",
+  "files_sha256": {
+    "benchmark_overlap.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "benchmarks/api_bank.jsonl": "6b1855bfaa0709f83991fd66d3ec6aaba2619ebe7fed15876c7582809d33ebc8",
+    "eval/test.jsonl": "9566a2762d9b1ccfd67a3542d67ecafdf8d156352862e61f7005fc4f679b1be2",
+    "eval/validation.jsonl": "1ea747d6d9a016da2428afe6f7551d74d71f805c18de4d35517d269c8c10d478",
+    "group_edges.jsonl": "c26c3eabc4bd8f7933e24b8ab5b0aea88343d153569c245af58322d42cd0c202",
+    "grpo/test.parquet": "4b6d66f2bbfe19aabf7570ab967b8c240b00cc0289b27260cf79fb57e584289f",
+    "grpo/train.parquet": "ca12441ebd64cd1fea63b756c3b5a6f024493f22bb70c6dfd829536e16e813e0",
+    "grpo/validation.parquet": "44058d06b7fa158f9a9198290041373575ef5886c517faa1e3d2937c1c6507b7",
+    "lineage.jsonl": "e914bebcbe3a46eb2ab0e0328670aaea43c0783aa3d42463f60822b0426c59af",
+    "quality.json": "526d1ba01ddfc21e6436cb3e1f2dbc9fb99811a59ef353596e0b0c37d43e5246",
+    "quarantine.jsonl": "a5c4022e0cde170f4c696f15297543ad9b1fde4039d38cefe4f7f244b69fd477",
+    "rl/test.jsonl": "2965e2ca5677aa4326a744949aa1611a50308c1c379d7d165d4170b2e47eef64",
+    "rl/train.jsonl": "3e8b58f413317560e23882c043e426f476ea4230e72bf80320cb57eee186d228",
+    "rl/validation.jsonl": "7702cc20b311c8768bb9112964693d4064e1e7b9e9c94f4595cb0ac75ea8e7bd",
+    "sft/test.jsonl": "f49049ee71a7321a73c996fa661c68f1911c1687d00c61c7d5c49cee785d48b7",
+    "sft/test.parquet": "d6d3bb62940e01913a93d60ef9a59b52ae967b851ad979944c0700b0e59b06d7",
+    "sft/train.jsonl": "b85e5e59292840f2228f3cfa1c834233b9f80748686a7fd819f2779d7446e0d4",
+    "sft/train.parquet": "99c0cc71028b48cb2b5f391579aeaf91b734e2003f56052807bc97fd0a16b835",
+    "sft/validation.jsonl": "d0b06026dd2d1a8b9c5662967f22e617ad57ceff9f5bcfedc2664c6932993204",
+    "sft/validation.parquet": "a427cac4868c5edc1a25a3f141ce7f887ccee6a51f82dc92bf5047ab49f53108"
+  },
+  "manifests_sha256": {
+    "benchmarks/api_bank.jsonl": "491e5f709f333504beb3df6bcdbe548d0dc1b5ec0e950e1c1039e9ee2eacb57e",
+    "eval/test.jsonl": "e3b4f6414964fba27f522d47fcd368cd0dafa29ffa376d1cf97a417e84068416",
+    "eval/validation.jsonl": "537a5c8099542eb1a036229ed6dfd759ac6ecf822e3bd6484a2452db5118a644",
+    "rl/test.jsonl": "feaf9f32b75636f40f67c4ff096b8ad96384ac7f35e46d253acaa68a5ac3df2e",
+    "rl/train.jsonl": "63808fe458a739788687d925bfee9131cb61f209384b032e81ba7afb85515e48",
+    "rl/validation.jsonl": "d798e938e6e92912489058993a021c1a76a6684c243269ebb14f317022cafa34",
+    "sft/test.jsonl": "f13a9cedf23b7941e65afc2f5f41f4e48befa1e92a4df07a127787cac13c2885",
+    "sft/train.jsonl": "28061dffdfc7d59dd3e3ce834d5e41712d067ae734e1de359fa3a461b68064bf",
+    "sft/validation.jsonl": "0db09661f4f041221c74dd38697eff3501545c569018a8beb62a0a989d06397d"
+  },
+  "original_files_unchanged": true
+}

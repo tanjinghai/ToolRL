@@ -1,0 +1,6 @@
+{
+  "dataset_version": "phase2-v1-13c266c7a084",
+  "final_test_sha256": "9566a2762d9b1ccfd67a3542d67ecafdf8d156352862e61f7005fc4f679b1be2",
+  "manifest_sha256": "e3b4f6414964fba27f522d47fcd368cd0dafa29ffa376d1cf97a417e84068416",
+  "policy": "Never use for data/reward/checkpoint selection."
+}

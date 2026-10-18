@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "scan_scope": "all final staged changes, including the explicitly versioned small unittest log; implementation was scanned before its commits",
+  "files_scanned": 29,
+  "maximum_file_bytes": 739580,
+  "credential_pattern_matches": 0,
+  "credential_scan_limitations": "pattern scan cannot prove all secrets absent",
+  "original_data_reward_license_unchanged": true,
+  "main_and_phase1_branch_unchanged": true,
+  "git_diff_check": "PASS"
+}
