@@ -1,0 +1,22 @@
+{
+  "files": [
+    {
+      "blobId": "f81ead14ab072d65a07817f83a3ee0e5a1890d10",
+      "rfilename": "config.json",
+      "size": 660
+    },
+    {
+      "blobId": "443909a61d429dff23010e5bddd28ff530edda00",
+      "rfilename": "tokenizer.json",
+      "size": 7031645
+    },
+    {
+      "blobId": "07bfe0640cb5a0037f9322287fbfc682806cf672",
+      "rfilename": "tokenizer_config.json",
+      "size": 7305
+    }
+  ],
+  "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+  "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "total_bytes": 7039610
+}

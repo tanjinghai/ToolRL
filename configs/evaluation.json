@@ -1,0 +1,8 @@
+{
+  "temperature": 0.0,
+  "top_p": 1.0,
+  "max_new_tokens": 1024,
+  "seed": 31415,
+  "n": 1,
+  "stop": null
+}
