@@ -1,0 +1,12 @@
+{
+  "kind": "sft",
+  "gpus": 1,
+  "batch": 8,
+  "micro": 1,
+  "max_length": 3072,
+  "epochs": 2,
+  "updates": 32,
+  "seed": 31415,
+  "lr": 1e-05,
+  "save_freq": 10
+}

@@ -40,7 +40,8 @@ class RewardManager():
     """The reward manager.
     """
 
-    def __init__(self, tokenizer, num_examine) -> None:
+    def __init__(self, tokenizer, num_examine, reward_version='legacy') -> None:
+        self.reward_version = reward_version
         self.tokenizer = tokenizer
         self.num_examine = num_examine  # the number of batches of decoded responses to print to the console
 
@@ -49,7 +50,7 @@ class RewardManager():
 
         # If there is rm score, we directly return rm score. Otherwise, we compute via rm_score_fn
         if 'rm_scores' in data.batch.keys():
-            return data.batch['rm_scores']
+            raise ValueError('Phase 3 expects four rule-reward components; learned RM is unsupported')
 
         reward_tensor = torch.zeros_like(data.batch['responses'], dtype=torch.float32)
         format_tensor = torch.zeros_like(data.batch['responses'], dtype=torch.float32)
@@ -61,20 +62,16 @@ class RewardManager():
         for i in range(len(data)):
             data_item = data[i]  # DataProtoItem
 
-            prompt_ids = data_item.batch['prompts']
-
-            prompt_length = prompt_ids.shape[-1]
-
-            valid_prompt_length = data_item.batch['attention_mask'][:prompt_length].sum()
-            valid_prompt_ids = prompt_ids[-valid_prompt_length:]
+            prompt_length = data_item.batch['prompts'].shape[-1]
 
             response_ids = data_item.batch['responses']
-            valid_response_length = data_item.batch['attention_mask'][prompt_length:].sum()
+            valid_response_length = int(data_item.batch['attention_mask'][prompt_length:].sum().item())
+            if valid_response_length == 0:
+                raise ValueError('Empty generated response')
             valid_response_ids = response_ids[:valid_response_length]
 
             # decode
-            sequences = torch.cat((valid_prompt_ids, valid_response_ids))
-            sequences_str = self.tokenizer.decode(sequences)
+            sequences_str = self.tokenizer.decode(valid_response_ids, skip_special_tokens=True)
 
             ground_truth = data_item.non_tensor_batch['reward_model']['ground_truth']
 
@@ -82,7 +79,20 @@ class RewardManager():
             data_source = data_item.non_tensor_batch['data_source']
             compute_score_fn = _select_rm_score_fn(data_source)
 
-            score, fomrat_score, correctness_score, length_score = compute_score_fn(solution_str=sequences_str, ground_truth=ground_truth, step=step)
+            if 'rlla' in data_source:
+                from toolrl_training.rewards import compute_reward
+                from toolrl_pipeline.io import loads
+                tools = loads(data_item.non_tensor_batch['available_tools'])
+                # Preserve the frozen sample-specific multi-call ordering contract.
+                extra = data_item.non_tensor_batch.get('extra_info', {})
+                order = extra.get('call_order')
+                if order is None:
+                    raise ValueError('Missing frozen call_order metadata')
+                score, fomrat_score, correctness_score, length_score = compute_reward(
+                    self.reward_version, sequences_str, ground_truth, tools, {'call_order': order}, step)
+            else:
+                score, fomrat_score, correctness_score, length_score = compute_score_fn(
+                    solution_str=sequences_str, ground_truth=ground_truth, step=step)
             reward_tensor[i, valid_response_length - 1] = score
             format_tensor[i, valid_response_length - 1] = fomrat_score
             correctness_tensor[i, valid_response_length - 1] = correctness_score
@@ -107,7 +117,10 @@ def main(config):
     if not ray.is_initialized():
         print("!!! Initializing Ray...")
         # this is for local ray cluster
-        ray.init(runtime_env={'env_vars': {'TOKENIZERS_PARALLELISM': 'true', 'NCCL_DEBUG': 'WARN'}})
+        import os
+        ray.init(runtime_env={'env_vars': {'TOKENIZERS_PARALLELISM': 'true', 'NCCL_DEBUG': 'WARN',
+                                          'TOOLRL_DATA_ROOT': os.environ.get('TOOLRL_DATA_ROOT', ''),
+                                          'TOOLRL_RUN_METADATA': os.environ.get('TOOLRL_RUN_METADATA', '')}})
 
     ray.get(main_task.remote(config))
 
@@ -188,10 +201,10 @@ def main_task(config):
         role_worker_mapping[Role.RewardModel] = ray.remote(RewardModelWorker)
         mapping[Role.RewardModel] = global_pool_id
 
-    reward_fn = RewardManager(tokenizer=tokenizer, num_examine=0)
+    reward_fn = RewardManager(tokenizer=tokenizer, num_examine=0, reward_version=config.reward_model.get('reward_version', 'legacy'))
 
     # Note that we always use function-based RM for validation
-    val_reward_fn = RewardManager(tokenizer=tokenizer, num_examine=1)
+    val_reward_fn = RewardManager(tokenizer=tokenizer, num_examine=0, reward_version=config.reward_model.get('reward_version', 'legacy'))
 
     resource_pool_manager = ResourcePoolManager(resource_pool_spec=resource_pool_spec, mapping=mapping)
 

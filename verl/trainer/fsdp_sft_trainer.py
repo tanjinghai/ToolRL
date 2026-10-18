@@ -74,7 +74,9 @@ class FSDPSFTTrainer(object):
         # build model
         self._build_model_optimizer()
 
-        # TODO: add checkpoint manager
+        self.resume_progress = None
+        if self.config.trainer.resume_path:
+            self._restore_checkpoint(self.config.trainer.resume_path)
         if self.device_mesh.get_rank() == 0:
             print(self.config)
 
@@ -110,31 +112,35 @@ class FSDPSFTTrainer(object):
                                       truncation=config.data.truncation)
 
         # build dataloader
+        loader_rng = torch.Generator().manual_seed(config.trainer.seed)
         rank = self.device_mesh.get_rank()
         world_size = self.device_mesh.size()
         self.train_sampler = DistributedSampler(self.train_dataset,
                                                 shuffle=True,
+                                                seed=config.trainer.seed,
                                                 num_replicas=world_size,
                                                 rank=rank,
-                                                drop_last=True)
+                                                drop_last=False)
         self.train_dataloader = DataLoader(dataset=self.train_dataset,
                                            batch_size=config.data.train_batch_size,
                                            sampler=self.train_sampler,
-                                           num_workers=8,
+                                           num_workers=0,
+                                           generator=loader_rng,
                                            pin_memory=True,
-                                           drop_last=True)
+                                           drop_last=False)
 
         self.val_sampler = DistributedSampler(self.val_dataset,
-                                              shuffle=True,
+                                              shuffle=False,
                                               num_replicas=world_size,
                                               rank=rank,
-                                              drop_last=True)
+                                              drop_last=False)
         self.val_dataloader = DataLoader(dataset=self.val_dataset,
                                          batch_size=config.data.micro_batch_size,
                                          sampler=self.val_sampler,
-                                         num_workers=8,
+                                         num_workers=0,
+                                         generator=loader_rng,
                                          pin_memory=True,
-                                         drop_last=True)
+                                         drop_last=False)
 
     def _build_model_optimizer(self):
         # TODO (zhangchi.usc1992):
@@ -202,7 +208,10 @@ class FSDPSFTTrainer(object):
         log_gpu_memory_usage('After initialize optimizer', logger=logger)
 
         steps_per_epoch = len(self.train_dataloader)
-        total_steps = steps_per_epoch * self.config.trainer.total_epochs
+        if steps_per_epoch < 1:
+            raise ValueError('Empty SFT training loader')
+        total_steps = min(steps_per_epoch * self.config.trainer.total_epochs,
+                          self.config.trainer.get('max_steps', steps_per_epoch * self.config.trainer.total_epochs))
 
         if self.device_mesh.get_rank() == 0:
             print(
@@ -215,9 +224,9 @@ class FSDPSFTTrainer(object):
                                                             num_warmup_steps=num_warmup_steps,
                                                             num_training_steps=total_steps)
 
-    def _compute_loss(self, batch):
-        loss_mask = batch.pop('loss_mask')[:, :-1].reshape(-1).cuda()
-        labels = batch['input_ids'][:, 1:].cuda()
+    def _compute_loss(self, batch, normalizer=None):
+        labels = batch['labels'][:, 1:].cuda()
+        loss_mask = (labels != -100).reshape(-1)
 
         with torch.autocast(device_type='cuda', dtype=torch.bfloat16):
             output = self.fsdp_model(input_ids=batch['input_ids'],
@@ -225,29 +234,11 @@ class FSDPSFTTrainer(object):
                                      position_ids=batch['position_ids'],
                                      use_cache=False)  # prevent model thinks it it generating
 
-        logits = output.logits
-
-        shift_logits = logits[..., :-1, :].contiguous()
-        shift_labels = labels.contiguous()
-        # Flatten the tokens
-        loss_fct = nn.CrossEntropyLoss(reduction='none')
-        shift_logits = shift_logits.view(-1, self.model.config.vocab_size)
-        shift_labels = shift_labels.view(-1)
-        # Enable model parallelism
-        shift_labels = shift_labels.to(shift_logits.device)
-        loss = loss_fct(shift_logits, shift_labels)
-        loss = loss * loss_mask
-
-        valid_token_this_rank = torch.sum(loss_mask)
-
-        if self.config.data.balance_dp_token:
-            torch.distributed.all_reduce(valid_token_this_rank)  # becomes total valid tokens in all ranks
-            dp_size = torch.distributed.get_world_size()
-        else:
-            dp_size = 1
-
-        loss = torch.sum(loss) / valid_token_this_rank * dp_size  # possible bugs here for dp
-        return loss
+        from toolrl_training.tensor_ops import causal_sft_loss
+        valid_tokens = torch.sum(loss_mask) if normalizer is None else normalizer
+        if normalizer is None:
+            torch.distributed.all_reduce(valid_tokens)
+        return causal_sft_loss(output.logits, batch['labels'], valid_tokens, self.device_mesh.size())
 
     def training_step(self, batch: TensorDict):
         self.fsdp_model.train()
@@ -259,14 +250,17 @@ class FSDPSFTTrainer(object):
         log_gpu_memory_usage('After optimizer zero_grad', logger=logger)
 
         micro_batches = batch.split(self.config.data.micro_batch_size)
-        n_micro_batches = len(micro_batches)
+        valid_tokens = (batch['labels'][:, 1:] != -100).sum()
+        torch.distributed.all_reduce(valid_tokens)
         step_loss = 0
         for micro_batch in micro_batches:
-            loss = self._compute_loss(batch=micro_batch) / n_micro_batches
+            loss = self._compute_loss(batch=micro_batch, normalizer=valid_tokens)
             loss.backward()
             step_loss += loss.item()
 
-        self.fsdp_model.clip_grad_norm_(max_norm=self.config.optim.clip_grad)
+        norm = self.fsdp_model.clip_grad_norm_(max_norm=self.config.optim.clip_grad)
+        if not torch.isfinite(norm):
+            raise FloatingPointError('Nonfinite SFT gradients; optimizer update rejected')
 
         log_gpu_memory_usage('Before optimizer step', logger=logger)
 
@@ -292,63 +286,96 @@ class FSDPSFTTrainer(object):
             torch.distributed.all_reduce(loss, op=torch.distributed.ReduceOp.AVG)
         return loss
 
-    def save_checkpoint(self, step):
-        # save checkpoint
-        from torch.distributed.fsdp import FullStateDictConfig, StateDictType
+    def save_checkpoint(self, step, progress):
+        from torch.distributed.fsdp import FullStateDictConfig, FullOptimStateDictConfig, StateDictType
+        from toolrl_training.checkpoint import publish_checkpoint, capture_rng, training_provenance
+        from omegaconf import OmegaConf
         cfg = FullStateDictConfig(offload_to_cpu=True, rank0_only=True)
-        with FSDP.state_dict_type(self.fsdp_model, StateDictType.FULL_STATE_DICT, cfg):
-            state_dict = self.fsdp_model.state_dict()
-
-        path = os.path.join(self.config.trainer.default_local_dir, f'global_step_{step}')
-        # save huggingface model
+        ocfg = FullOptimStateDictConfig(offload_to_cpu=True, rank0_only=True)
+        with FSDP.state_dict_type(self.fsdp_model, StateDictType.FULL_STATE_DICT, cfg, ocfg):
+            weights = self.fsdp_model.state_dict()
+            optimizer = FSDP.optim_state_dict(self.fsdp_model, self.optimizer)
+        rngs = [None] * self.device_mesh.size()
+        torch.distributed.all_gather_object(rngs, capture_rng())
         if self.device_mesh.get_rank() == 0:
-            os.makedirs(path, exist_ok=True)
-            self.model.save_pretrained(path, state_dict=state_dict)
-            self.tokenizer.save_pretrained(path)
-            if self.config.trainer.default_hdfs_dir:
-                hdfs_io.makedirs(self.config.trainer.default_hdfs_dir, exist_ok=True)
-                hdfs_io.copy(src=path, dst=self.config.trainer.default_hdfs_dir, dirs_exist_ok=True)
+            def writer(tmp):
+                self.model.save_pretrained(tmp, state_dict=weights)
+                self.tokenizer.save_pretrained(tmp)
+                OmegaConf.save(self.config, tmp / 'training_config.yaml')
+                torch.save({'optimizer': optimizer, 'scheduler': self.lr_scheduler.state_dict(),
+                            'rngs': rngs, 'progress': progress,
+                            'world_size': self.device_mesh.size()}, tmp / 'training_state.pt')
+            publish_checkpoint(os.path.join(self.config.trainer.default_local_dir, f'global_step_{step}'),
+                               writer, {**training_provenance(), 'step': step, 'resume_mode': 'sft_exact_candidate_gpu_unverified',
+                                        'training_signature': self._training_signature()})
+            from toolrl_training.checkpoint import prune_checkpoints
+            prune_checkpoints(self.config.trainer.default_local_dir, self.config.trainer.get('keep_checkpoints', 1))
         torch.distributed.barrier()
+
+    def _training_signature(self):
+        from omegaconf import OmegaConf
+        from toolrl_training.runtime import sft_training_signature
+        return sft_training_signature(OmegaConf.to_container(self.config, resolve=True))
+
+    def _restore_checkpoint(self, path):
+        from toolrl_training.checkpoint import validate_checkpoint, restore_rng
+        from torch.distributed.fsdp import FullStateDictConfig, FullOptimStateDictConfig, StateDictType
+        validate_checkpoint(path, {'training_signature': self._training_signature()})
+        # Only trusted locally produced checkpoints; torch pickle is not an untrusted interchange format.
+        state = torch.load(os.path.join(path, 'training_state.pt'), map_location='cpu', weights_only=False)
+        if state['world_size'] != self.device_mesh.size():
+            raise ValueError('Exact SFT resume requires identical world size')
+        # Initialization must use this exported model path so HF loads the matching weights.
+        if os.path.realpath(self.config.model.partial_pretrain) != os.path.realpath(path):
+            raise ValueError('Set model.partial_pretrain to resume_path for exact resume')
+        cfg = FullStateDictConfig(offload_to_cpu=True, rank0_only=False)
+        ocfg = FullOptimStateDictConfig(offload_to_cpu=True, rank0_only=False)
+        with FSDP.state_dict_type(self.fsdp_model, StateDictType.FULL_STATE_DICT, cfg, ocfg):
+            optim_state = FSDP.optim_state_dict_to_load(self.fsdp_model, self.optimizer, state['optimizer'])
+        self.optimizer.load_state_dict(optim_state)
+        self.lr_scheduler.load_state_dict(state['scheduler'])
+        restore_rng(state['rngs'][self.device_mesh.get_rank()])
+        self.resume_progress = state['progress']
 
     def fit(self):
         rank = self.device_mesh.get_rank()
-
-        # TODO: add a unified tracking
         if rank == 0:
             tracking = Tracking(project_name=self.config.trainer.project_name,
                                 experiment_name=self.config.trainer.experiment_name,
                                 default_backend=self.config.trainer.logger)
-
-        global_step = 0
-
-        # TODO (zhangchi.usc1992) add back checkpoint manager. Currently, it blocks when uploading to hdfs. So very slow.
-
-        for epoch in range(self.config.trainer.total_epochs):
-            self.train_sampler.set_epoch(epoch=epoch)
-            for data in self.train_dataloader:
-                data = TensorDict(data, batch_size=self.config.data.train_batch_size).cuda()
+        progress = self.resume_progress or {'step': 0, 'epoch': 0, 'next_batch': 0}
+        global_step = progress['step']
+        limit = min(self.config.trainer.get('max_steps', 10**12),
+                    len(self.train_dataloader) * self.config.trainer.total_epochs)
+        last_saved = global_step if self.resume_progress else -1
+        for epoch in range(progress['epoch'], self.config.trainer.total_epochs):
+            self.train_sampler.set_epoch(epoch)
+            for batch_index, data in enumerate(self.train_dataloader):
+                if epoch == progress['epoch'] and batch_index < progress['next_batch']:
+                    continue
+                if global_step >= limit:
+                    break
+                data = TensorDict(data, batch_size=data['input_ids'].shape[0]).cuda()
                 metric = self.training_step(data)
+                global_step += 1
+                next_progress = {'step': global_step, 'epoch': epoch, 'next_batch': batch_index + 1}
                 if rank == 0:
                     tracking.log(data=metric, step=global_step)
-                global_step += 1
-
-            # validation
+                if global_step % self.config.trainer.get('save_freq', 10) == 0 or global_step == limit:
+                    self.save_checkpoint(global_step, next_progress)
+                    last_saved = global_step
             val_losses = []
             for data in self.val_dataloader:
-                data = TensorDict(data, batch_size=self.config.data.micro_batch_size).cuda()
-                val_loss = self.validation_step(data)
-                val_losses.append(val_loss)
+                data = TensorDict(data, batch_size=data['input_ids'].shape[0]).cuda()
+                val_losses.append(self.validation_step(data))
             if rank == 0:
-                val_loss = torch.mean(torch.stack(val_losses))
-                metric = {'val/loss': val_loss.detach().item()}
-                tracking.log(data=metric, step=global_step)
-            torch.distributed.barrier()
-
-            # save checkpoint
-            self.save_checkpoint(step=global_step)
+                tracking.log(data={'val/loss': torch.stack(val_losses).mean().item()}, step=global_step)
+            if global_step >= limit:
+                break
+        if global_step and last_saved != global_step:
+            self.save_checkpoint(global_step, next_progress)
 
 
-from verl.trainer.fsdp_sft_trainer import FSDPSFTTrainer
 import hydra
 
 from torch.distributed.device_mesh import init_device_mesh
@@ -358,6 +385,11 @@ from verl.utils.distributed import initialize_global_process_group
 
 @hydra.main(config_path='config', config_name='sft_trainer', version_base=None)
 def main(config):
+    import random
+    import numpy as np
+    random.seed(config.trainer.seed)
+    np.random.seed(config.trainer.seed)
+    torch.manual_seed(config.trainer.seed)
     local_rank, rank, world_size = initialize_global_process_group()
 
     device_mesh = init_device_mesh(device_type='cuda', mesh_shape=(world_size,), mesh_dim_names=('dp',))

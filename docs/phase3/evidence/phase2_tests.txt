@@ -1,0 +1,42 @@
+test_cross_source_history_groups_and_train_anchor (test_data.CleaningTests) ... ok
+test_lexical_near_duplicate_group (test_data.CleaningTests) ... ok
+test_provable_whitespace_repair_preserves_think (test_data.CleaningTests) ... ok
+test_unknown_tool_not_fuzzy_repaired (test_data.CleaningTests) ... ok
+test_wrong_type_is_quarantined_and_raw_unchanged (test_data.CleaningTests) ... ok
+test_deterministic_rebuild_and_all_artifact_hashes (test_data.FullBuildTests) ... ok
+test_parquet_contract_and_no_label_in_rendered_input (test_data.FullBuildTests) ... ok
+test_raw_files_unchanged_and_every_occurrence_accounted (test_data.FullBuildTests) ... ok
+test_train_subset_cannot_use_held_out_ids (test_data.FullBuildTests) ... ok
+test_train_validation_test_and_sft_rl_isolation (test_data.FullBuildTests) ... ok
+test_api_bank_fixed_manifest_and_legacy_looseness (test_evaluation.BenchmarkTests) ... ok
+test_api_mock_from_other_cwd (test_evaluation.BenchmarkTests) ... ok
+test_api_wrappers_are_cwd_independent_and_cpu_import_safe (test_evaluation.BenchmarkTests) ... ok
+test_bfcl_bridge_and_malformed_output (test_evaluation.BenchmarkTests) ... ok
+test_assistant_only_labels_and_no_duplicate_control_tokens (test_evaluation.EvaluationTests) ... ok
+test_bad_case_diff_and_truncation (test_evaluation.EvaluationTests) ... ok
+test_duplicate_unknown_and_mixed_provenance_refused (test_evaluation.EvaluationTests) ... ok
+test_final_test_gate (test_evaluation.EvaluationTests) ... ok
+test_oracle_mock_full_pipeline_and_fixed_missing_denominator (test_evaluation.EvaluationTests) ... ok
+test_resume_retains_failed_attempts_and_no_labels_reach_backend (test_evaluation.EvaluationTests) ... ok
+/private/tmp/toolrl-phase3-venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+test_length_rejects_silent_truncation (test_real_tokenizer.RealQwenTokenizerTests) ... ok
+test_original_messages_exactly_once_and_labels (test_real_tokenizer.RealQwenTokenizerTests) ... ok
+test_assignment_matches_bruteforce_global_optimum (test_verifier.VerifierTests) ... ok
+test_bool_integer_numeric_string_and_integer_float (test_verifier.VerifierTests) ... ok
+test_exact_and_independent_name_metrics (test_verifier.VerifierTests) ... ok
+test_invalid_gt_and_unknown_order (test_verifier.VerifierTests) ... ok
+test_json_no_line_is_dropped_and_duplicate_keys_rejected (test_verifier.VerifierTests) ... ok
+test_missing_extra_arguments_and_nested_type (test_verifier.VerifierTests) ... ok
+test_no_tool_is_structural_not_semantic (test_verifier.VerifierTests) ... ok
+test_parallel_permutations_same_names_and_multiplicity (test_verifier.VerifierTests) ... ok
+test_schema_annotations_and_number_policy (test_verifier.VerifierTests) ... ok
+test_sequential_order_is_enforced (test_verifier.VerifierTests) ... ok
+test_thought_tags_and_outer_ambiguity (test_verifier.VerifierTests) ... ok
+test_truncation_and_generation_failure_are_failed_attempts (test_verifier.VerifierTests) ... ok
+test_wrong_missing_extra_unknown_and_duplicate_tools (test_verifier.VerifierTests) ... ok
+
+----------------------------------------------------------------------
+Ran 35 tests in 6.761s
+
+OK

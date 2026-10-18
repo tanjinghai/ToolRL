@@ -131,7 +131,7 @@ class RLHFDataset(Dataset):
             prompt = self.tokenizer.apply_chat_template(chat, tokenize=False, add_generation_prompt=True)
         else:
             prompt = ""
-            for p in prompt:
+            for p in chat:
                 prompt += p["content"].strip() + "\n\n"
             prompt = prompt.strip()
         

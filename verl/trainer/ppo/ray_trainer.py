@@ -375,10 +375,15 @@ class RayPPOTrainer(object):
                                          # use_chat_template=self.config.data.use_chat_template,
                                          filter_prompts=True,
                                          return_raw_chat=self.config.data.get('return_raw_chat', False),
-                                         truncation='left')
+                                         truncation=self.config.data.get('truncation', 'error'))
+        limit = self.config.data.get('train_limit')
+        if limit is not None:
+            self.train_dataset.dataframe = self.train_dataset.dataframe.iloc[:limit].copy()
+        generator = torch.Generator().manual_seed(self.config.trainer.get('seed', 31415))
         self.train_dataloader = DataLoader(dataset=self.train_dataset,
                                            batch_size=self.config.data.train_batch_size,
                                            shuffle=True,
+                                           generator=generator,
                                            drop_last=True,
                                            collate_fn=collate_fn)
 
@@ -389,11 +394,11 @@ class RayPPOTrainer(object):
                                        # use_chat_template=self.config.data.use_chat_template,
                                        filter_prompts=True,
                                        return_raw_chat=self.config.data.get('return_raw_chat', False),
-                                       truncation='left')
+                                       truncation=self.config.data.get('truncation', 'error'))
         self.val_dataloader = DataLoader(dataset=self.val_dataset,
-                                         batch_size=len(self.val_dataset),
-                                         shuffle=True,
-                                         drop_last=True,
+                                         batch_size=self.config.data.val_batch_size,
+                                         shuffle=False,
+                                         drop_last=False,
                                          collate_fn=collate_fn)
 
         assert len(self.train_dataloader) >= 1
@@ -567,12 +572,19 @@ class RayPPOTrainer(object):
         self.actor_rollout_wg.init_model()
 
     def _save_checkpoint(self):
+        self._last_saved_step = self.global_steps
         actor_local_path = os.path.join(self.config.trainer.default_local_dir, 'actor',
                                         f'global_step_{self.global_steps}')
         actor_remote_path = None # if self.config.trainer.default_hdfs_dir is None else os.path.join(
             # self.config.trainer.default_hdfs_dir, 'actor')
         self.actor_rollout_wg.save_checkpoint(actor_local_path, actor_remote_path)
 
+        from toolrl_pipeline.io import write_json
+        from omegaconf import OmegaConf
+        write_json(os.path.join(self.config.trainer.default_local_dir, f'progress_{self.global_steps}.json'),
+                   {'step': self.global_steps, 'resume_mode': 'weights_only_optimizer_restart',
+                    'config': OmegaConf.to_container(self.config, resolve=True),
+                    'note': 'Ray/vLLM/sampler exact restore not implemented'})
         if self.use_critic:
             critic_local_path = os.path.join(self.config.trainer.default_local_dir, 'critic',
                                              f'global_step_{self.global_steps}')
@@ -611,6 +623,8 @@ class RayPPOTrainer(object):
                           default_backend=self.config.trainer.logger,
                           config=OmegaConf.to_container(self.config, resolve=True))
 
+        from toolrl_training.watchdog import TrainingWatchdog, is_final_update
+        watchdog = TrainingWatchdog()
         self.global_steps = 0
 
         # perform validation before training
@@ -678,6 +692,8 @@ class RayPPOTrainer(object):
 
                         # we combine with rule-based rm
                         reward_tensor, format_tensor, correctness_tensor, length_tensor = self.reward_fn(batch, self.global_steps)
+                        metrics['health/zero_group_fraction'] = watchdog.observe(
+                            reward_tensor.sum(-1).tolist(), batch.non_tensor_batch['uid'].tolist())
                         batch.batch['token_level_scores'] = reward_tensor
                         batch.batch['token_level_scores_format'] = format_tensor
                         batch.batch['token_level_scores_correctness'] = correctness_tensor
@@ -733,13 +749,16 @@ class RayPPOTrainer(object):
                 # TODO: make a canonical logger that supports various backend
                 logger.log(data=metrics, step=self.global_steps)
 
-                self.global_steps += 1
+                if is_final_update(self.global_steps, self.total_training_steps):
 
-                if self.global_steps >= self.total_training_steps:
-
+                    if getattr(self, '_last_saved_step', None) != self.global_steps:
+                        self._save_checkpoint()
                     # perform validation after training
                     if self.val_reward_fn is not None:
                         val_metrics = self._validate()
                         pprint(f'Final validation metrics: {val_metrics}')
                         logger.log(data=val_metrics, step=self.global_steps)
                     return
+
+                self.global_steps += 1
+        raise RuntimeError('Epoch capacity exhausted before requested updates; inspect epochs/batch/limit')

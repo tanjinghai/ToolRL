@@ -1,0 +1,104 @@
+test_budget_includes_idle_and_reserve (test_control.ApprovalTests) ... ok
+test_no_approval_dryrun_and_price_basis (test_control.ApprovalTests) ... ok
+test_whitelist_rejected_before_launch (test_control.ApprovalTests) ... ok
+test_atomic_failure_preserves_prior (test_control.CheckpointTests) ... ok
+test_cpu_resume_optimizer_scheduler_rng_cursor (test_control.CheckpointTests) ... ok
+test_exact_update_count (test_control.ConfigTests) ... ok
+test_kl_and_hydra (test_control.ConfigTests) ... ok
+test_old_worker_normalization (test_control.ConfigTests) ... ok
+test_plan_controlled_comparisons (test_control.ConfigTests) ... ok
+test_real_frozen_data (test_control.ConfigTests) ... ok
+test_watchdog (test_control.ConfigTests) ... ok
+test_failed_sft_does_not_cancel_independent_e2 (test_control.ExecutorTests) ... ok
+test_final_mock_cannot_unlock_test (test_control.ExecutorTests) ... ok
+test_recovery_after_failed_attempt (test_control.ExecutorTests) ... ok
+test_retry_dependencies_and_idempotence (test_control.ExecutorTests) ... ok
+test_timeout_stops_new_work (test_control.ExecutorTests) ... ok
+test_latest_complete_survives_and_other_runs_untouched (test_control.RetentionTests) ... ok
+test_all_real_rl_train_val_targets_schema_and_partial_reward (test_rewards.RealTrainingRewardSanityTests) ... ok
+test_adversarial_independent_verifier_agreement (test_rewards.RewardTests) ... ok
+test_duplicate_global_assignment_and_order (test_rewards.RewardTests) ... ok
+test_free_text_no_invented_semantic_reward (test_rewards.RewardTests) ... ok
+test_fullscore_requires_em_small_exhaustive (test_rewards.RewardTests) ... ok
+test_parameter_dict_order_invariance (test_rewards.RewardTests) ... ok
+test_partial_credit_and_extra_arguments (test_rewards.RewardTests) ... ok
+test_actual_saved_predictions_fullscore_false_positive_gate (test_rewards.ValidationAuditTests) ... ok
+/private/tmp/toolrl-phase3-venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+test_all_real_train_val_labels_and_padding (test_sft.SFTAdapterTests) ... ok
+test_overlength_and_role_loss_rejected (test_sft.SFTAdapterTests) ... ok
+test_candidate_mismatch_before_opening_test (test_stages.FinalOnceTests) ... ok
+test_frozen_candidate_gate_one_round_across_runs (test_stages.FinalOnceTests) ... ok
+test_decision_rejects_test (test_stages.StageTests) ... ok
+test_e4_manual_gate_and_final_lock_without_model (test_stages.StageTests) ... ok
+test_full_mock_evaluation_comparison_badcases_api_and_idempotence (test_stages.StageTests) ... huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+ok
+test_model_manifest_revision_hash_and_incomplete_rejected (test_stages.StageTests) ... ok
+test_actual_reward_kl_zero_and_legacy_coefficient (test_tensors.RewardManagerIntegrationTests) ... /private/tmp/toolrl-phase3-venv/lib/python3.9/site-packages/ray/util/state/util.py:54: DeprecationWarning: Ray state API is no longer experimental. Please import from `ray.util.state`. instead. Importing from `ray.experimental` will be deprecated in future releases. 
+  warnings.warn(
+ok
+test_completion_only_reward_and_last_valid_token (test_tensors.RewardManagerIntegrationTests) ... ok
+test_actual_cpu_optimizer_scheduler_rng_resume (test_tensors.TensorTests) ... ok
+test_actual_grpo_advantage_and_clipped_objective (test_tensors.TensorTests) ... ok
+test_gradient_accumulation_equals_full_token_weighted_batch (test_tensors.TensorTests) ... ok
+test_hydra_parse_actual_vendored_configs (test_tensors.TensorTests) ... ok
+test_prompt_padding_labels_do_not_change_loss (test_tensors.TensorTests) ... ok
+test_real_veRL_sft_dataset_and_rl_dataset (test_tensors.TensorTests) ... ok
+
+----------------------------------------------------------------------
+Ran 41 tests in 8.432s
+
+OK
+original dataset len: 2511
+filter dataset len: 2511
